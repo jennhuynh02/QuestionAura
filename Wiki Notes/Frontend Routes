@@ -1,0 +1,64 @@
+# Frontend Routes
+
+### Main
+- [ ] `/` - Navigation bar
+* _main container_
+
+
+- [ ] `/login` Login page
+* _login session (container)_
+* _login form (component)_
+
+
+- [ ] `/signup` Signup page
+* _signup session (container)_
+* _session form (component)_
+
+
+### Feed
+- [ ] `/dashboard` Dashboard/Homepage
+
+* - [ ] `/questions/index`
+* - [ ] `/question/:questionId`
+ * - [ ] _answers index_
+ * - [ ] _answers index item container_
+ * - [ ] _answers index item comments container_
+ * - [ ] _answers index item comments form_ 
+
+
+
+### Question
+- [ ] `/questions/new` Ask a question
+* _question container (createQuestion action)_
+* _question form (component)_
+
+- [ ] `/questions/:questionId/edit` QuestionForm Container 
+
+
+### Answer
+- [ ] `/answers/new` Answer a question
+* _answer container (answerQuestion action)_
+* _answer form (component)_
+
+
+- [ ] `/answers/:answerId/edit` Answer Form Container
+
+
+### Profile
+- [ ] `/users/:userId` Profile page
+* _user show page_
+
+
+- [ ] `/users/:userId/questions` User's questions
+* _user show page (including all questions posted)_
+
+
+- [ ] `/users/:userId/answers` User's answer
+* _user show page (including all answers to other users' questions)_
+
+
+- [ ] `/users/:userId/edit` Edit profile information
+* _profile container_
+* _profile edit form_
+
+

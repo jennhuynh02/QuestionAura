@@ -1,0 +1,132 @@
+## Initial Sample State:
+- [ ] To be reviewed...
+``` javascript
+{
+  entities: {
+    users: {
+      72: {
+        id: 72,
+        username: "isaacstein",
+        authoredQuestionIds: [10,20],
+        authoredAnswerIds: [202],
+        authoredCommentIds: [22],
+      },
+      82: {
+        id: 2,
+        username: "allthewayne",
+        authoredQuestionIds: [30],
+        authoredAnswerIds: [303],
+        authoredCommentIds: [11],
+      },
+      92: {
+        id: 3,
+        username: "jayjames",
+        authoredQuestionIds: [40,50],
+        authoredAnswerIds: [101],
+        authoredCommentIds: [],
+      }
+    },
+    questions: {
+      10: {
+        id: 10,
+        title: "What's the best strategy for becoming a Leet-codeist?",
+        body: "I want to improve my skills in coding algorithms.",
+        topicId: 1,
+        askerId: 72,        
+      },
+      20: {
+        id: 20,
+        username: "What was your experience like at App Academy?  Did you end up finding a job?",
+        body: "I currently attend App Academy and am curious to know other people's experience and how AA has changed their life.",
+        topicId: 2,
+        askerId: 72,
+      },
+      30: {
+        id: 30,
+        username: "What are some of the best tech companies to work for?",
+        body: "In terms of: culture, room for growth, salary, perks, etc.",
+        topicId: 3,
+        askerId: 82,
+      },
+      40: {
+        id: 40,
+        username: "How do I help myself understand recursions.?",
+        body: "I'm struggling to visualize how this process works.",
+        topicId: 1,
+        askerId: 92,
+      },
+      50: {
+        id: 50,
+        username: "What are useful websites/applications for finance?",
+        body: "I'm looking for tools for investing and managing my finances.",
+        topicId: 4,
+        askerId: 92,
+      }
+    },
+    answers: {
+      101: {
+        id: 101,
+        questionId: 10,
+        body: "Practice makes perfect. To get good at Leet code, you should start working on the easy ones until you are prepared for the medium and hard questions.  Overtime, you will become familiar with your high level and low level strategies for solving algorithmic coding problems.",
+        responderId: 92,        
+      },
+      202: {
+        id: 202,
+        questionId: 20,
+        body: "App Academy was a very intense and rewarding experience.  I learned how to code in Ruby and Javascript, as well as learn concepts like the Big O.  I've made a lot of great friends and learned a lot while I was in the program.  I would highly recommend this program to anyone who is serious about learning to code and becoming a programmer.",
+        responderId: 72,        
+      },
+      303: {
+        id: 303,
+        questionId: 30,
+        body: "A good strategy for undering recursions is to draw out each stack frame of the recursive problem/solution.  Doing so will help you understand that value that is being returned at each recursive step.",
+        responderId: 82,        
+      },
+    },
+    comments: {
+      11: {
+        id: 11,
+        answerId: 101,
+        body: "I have found that with more practice, I have become a lot better at solving the more complex LeetCode problems."
+        commenterId: 82,        
+      },
+      22: {
+        id: 22,
+        answerId: 303,
+        body: "This is a very good strategy for understanding recursions.  In addition to this, I was also very sure to think very hard about the return value of my base case.  This is crucial to successfully solving problems recursively."
+        commenterId: 72,        
+      },
+    },
+    topics: {
+      1: {
+        id: 1,
+        name: "coding"      
+      },
+      2: {
+        id: 2,
+        name: "bootcamp"      
+      },
+      3: {
+        id: 3,
+        name: "career"      
+      },
+      4: {
+        id: 4,
+        name: "finance"      
+      },
+    },
+    ui: {
+      loading: true/false
+    },
+    errors: {
+      login: ["Incorrect username/password combination"],
+      signup: ["Please choose another username and a secure password (minumum length: 6 characters)"],
+      question: ["Title and/or body must be filled"],
+      answer: ["Response must not be blank"],
+      comment: ["Please type out comment before submitting"]
+    },
+    session: { 
+      currentUserId: 3 
+    },
+  },
+} 
