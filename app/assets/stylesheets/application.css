@@ -27,36 +27,40 @@
  .welcome-page {
    background-image: url('RickandMortyBackground.jpg');
    background-size: cover;
-   height: 500px;
+   height: 800px;
    display: flex;
    align-items: center;
-   border: grey;
  }
  
  .welcome-content {
-   background-color: ivory;
+   background-color: white;
    border: 5px solid grey;
+   background-size: cover;
+   height: 700px;
+   width: 600px;
   }
-
- .welcome-content .session-form {
- }
 
  .forms {
    display: flex;
    flex-direction: row; 
-   justify-content: space-between;
+   justify-content: space-around;
  }
 
  .session-form{
   width: 150px;
-  color: grey;
+  font-weight: bold;
+  font: menu;
  }
 
 .welcome-logo {
    color: #B92B27;
    font-size: 80px;
+   text-align: center;
  }
 
 .welcome-quote {
    color:grey;
+   text-align: center;
+   font-size: 19px;
+   font-family: fantasy;
  }
