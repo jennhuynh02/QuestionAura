@@ -5,10 +5,10 @@ import WelcomePage from "../components/sessions/welcome_page";
 
 export const App = () => (
   <div>
-    {/* <HeaderContainer /> */}
+    <HeaderContainer />
     <WelcomePage />
     <Switch>
-      {/* <Route path="/login" component={LoginFormContainer} /> */}
+      <Route path="/login" component={WelcomePage} />
     </Switch>
   </div>
 )

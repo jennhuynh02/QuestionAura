@@ -23,7 +23,33 @@
    color: #B92B27;
  }
 
+ /* login page css */
+ .welcome-page {
+   background-image: url('RickandMortyBackground.jpg');
+   background-size: cover;
+   height: 500px;
+   display: flex;
+   align-items: center;
+   border: grey;
+ }
+ 
+ .welcome-content {
+   background-color: ivory;
+  }
+
+ .welcome-content .session-form {
+ }
+
+ .session-form{
+  max-width: 50px;
+   color: grey;
+ }
+
   .welcome-logo {
    color: #B92B27;
    font-size: 80px;
+ }
+
+.welcome-quote {
+   color:grey;
  }
