@@ -35,17 +35,24 @@
  
  .welcome-content {
    background-color: ivory;
+   border: 5px solid grey;
   }
 
  .welcome-content .session-form {
  }
 
- .session-form{
-  max-width: 50px;
-   color: grey;
+ .forms {
+   display: flex;
+   flex-direction: row; 
+   justify-content: space-between;
  }
 
-  .welcome-logo {
+ .session-form{
+  width: 150px;
+  color: grey;
+ }
+
+.welcome-logo {
    color: #B92B27;
    font-size: 80px;
  }
