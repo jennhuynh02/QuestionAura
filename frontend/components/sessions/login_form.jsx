@@ -36,21 +36,23 @@ class LoginForm extends React.Component {
     return (
       <div className = "session-form">
         <form onSubmit={this.handleSubmit}>
-          Login
-          <br/>
+          <h2>Login</h2>
+       
           <input type="text"
           placeholder="Email"
           value={this.state.username}
-          onChange={this.update("username")}/>
+          onChange={this.update("username")}
+          className="form-input-boxes"/>
 
           <br/>
 
           <input type="password"
           placeholder="Password"
           value={this.state.password}
-          onChange={this.update("password")}/>
+          onChange={this.update("password")}
+          className="form-input-boxes"/>
 
-          <button>Login</button>
+          <button className="form-login-buttons">Login</button>
         </form>
       </div>
     );

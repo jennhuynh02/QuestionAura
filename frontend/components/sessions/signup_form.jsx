@@ -37,21 +37,24 @@ class SignupForm extends React.Component {
     return (
       <div className = "session-form">
         <form onSubmit={this.handleSubmit}>
-          Signup
+          <h2>Signup</h2>
           <br/>
+          EMAIL
           <input type="text"
           placeholder="Email"
           value={this.state.username}
-          onChange={this.update("username")}/>
+          onChange={this.update("username")}
+          className="form-input-boxes"/>
 
           <br/>
-
+          PASSWORD
           <input type="password"
           placeholder="Password"
           value={this.state.password}
-          onChange={this.update("password")}/>
+          onChange={this.update("password")}
+          className="form-input-boxes"/>
 
-        <button>Signup</button>
+          <button className="form-login-buttons">Sign Up</button>
         </form>
       </div>
     );
