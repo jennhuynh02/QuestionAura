@@ -5,18 +5,25 @@ class LoginForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLoginSubmit = this.handleDemoLoginSubmit.bind(this);
+  }
+
+  handleDemoLoginSubmit(e) {
+    e.preventDefault();
+    const user = { email: 'guestuser@questionaura.com', password: '123456' };
+    this.props.processForm(user);
   }
 
   update(field) {
-    return e => this.setState({[field]: e.currentTarget.value});
+    return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state)
+    const user = { ...this.state };
     this.props.processForm(user);
   }
 
@@ -34,7 +41,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className = "session-form">
+      <div className="session-form">
         <form onSubmit={this.handleSubmit}>
           <h2>Login</h2>
        
@@ -54,6 +61,7 @@ class LoginForm extends React.Component {
 
           <button className="form-login-buttons">Login</button>
         </form>
+        <button className="demo-login-button" onClick={this.handleDemoLoginSubmit}>Demo Login Button</button>
       </div>
     );
   }

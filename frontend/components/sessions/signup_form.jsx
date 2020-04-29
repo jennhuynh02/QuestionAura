@@ -16,7 +16,7 @@ class SignupForm extends React.Component {
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
     const user = { ...this.state };
@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
+      <div className="session-form" id="signup-form">
         <form onSubmit={this.handleSubmit}>
           <h2>Signup</h2>
           <br />
