@@ -6,21 +6,21 @@
     users: {
       72: {
         id: 72,
-        username: "isaacstein",
+        email: "isaacstein@gmail.com",
         authoredQuestionIds: [10,20],
         authoredAnswerIds: [202],
         authoredCommentIds: [22],
       },
       82: {
         id: 2,
-        username: "allthewayne",
+        email: "allthewayne@yahoo.com",
         authoredQuestionIds: [30],
         authoredAnswerIds: [303],
         authoredCommentIds: [11],
       },
       92: {
         id: 3,
-        username: "jayjames",
+        email: "jayjames@hotmail.com",
         authoredQuestionIds: [40,50],
         authoredAnswerIds: [101],
         authoredCommentIds: [],
@@ -36,28 +36,28 @@
       },
       20: {
         id: 20,
-        username: "What was your experience like at App Academy?  Did you end up finding a job?",
+        title: "What was your experience like at App Academy?  Did you end up finding a job?",
         body: "I currently attend App Academy and am curious to know other people's experience and how AA has changed their life.",
         topicId: 2,
         askerId: 72,
       },
       30: {
         id: 30,
-        username: "What are some of the best tech companies to work for?",
+        title: "What are some of the best tech companies to work for?",
         body: "In terms of: culture, room for growth, salary, perks, etc.",
         topicId: 3,
         askerId: 82,
       },
       40: {
         id: 40,
-        username: "How do I help myself understand recursions.?",
+        title: "How do I help myself understand recursions.?",
         body: "I'm struggling to visualize how this process works.",
         topicId: 1,
         askerId: 92,
       },
       50: {
         id: 50,
-        username: "What are useful websites/applications for finance?",
+        title: "What are useful websites/applications for finance?",
         body: "I'm looking for tools for investing and managing my finances.",
         topicId: 4,
         askerId: 92,
@@ -119,8 +119,8 @@
       loading: true/false
     },
     errors: {
-      login: ["Incorrect username/password combination"],
-      signup: ["Please choose another username and a secure password (minumum length: 6 characters)"],
+      login: ["Incorrect email/password combination"],
+      signup: ["Please choose another email and a secure password (minumum length: 6 characters)"],
       question: ["Title and/or body must be filled"],
       answer: ["Response must not be blank"],
       comment: ["Please type out comment before submitting"]

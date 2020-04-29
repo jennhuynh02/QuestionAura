@@ -4,7 +4,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,8 +40,8 @@ class LoginForm extends React.Component {
        
           <input type="text"
           placeholder="Email"
-          value={this.state.username}
-          onChange={this.update("username")}
+          value={this.state.email}
+          onChange={this.update("email")}
           className="form-input-boxes"/>
 
           <br/>
