@@ -34,36 +34,31 @@
     questions: {
       10: {
         id: 10,
-        title: "What's the best strategy for becoming a Leet-codeist?",
-        body: "I want to improve my skills in coding algorithms.",
+        ask: "What's the best strategy for becoming a Leet-codeist?",
         topicId: 1,
         askerId: 72,        
       },
       20: {
         id: 20,
-        username: "What was your experience like at App Academy?  Did you end up finding a job?",
-        body: "I currently attend App Academy and am curious to know other people's experience and how AA has changed their life.",
+        ask: "What was your experience like at App Academy?  Did you end up finding a job?",
         topicId: 2,
         askerId: 72,
       },
       30: {
         id: 30,
-        username: "What are some of the best tech companies to work for?",
-        body: "In terms of: culture, room for growth, salary, perks, etc.",
+        ask: "What are some of the best tech companies to work for in terms of: culture, room for growth, salary, perks, etc.?",
         topicId: 3,
         askerId: 82,
       },
       40: {
         id: 40,
-        username: "How do I help myself understand recursions.?",
-        body: "I'm struggling to visualize how this process works.",
+        ask: "How do I help myself better understand recursions.?",
         topicId: 1,
         askerId: 92,
       },
       50: {
         id: 50,
-        username: "What are useful websites/applications for finance?",
-        body: "I'm looking for tools for investing and managing my finances.",
+        ask: "What are useful websites/applications for finance?  I'm looking for tools for investing and managing my finances.",
         topicId: 4,
         askerId: 92,
       }
@@ -124,9 +119,9 @@
       loading: true/false
     },
     errors: {
-      login: ["Incorrect username/password combination"],
+      login: ["Invalid username/password combination"],
       signup: ["Please choose another username and a secure password (minumum length: 6 characters)"],
-      question: ["Title and/or body must be filled"],
+      question: ["Please ask your question"],
       answer: ["Response must not be blank"],
       comment: ["Please type out comment before submitting"]
     },

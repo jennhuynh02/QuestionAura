@@ -1,0 +1,1 @@
+json.extract! question, :id, :ask, :topic_id, :asker_id
