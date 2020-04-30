@@ -8,13 +8,6 @@ class LoginForm extends React.Component {
       password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleDemoLoginSubmit = this.handleDemoLoginSubmit.bind(this);
-  }
-
-  handleDemoLoginSubmit(e) {
-    e.preventDefault();
-    const user = { email: 'guestuser@questionaura.com', password: '123456' };
-    this.props.processForm(user);
   }
 
   update(field) {
@@ -41,9 +34,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="session-form">
+      <div className="session-form" id="login-form">
         <form onSubmit={this.handleSubmit}>
-          <h2>Login</h2>
+          <h2 className="form-title-name">Login</h2>
        
           <input type="text"
           placeholder="Email"
@@ -61,7 +54,8 @@ class LoginForm extends React.Component {
 
           <button className="form-login-buttons">Login</button>
         </form>
-        <button className="demo-login-button" onClick={this.handleDemoLoginSubmit}>Demo Login Button</button>
+
+        <p>Forgot Password?</p>
       </div>
     );
   }

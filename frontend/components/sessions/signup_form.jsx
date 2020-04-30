@@ -16,7 +16,7 @@ class SignupForm extends React.Component {
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
-  
+
   handleSubmit(e) {
     e.preventDefault();
     const user = { ...this.state };
@@ -39,27 +39,31 @@ class SignupForm extends React.Component {
     return (
       <div className="session-form" id="signup-form">
         <form onSubmit={this.handleSubmit}>
-          <h2>Signup</h2>
+          <h2 className="form-title-name">Signup</h2>
           <br />
-          FIRST NAME
-          <input
-            type="text"
-            placeholder="First Name"
-            value={this.state.first_name}
-            onChange={this.update('first_name')}
-            className="form-input-boxes"
-          />
 
-          <br />
-          LAST NAME
-          <input
-            type="text"
-            placeholder="Last Name"
-            value={this.state.last_name}
-            onChange={this.update('last_name')}
-            className="form-input-boxes"
-          />
+          <div className="fit-names">
 
+            FIRST NAME
+            <input
+              type="text"
+              placeholder="First Name"
+              value={this.state.first_name}
+              onChange={this.update('first_name')}
+              className="form-input-boxes"
+            />
+
+            <br />
+            LAST NAME
+            <input
+              type="text"
+              placeholder="Last Name"
+              value={this.state.last_name}
+              onChange={this.update('last_name')}
+              className="form-input-boxes"
+            />
+
+          </div>
           <br />
           EMAIL
           <input

@@ -1,11 +1,12 @@
 ## Initial Sample State:
-- [ ] To be reviewed...
 ``` javascript
 {
   entities: {
     users: {
       72: {
         id: 72,
+        first_name: "Isaac",
+        last_name: "Newdon",
         email: "isaacstein@gmail.com",
         authoredQuestionIds: [10,20],
         authoredAnswerIds: [202],
@@ -13,14 +14,19 @@
       },
       82: {
         id: 2,
-        email: "allthewayne@yahoo.com",
+        first_name: "Wayne",
+        last_name: "Brazy",
+        username: "allthewayne@yahoo.com",
         authoredQuestionIds: [30],
         authoredAnswerIds: [303],
         authoredCommentIds: [11],
       },
       92: {
         id: 3,
-        email: "jayjames@hotmail.com",
+        first_name: "James",
+        last_name: "Bands",
+        email: "isaacstein",
+        username: "jayjames@hotmail.com",
         authoredQuestionIds: [40,50],
         authoredAnswerIds: [101],
         authoredCommentIds: [],
@@ -36,28 +42,28 @@
       },
       20: {
         id: 20,
-        title: "What was your experience like at App Academy?  Did you end up finding a job?",
+        username: "What was your experience like at App Academy?  Did you end up finding a job?",
         body: "I currently attend App Academy and am curious to know other people's experience and how AA has changed their life.",
         topicId: 2,
         askerId: 72,
       },
       30: {
         id: 30,
-        title: "What are some of the best tech companies to work for?",
+        username: "What are some of the best tech companies to work for?",
         body: "In terms of: culture, room for growth, salary, perks, etc.",
         topicId: 3,
         askerId: 82,
       },
       40: {
         id: 40,
-        title: "How do I help myself understand recursions.?",
+        username: "How do I help myself understand recursions.?",
         body: "I'm struggling to visualize how this process works.",
         topicId: 1,
         askerId: 92,
       },
       50: {
         id: 50,
-        title: "What are useful websites/applications for finance?",
+        username: "What are useful websites/applications for finance?",
         body: "I'm looking for tools for investing and managing my finances.",
         topicId: 4,
         askerId: 92,
@@ -119,8 +125,8 @@
       loading: true/false
     },
     errors: {
-      login: ["Incorrect email/password combination"],
-      signup: ["Please choose another email and a secure password (minumum length: 6 characters)"],
+      login: ["Incorrect username/password combination"],
+      signup: ["Please choose another username and a secure password (minumum length: 6 characters)"],
       question: ["Title and/or body must be filled"],
       answer: ["Response must not be blank"],
       comment: ["Please type out comment before submitting"]
