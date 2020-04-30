@@ -40,7 +40,6 @@ class Api::QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
     render json: ["Your question has been deleted!  Ask another :) "]
-    render "api/questions/show"
   end
 
   private

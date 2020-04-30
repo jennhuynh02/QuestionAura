@@ -1,31 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import configureStore from "./store/store";
-import { Root } from "./components/root";
-import { login, logout, signup } from "./actions/session_actions";
+import configureStore from './store/store';
+import { Root } from './components/root';
+import {fetchQuestions, fetchQuestion, createQuestion, updateQuestion, deleteQuestion } from "./util/question_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
   if (window.currentUser) {
     const preloadedState = {
-      session: { id: window.currentUser.id},
+      session: { id: window.currentUser.id },
       entities: {
-        users: { [window.currentUser.id]: window.currentUser }
-      }
+        users: { [window.currentUser.id]: window.currentUser },
+      },
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
     store = configureStore();
   }
-  
-  window.login = login
-  window.logout = logout
-  window.signup = signup
+
+  window.fetchQuestions = fetchQuestions;
+  window.fetchQuestion = fetchQuestion;
+  window.createQuestion = createQuestion;
+  window.updateQuestion = updateQuestion;
+  window.deleteQuestion = deleteQuestion;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 
   const root = document.getElementById('root');
-  ReactDOM.render(<Root store={store} />, root)
+  ReactDOM.render(<Root store={store} />, root);
 });
