@@ -25,9 +25,9 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul >
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
+          <li className="error-messages" key={`error-${i}`}>
             {error}
           </li>
         ))}
@@ -41,7 +41,6 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <h2 className="form-title-name">Signup</h2>
           <br />
-
           <div className="fit-names">
 
             FIRST NAME
@@ -51,7 +50,7 @@ class SignupForm extends React.Component {
               value={this.state.first_name}
               onChange={this.update('first_name')}
               className="form-input-boxes"
-            />
+              />
 
             <br />
             LAST NAME
@@ -61,7 +60,7 @@ class SignupForm extends React.Component {
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className="form-input-boxes"
-            />
+              />
 
           </div>
           <br />
@@ -72,7 +71,7 @@ class SignupForm extends React.Component {
             value={this.state.email}
             onChange={this.update('email')}
             className="form-input-boxes"
-          />
+            />
 
           <br />
           PASSWORD
@@ -82,10 +81,11 @@ class SignupForm extends React.Component {
             value={this.state.password}
             onChange={this.update('password')}
             className="form-input-boxes"
-          />
+            />
 
           <button type="submit" className="form-login-buttons">Sign Up</button>
         </form>
+        {this.renderErrors()}
       </div>
     );
   }
