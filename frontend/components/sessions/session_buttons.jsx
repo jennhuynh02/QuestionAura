@@ -18,16 +18,21 @@ class SessionButtonsPocket extends React.Component {
     this.props.processForm(user);
   }
 
+  // handleSignUpButton(e) {
+  //   e.preventDefault();
+
+  // }
+
   render() {
     return (
       <div className="session-buttons-pocket">
-        <button className="demo-login-button" onClick={this.handleDemoLoginSubmit}>Demo Login</button>
-        <br/>
-        <button className="signup-form-button" onClick={this.handleDemoLoginSubmit}>Signup Form</button>
-        <br/>
-        {/* <h2>
+        <button className="demo-login-button" onClick={this.handleDemoLoginSubmit}>Guest Demo Login</button>
+        <br />
+        <button className="signup-form-button" onClick={this.handleDemoLoginSubmit}>Signup Form Page</button>
+        <br />
+        <h5>
           {this.props.navLink}
-        </h2> */}
+        </h5>
         <h5>By signing up or logging in, you have read and agreed to asking questions without any hesitations and answering questions confidently with the wisdom of your own knowledges and life experiences.</h5>
       </div>
     );

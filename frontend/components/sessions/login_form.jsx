@@ -21,7 +21,7 @@ class LoginForm extends React.Component {
   }
 
   renderErrors() {
-    return(
+    return (
       <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
@@ -37,20 +37,24 @@ class LoginForm extends React.Component {
       <div className="session-form" id="login-form">
         <form onSubmit={this.handleSubmit}>
           <h2 className="form-title-name">Login</h2>
-       
-          <input type="text"
-          placeholder="Email"
-          value={this.state.email}
-          onChange={this.update("email")}
-          className="form-input-boxes"/>
+          {this.renderErrors()}
+          <input
+            type="text"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.update('email')}
+            className="form-input-boxes"
+          />
 
-          <br/>
+          <br />
 
-          <input type="password"
-          placeholder="Password"
-          value={this.state.password}
-          onChange={this.update("password")}
-          className="form-input-boxes"/>
+          <input
+            type="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.update('password')}
+            className="form-input-boxes"
+          />
 
           <button className="form-login-buttons">Login</button>
         </form>
