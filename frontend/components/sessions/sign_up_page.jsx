@@ -4,7 +4,7 @@ import LoginContainer from './login_container';
 
 const SignUpPage = () => (
   <div className="welcome-page">
-    <img src={window.fullLogoURL} />
+    <img className="welcome-page" src={window.fullLogoURL} />
     <div className="welcome-content">
 
       <header className="welcome-logo">Question Aura</header>
@@ -15,6 +15,6 @@ const SignUpPage = () => (
       </div>
     </div>
   </div>
-)
+);
 
 export default SignUpPage;
