@@ -60,7 +60,7 @@ export const updateQuestion = (question) => (dispatch) => (
 
 export const deleteQuestion = (question) => (dispatch) => (
   APIUtil.deleteQuestion(question)
-    .then(() => (dispatch(destroyQuestion(question))),
+    .then((question) => (dispatch(destroyQuestion(question))),
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))

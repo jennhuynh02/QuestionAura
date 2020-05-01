@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
-import { Root } from './components/root';
+import Root from './components/root';
 import {
   fetchQuestions, createQuestion, fetchQuestion, updateQuestion, deleteQuestion,
 } from './actions/question_actions';
@@ -20,12 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
-  window.fetchQuestions = fetchQuestions;
-  window.fetchQuestion = fetchQuestion;
-  window.createQuestion = createQuestion;
-  window.updateQuestion = updateQuestion;
-  window.deleteQuestion = deleteQuestion;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
