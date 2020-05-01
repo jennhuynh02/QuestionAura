@@ -8,7 +8,7 @@ class SessionButtonsPocket extends React.Component {
       password: '',
     };
 
-    // this.handleSignUpButton = this.handleSignUpButton.bind(this);
+    this.handleSignUpButton = this.handleSignUpButton.bind(this);
     this.handleDemoLoginSubmit = this.handleDemoLoginSubmit.bind(this);
   }
 
@@ -18,17 +18,17 @@ class SessionButtonsPocket extends React.Component {
     this.props.processForm(user);
   }
 
-  // handleSignUpButton(e) {
-  //   e.preventDefault();
-
-  // }
+  handleSignUpButton(e) {
+    e.preventDefault();
+    location.href = "/#/signup";
+  };
 
   render() {
     return (
       <div className="session-buttons-pocket">
         <button className="demo-login-button" onClick={this.handleDemoLoginSubmit}>Guest Demo Login</button>
         <br />
-        <button className="signup-form-button" onClick={this.handleDemoLoginSubmit}>Signup Form Page</button>
+        <button className="signup-form-button" onClick={(this.handleSignUpButton)}>Signup Form Page</button>
         <br />
         <h5>
           {this.props.navLink}

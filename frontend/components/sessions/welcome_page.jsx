@@ -15,6 +15,6 @@ const WelcomePage = () => (
     </div>
     </div>
   </div>
-)
+);
 
 export default WelcomePage;
