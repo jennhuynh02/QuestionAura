@@ -20,8 +20,8 @@ class SessionButtonsPocket extends React.Component {
 
   handleSignUpButton(e) {
     e.preventDefault();
-    location.href = "/#/signup";
-  };
+    location.href = '/#/signup';
+  }
 
   render() {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import LoginFormContainer from '../sessions/login_container';
+import QuestionFormContainer from "../questions/question_container";
 import SignupFormContainer from "../../components/sessions/signup_container";
 
 function Modal({ modal, closeModal }) {
@@ -11,8 +11,8 @@ function Modal({ modal, closeModal }) {
 
   let component;
   switch (modal) {
-    case 'login':
-      component = <LoginFormContainer />;
+    case 'question':
+      component = <QuestionFormContainer />;
       break;
     case 'signup':
       component = <SignupFormContainer />;
@@ -22,8 +22,8 @@ function Modal({ modal, closeModal }) {
   }
 
   return (
-    <div className="modal-background"  onClick={closeModal}>
-      <div className="modal-child" onClick={(e) => e.stopPropagation()}>
+    <div id="modal-background"  onClick={closeModal}>
+      <div id="modal-child" onClick={(e) => e.stopPropagation()}>
         {component}
       </div>
     </div>

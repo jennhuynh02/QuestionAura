@@ -39,7 +39,7 @@ class SignupForm extends React.Component {
     return (
       <div className="session-form" id="signup-form">
         <form onSubmit={this.handleSubmit}>
-          <h2 className="form-title-name">Signup</h2>
+          <h2 id="form-title-name">Signup</h2>
           <br />
           <div className="fit-names">
 
