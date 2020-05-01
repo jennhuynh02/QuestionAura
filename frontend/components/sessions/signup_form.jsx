@@ -85,6 +85,9 @@ class SignupForm extends React.Component {
 
           <button type="submit" className="form-login-buttons">Sign Up</button>
         </form>
+        <h5>
+          {this.props.navLink}
+        </h5>
         {this.renderErrors()}
       </div>
     );

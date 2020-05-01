@@ -37,15 +37,19 @@ class QuestionForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Ask a question:</h1>
-        <form onSubmit={this.handleSubmit}>
+      <div className="question-box">
+        <form id="question-form" onSubmit={this.handleSubmit}>
+    <p>Guest User asked</p>
           <input
             type="text"
             value={this.state.ask}
             onChange={this.update('ask')}
+            placeholder="Start your question with What, How, Why, etc."
+            className="question-input"
           />
-          <button>Ask Question</button>
+          <div id="cancel-or-submit-question-section">
+          <button className="ask-question-button" onClick={() => props.closeModal()}>Add Question</button>
+          </div>
         </form>
       </div>
     );

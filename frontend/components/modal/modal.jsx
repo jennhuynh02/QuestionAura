@@ -7,7 +7,7 @@ import SignupFormContainer from "../../components/sessions/signup_container";
 function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
-  }
+  } 
 
   let component;
   switch (modal) {
@@ -22,7 +22,7 @@ function Modal({ modal, closeModal }) {
   }
 
   return (
-    <div id="modal-background"  onClick={closeModal}>
+    <div id="modal-parent"  onClick={closeModal}>
       <div id="modal-child" onClick={(e) => e.stopPropagation()}>
         {component}
       </div>

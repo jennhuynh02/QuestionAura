@@ -1,8 +1,43 @@
 #header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  height: 49px;
 }
 
 #logo {
    color: #B92B27;
+  font-size: x-large;
+  font-weight: bolder;
+ }
+
+ .header-question-click {
+    background-color: #b92b27;
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+    border: white;
+    box-sizing: border-box;
+    /* color: rgb(40, 40, 41); */
+    cursor: pointer;
+    direction: ltr;
+    display: inline-block;
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    font-stretch: 100%;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: 400;
+    height: 30px;
+    line-height: 21px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    color: white;
  }
