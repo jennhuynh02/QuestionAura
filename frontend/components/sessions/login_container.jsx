@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // import { Link } from './login_form';
-import { login } from '../../actions/session_actions';
+import { login, receiveErrors } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
 const mapStateToProps = ({ errors }) => ({
@@ -10,6 +10,7 @@ const mapStateToProps = ({ errors }) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   processForm: (user) => dispatch(login(user)),
+  clearErrors: () => dispatch(receiveErrors([])),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

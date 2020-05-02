@@ -13,6 +13,10 @@ class SignupForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
@@ -23,17 +27,17 @@ class SignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() {
-    return (
-      <ul >
-        {this.props.errors.map((error, i) => (
-          <li className="error-messages" key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul >
+  //       {this.props.errors.map((error, i) => (
+  //         <li className="error-messages" key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
     return (
@@ -88,7 +92,7 @@ class SignupForm extends React.Component {
         <h5>
           {this.props.navLink}
         </h5>
-        {this.renderErrors()}
+        {/* {this.renderErrors()} */}
       </div>
     );
   }

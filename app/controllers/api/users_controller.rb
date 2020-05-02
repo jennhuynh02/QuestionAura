@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      render json: ["Please choose another username and a secure password (minumum length: 6 characters)"], status: 422
+      render json: ["Sign Up: Please choose another email and a secure password (minumum length: 6 characters)"], status: 422
     end
   end
 
