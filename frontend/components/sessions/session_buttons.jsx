@@ -16,6 +16,7 @@ class SessionButtonsPocket extends React.Component {
     e.preventDefault();
     const user = { email: 'guestuser@questionaura.com', password: '123456' };
     this.props.processForm(user);
+    location.href = '/#/';
   }
 
   handleSignUpButton(e) {
