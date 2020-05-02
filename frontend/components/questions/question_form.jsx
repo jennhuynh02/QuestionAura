@@ -19,7 +19,8 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const question = { ...this.state };
-    this.props.askQuestion(question);
+    this.props.askQuestion(question)
+    .then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -39,7 +40,7 @@ class QuestionForm extends React.Component {
     return (
       <div className="question-box">
         <form id="question-form" onSubmit={this.handleSubmit}>
-    <p>Guest User asked</p>
+    <p>{this.props.name} asked</p>
           <input
             type="text"
             value={this.state.ask}
@@ -48,7 +49,7 @@ class QuestionForm extends React.Component {
             className="question-input"
           />
           <div id="cancel-or-submit-question-section">
-          <button className="ask-question-button" onClick={() => props.closeModal()}>Add Question</button>
+          <button className="ask-question-button">Add Question</button>
           </div>
         </form>
       </div>
