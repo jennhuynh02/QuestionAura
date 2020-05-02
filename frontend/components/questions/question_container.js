@@ -4,7 +4,7 @@ import { createQuestion } from '../../actions/question_actions';
 import { closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state) => ({
-  errors: state.question.errors,
+  errors: state.questions.errors,
   currentUser: state.session.id,
   name: state.entities.users[state.session.id].first_name,
 });
