@@ -6,6 +6,7 @@ class QuestionForm extends React.Component {
     this.state = {
       ask: this.props.question.ask,
       asker_id: this.props.currentUser,
+      id: this.props.question.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
