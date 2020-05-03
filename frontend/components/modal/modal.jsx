@@ -4,18 +4,18 @@ import { closeModal } from '../../actions/modal_actions';
 import QuestionFormContainer from "../questions/question_container";
 import EditQuestionContainer from '../questions/edit_question_form_container';
 
-function Modal({ modal, closeModal, question }) {
+function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
 
   let component;
-  switch (modal) {
+  switch (Object.keys(modal)[0]) {
     case 'question':
       component = <QuestionFormContainer />;
       break;
     case 'editQuestion':
-      component = <EditQuestionContainer question={question} />;
+      component = <EditQuestionContainer />;
       break;
     default:
       return null;

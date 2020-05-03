@@ -1,15 +1,12 @@
 import React from 'react';
 
-const FeedItem = ({ question, deleteQuestion, openModal }) => {
-
-  return (
-    <div className="feed-item">
-      { question.ask }
-      <button onClick={(question) => openModal('editQuestion', question={question})}>Edit Question</button>
-      <button onClick={() => deleteQuestion(question.id)}>Delete Question</button>
-    </div>
-  );
-};
+const FeedItem = ({ question, deleteQuestion, openModal }) => (
+  <div className="feed-item">
+    { question.ask }
+    <button onClick={() => openModal({ 'editQuestion': question.id })}>Edit Question</button>
+    <button onClick={() => deleteQuestion(question.id)}>Delete Question</button>
+  </div>
+);
 
 
 export default FeedItem;
