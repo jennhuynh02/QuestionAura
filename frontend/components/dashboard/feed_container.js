@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   fetchQuestions: () => dispatch(fetchQuestions()),
-  deleteQuestion: () => dispatch(deleteQuestion()),
+  deleteQuestion: (question) => dispatch(deleteQuestion(question)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

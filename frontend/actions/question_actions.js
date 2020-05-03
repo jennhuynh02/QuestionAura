@@ -58,12 +58,9 @@ export const updateQuestion = (question) => (dispatch) => (
       ))
 );
 
-export const deleteQuestion = (question) => (dispatch) => (
-  APIUtil.deleteQuestion(question)
-    .then((question) => (dispatch(destroyQuestion(question))),
-      (err) => (
-        dispatch(receiveErrors(err.responseJSON))
-      ))
+export const deleteQuestion = (questionId) => (dispatch) => (
+  APIUtil.deleteQuestion(questionId)
+    .then(() => (dispatch(destroyQuestion(questionId))))
 );
 
 // actions: fetchQuestions, createQuestion, fetchQuestion, editQuestion, destroyQuestion

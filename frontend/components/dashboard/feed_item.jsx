@@ -3,18 +3,15 @@ import React from 'react';
 class FeedItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    };
   }
-  // componentWillUnmount() {
-  //   this.props.deleteQuestion();
-  // }
 
   render() {
+    const { question, deleteQuestion } = this.props;
+
     return (
       <div className="feed-item">
-        { this.props.question.ask }
-        <button onClick={() => this.props.deleteQuestion()}>Delete Question</button>
+        { question.ask }
+        <button onClick={() => deleteQuestion(question.id)}>Delete Question</button>
       </div>
     );
   }

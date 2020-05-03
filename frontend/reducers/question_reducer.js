@@ -11,7 +11,7 @@ const questionsReducer = (state = {}, action) => {
       return { ...state, [action.question.id]: action.question };
     case DELETE_QUESTION: {
       const nextState = { ...state };
-      delete nextState[action.question.id];
+      delete nextState[action.questionId];
       return nextState;
     }
     default:

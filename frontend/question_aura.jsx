@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
+  window.fetchQuestion = fetchQuestion;
+  window.deleteQuestion = deleteQuestion;
+
+
   window.getState = store.getState;
   window.dispatch = store.dispatch;
 

@@ -2,7 +2,6 @@ import { RECEIVE_QUESTION, RECEIVE_QUESTION_ERRORS } from '../actions/question_a
 
 const questionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
-
   switch (action.type) {
     case RECEIVE_QUESTION_ERRORS:
       return action.errors;
