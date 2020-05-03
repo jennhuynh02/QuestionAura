@@ -5,11 +5,11 @@ class Categories extends React.Component {
     return (
       <div className="categories-bar">
         <br/>
-        <h1>Categories:</h1>
-        <p>Coding</p>
-        <p>Bootcamp</p>
-        <p>Career</p>
-        <p>Finance</p>
+        <h1 className="category">Categories:</h1>
+        <p className="category">Coding</p>
+        <p className="category">Bootcamp</p>
+        <p className="category">Career</p>
+        <p className="category"> Finance</p>
       </div>
     );
   }

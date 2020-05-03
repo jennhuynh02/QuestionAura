@@ -1,0 +1,34 @@
+.dashboard {
+  height: 100%;
+  width: 100%;
+}
+
+.categories-bar {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  height: 632px;
+  line-height: 21px;
+  margin-left: -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: sticky;
+  width: 300px;
+}
+
+.category {
+  color: #636466;
+  font-weight: 400;
+  height: 23px;
+  line-height: 18.2px;  
+}
+
+.feed {
+  width: 600px;
+  display: flex;
+}
+
+.feed-item {
+  color: grey;
+  height: 250px;
+}
