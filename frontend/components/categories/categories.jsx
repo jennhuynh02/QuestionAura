@@ -10,6 +10,8 @@ class Categories extends React.Component {
         <p className="category">Bootcamp</p>
         <p className="category">Career</p>
         <p className="category"> Finance</p>
+
+        <p className="resources">About * Careers * Terms * Privacy * Acceptable Use * Businesses</p>
       </div>
     );
   }
