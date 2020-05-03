@@ -19,7 +19,7 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const question = { ...this.state };
-    this.props.askQuestion(question)
+    this.props.action(question)
     .then(this.props.closeModal);
   }
 
@@ -49,7 +49,7 @@ class QuestionForm extends React.Component {
             className="question-input"
           />
           <div id="cancel-or-submit-question-section">
-          <button className="ask-question-button">Add Question</button>
+          <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>
       </div>

@@ -1,21 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
+import { updateQuestion } from '../../actions/question_actions';
 
 class EditQuestionForm extends React.Component {
 
   render() {
     const {
-      errors, currentUser, name, askQuestion, closeModal, question,
+      errors, currentUser, name, action, closeModal, question, formType
     } = this.props;
     return (
       <QuestionForm
         errors={errors}
         currentUser={currentUser}
         name={name}
-        askQuestion={askQuestion}
+        action={action}
         closeModal={closeModal}
         question={question}
+        formType={formType}
       />
     );
   }
@@ -26,12 +28,14 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     errors: state.errors.session,
     currentUser: state.entities.users[state.session.id],
+    name: state.entities.users[state.session.id].first_name,
+    formType: 'Update Question',
     question,
   });
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (question) => dispatch(updateQuestion(question)),
+  action: () => dispatch(updateQuestion(Object.values(state.ui.modal)[0])),
   fetchQuestion: (question) => dispatch(fetchQuestion(question)),
   removeErrors: () => dispatch(removeErrors()),
   closeModal: () => dispatch(closeModal()),

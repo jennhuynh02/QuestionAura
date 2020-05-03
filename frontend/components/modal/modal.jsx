@@ -8,7 +8,6 @@ function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
-
   let component;
   switch (Object.keys(modal)[0]) {
     case 'question':

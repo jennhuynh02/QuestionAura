@@ -7,10 +7,12 @@ const mapStateToProps = (state) => ({
   errors: state.questions.errors,
   currentUser: state.session.id,
   name: state.entities.users[state.session.id].first_name,
+  formType: 'Add Question',
+  question: {ask:'', asker_id:''}
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  askQuestion: (question) => dispatch(createQuestion(question)),
+  action: (question) => dispatch(createQuestion(question)),
   closeModal: () => dispatch(closeModal()),
 });
 
