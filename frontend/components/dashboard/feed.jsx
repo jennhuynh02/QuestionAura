@@ -1,4 +1,5 @@
 import React from 'react';
+import FeedItem from './feed_item';
 
 class Feed extends React.Component {
   componentDidMount() {
@@ -8,8 +9,8 @@ class Feed extends React.Component {
   render() {
     return (
       <div>
-        {this.props.questions.map((q, i) => (
-          <li key={`question-{i}`}>{ q.ask }</li>
+        {this.props.questions.map((question) => (
+          <FeedItem question={question} key={`question-${question.id}`} deleteQuestion={deleteQuestion}/>
         ))}
       </div>
     );
