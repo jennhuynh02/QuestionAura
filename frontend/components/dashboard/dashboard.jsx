@@ -9,7 +9,7 @@ const Dashboard = ({ questions, openModal, closeModal }) => (
     <div className="feed">
       <CategoriesContainer />
       <div className="the-content">
-        <div className="question-click" onClick={() => props.openModal({'question': -1})}>
+        <div className="question-click" onClick={() => openModal({'question': -1})}>
           <h1 id="question-invite">What is your question or link?</h1>
         </div>
         <Feed />
