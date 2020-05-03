@@ -1,11 +1,11 @@
 import React from 'react';
 
-class QuestionForm extends React.Component {
+class EditQuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       ask: '',
-      asker_id: this.props.currentUser,
+      asker_id: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,7 +19,7 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const question = { ...this.state };
-    this.props.askQuestion(question)
+    this.props.updateQuestion(question)
     .then(this.props.closeModal);
   }
 
@@ -45,11 +45,10 @@ class QuestionForm extends React.Component {
             type="text"
             value={this.state.ask}
             onChange={this.update('ask')}
-            placeholder="Start your question with What, How, Why, etc."
             className="question-input"
           />
           <div id="cancel-or-submit-question-section">
-          <button className="ask-question-button">Add Question</button>
+          <button className="ask-question-button">Update Question</button>
           </div>
         </form>
       </div>
@@ -57,5 +56,4 @@ class QuestionForm extends React.Component {
   }
 }
 
-
-export default QuestionForm;
+export default EditQuestionForm;

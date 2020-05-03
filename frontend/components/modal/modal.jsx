@@ -2,20 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import QuestionFormContainer from "../questions/question_container";
-import SignupFormContainer from "../../components/sessions/signup_container";
+import EditQuestionContainer from '../questions/edit_question_form_container';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, question }) {
   if (!modal) {
     return null;
-  } 
+  }
 
   let component;
   switch (modal) {
     case 'question':
       component = <QuestionFormContainer />;
       break;
-    case 'signup':
-      component = <SignupFormContainer />;
+    case 'editQuestion':
+      component = <EditQuestionContainer question={question} />;
       break;
     default:
       return null;
