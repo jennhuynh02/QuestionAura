@@ -8,13 +8,14 @@ class EditQuestionForm extends React.Component {
 
   render() {
     const {
-      errors, currentUser, name, action, closeModal, question, formType
+      errors, currentUser, first, last, action, closeModal, question, formType
     } = this.props;
     return (
       <QuestionForm
         errors={errors}
         currentUser={currentUser}
-        name={name}
+        first={first}
+        last={last}
         action={action}
         closeModal={closeModal}
         question={question}
@@ -29,7 +30,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     errors: state.errors.session,
     currentUser: state.entities.users[state.session.id],
-    name: state.entities.users[state.session.id].first_name,
+    first: state.entities.users[state.session.id].first_name,
+    last: state.entities.users[state.session.id].last_name,
     formType: 'Update Question',
     question,
   });
