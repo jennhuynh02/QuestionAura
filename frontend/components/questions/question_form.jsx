@@ -41,7 +41,7 @@ class QuestionForm extends React.Component {
     return (
       <div className="question-box">
         <form id="question-form" onSubmit={this.handleSubmit}>
-          <p>{this.props.first} {this.props.last} asked</p>
+          <p>{this.props.name} asked</p>
           <input
             type="text"
             value={this.state.ask}

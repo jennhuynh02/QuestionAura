@@ -6,10 +6,9 @@ import { closeModal } from "../../actions/modal_actions";
 const mapStateToProps = (state) => ({
   errors: state.questions.errors,
   currentUser: state.session.id,
-  first: state.entities.users[state.session.id].first_name,
-  last: state.entities.users[state.session.id].last_name,
+  name: state.entities.users[state.session.id].first_name,
   formType: 'Add Question',
-  question: {ask:'', asker_id:'', id:''}
+  question: {ask:'', asker_id:''}
 });
 
 const mapDispatchToProps = (dispatch) => ({

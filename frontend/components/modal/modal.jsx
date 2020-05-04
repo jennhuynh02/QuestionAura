@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
-import QuestionFormContainer from "../questions/question_container";
+import QuestionFormContainer from '../questions/question_container';
 import EditQuestionContainer from '../questions/edit_question_form_container';
+import AnswerFormContainer from '../answer/answer_form_container';
+import EditAnswerFormContainer from '../answer/edit_answer_form_container';
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -16,12 +18,18 @@ function Modal({ modal, closeModal }) {
     case 'editQuestion':
       component = <EditQuestionContainer />;
       break;
+    case 'answer':
+      component = <AnswerFormContainer />;
+      break;
+    case 'editAnswer':
+      component = <EditAnswerFormContainer />;
+      break;
     default:
       return null;
   }
 
   return (
-    <div id="modal-parent"  onClick={closeModal}>
+    <div id="modal-parent" onClick={closeModal}>
       <div id="modal-child" onClick={(e) => e.stopPropagation()}>
         {component}
       </div>

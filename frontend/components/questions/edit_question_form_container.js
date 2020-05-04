@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
 import { updateQuestion } from '../../actions/question_actions';
-import { closeModal } from "../../actions/modal_actions";
+import { closeModal } from '../../actions/modal_actions';
 
 class EditQuestionForm extends React.Component {
 
@@ -36,7 +36,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  action: (question) => dispatch(updateQuestion(question)),
+  action: (questionId) => dispatch(updateQuestion(questionId)),
   fetchQuestion: (question) => dispatch(fetchQuestion(question)),
   removeErrors: () => dispatch(removeErrors()),
   closeModal: () => dispatch(closeModal()),
