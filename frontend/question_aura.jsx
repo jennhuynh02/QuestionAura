@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {
-  fetchQuestions, createQuestion, fetchQuestion, updateQuestion, deleteQuestion,
-} from './actions/question_actions';
+import { fetchAnswers, fetchAnswer, createAnswer, updateAnswer, deleteAnswer } from "./util/answer_api_util";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,10 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-
-  window.fetchQuestion = fetchQuestion;
-  window.deleteQuestion = deleteQuestion;
-
+  window.fetchAnswers = fetchAnswers;
+  window.fetchAnswer = fetchAnswer;
+  window.createAnswer = createAnswer;
+  window.updateAnswer = updateAnswer;
+  window.deleteAnswer = deleteAnswer;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

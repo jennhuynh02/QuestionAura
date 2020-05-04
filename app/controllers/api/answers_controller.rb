@@ -1,7 +1,7 @@
 class Api::AnswersController < ApplicationController
 
   def index
-    @answers = answer.all
+    @answers = Answer.all
     render "api/answers/index"
   end
 
