@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
   first: state.entities.users[state.session.id].first_name,
   last: state.entities.users[state.session.id].last_name,
   formType: 'Submit',
-  answer: { answer: '', responder_id: '', question_id: '' },
+  answer: { answer: '', responder_id: '', question_id: '', id: '' },
 });
 
 const mapDispatchToProps = (dispatch) => ({

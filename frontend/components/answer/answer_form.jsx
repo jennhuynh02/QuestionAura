@@ -4,9 +4,10 @@ class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      answer: '',
-      responder_id: '',
-      question_id: '',
+      answer: this.props.answer.answer,
+      responder_id: this.props.currentUser,
+      question_id: this.props.answer.question_id,
+      id: this.props.answer.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,18 +39,18 @@ class AnswerForm extends React.Component {
 
   render() {
     return (
-      <div> Answer Form
-        <form onSubmit={this.handleSubmit}>
+      <div className="question-box"> Answer Form
+        <form id="question-form" onSubmit={this.handleSubmit}>
           <p>{this.props.first} {this.props.last}</p>
           <input
             type="text"
             value={this.state.answer}
             onChange={this.update('answer')}
             placeholder="Write your answer"
-            className="answer-input"
+            className="question-input"
           />
           <div id="cancel-or-submit-answer-section">
-          <button>{this.props.formType}</button>
+          <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>
       </div>
