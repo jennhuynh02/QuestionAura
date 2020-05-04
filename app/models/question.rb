@@ -15,10 +15,11 @@ class Question < ApplicationRecord
   validates :ask, presence: true
 
   belongs_to :asker,
-  class_name: :User
+  class_name: :User,
 
   has_many :answers,
   foreign_key: :question_id
+  dependent: :destroy
 
 
 end
