@@ -8,7 +8,7 @@ import QuestionContainer from './questions/question_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DashboardContainer from './dashboard/dashboard_container';
 import Modal from "./modal/modal";
-
+import QuestionPageContainer from '../components/questions/question_page_container';
 const App = () => (
   <div>
     <Modal />
@@ -16,7 +16,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={WelcomePage} />
       <AuthRoute exact path="/signup" component={SignUpPage} />
       <ProtectedRoute exact path="/" component={DashboardContainer} />
-      <Route path="/question" component={QuestionContainer} />
+      <Route path="/askquestion" component={QuestionContainer} />
+      <Route path="/questions/:questionId" component={QuestionPageContainer} />
     </Switch>
   </div>
 );
