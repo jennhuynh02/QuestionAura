@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchAnswers, fetchAnswer, createAnswer, updateAnswer, deleteAnswer } from "./util/answer_api_util";
+import {
+  fetchAnswers, fetchAnswer, createAnswer, updateAnswer, deleteAnswer,
+} from './actions/answer_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
