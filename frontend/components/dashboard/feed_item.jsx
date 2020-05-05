@@ -1,4 +1,5 @@
 import React from 'react';
+// import AnswerFormContainer from '../answer/answer_form_container';
 
 class FeedItem extends React.Component {
   constructor(props) {
@@ -11,9 +12,10 @@ class FeedItem extends React.Component {
     location.href = `/#/questions/${this.props.question.id}`;
   };
 
+
   render() {
 
-    const { question, deleteQuestion, openModal, answers } = this.props;
+    const { question, deleteQuestion, openModal, answers, first, last } = this.props;
 
     let a = null;
     let answerId = null;
@@ -25,21 +27,26 @@ class FeedItem extends React.Component {
       }
     }
 
+    let questionId = question.id;
+
 
     return (
 
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
+        <p className="feed-header">{first} {last}</p>
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
-        <button onClick={() => openModal({ editQuestion: question.id })}>Edit Question</button>
-        <button onClick={() => deleteQuestion(question.id)}>Delete Question</button>
+        <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
+        <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
 
         <br/>
         <p className="feed-answer">
         { a }  
         </p>
         <br />
-
+        {/* <AnswerFormContainer questionId={questionId} /> */}
+  
+        <button onClick={() => openModal({ answer: questionId })}>Answer</button>
         <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
         <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
 

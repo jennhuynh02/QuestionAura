@@ -13,12 +13,12 @@ class Feed extends React.Component {
 
   render() {
     const {
-      deleteQuestion, openModal, fetchAnswer, answers, questions
+      deleteQuestion, openModal, createAnswer, answers, questions, first, last
     } = this.props;
     return (
       <div>
         {this.props.questions.map((question) => (
-          <FeedItem question={question} key={question.id} deleteQuestion={deleteQuestion} openModal={openModal} fetchAnswers={fetchAnswers} answers={answers} />
+          <FeedItem question={question} key={question.id} deleteQuestion={deleteQuestion} openModal={openModal} fetchAnswers={fetchAnswers} createAnswer={createAnswer} answers={answers} first={first} last={last} />
         ))}
       </div>
 
