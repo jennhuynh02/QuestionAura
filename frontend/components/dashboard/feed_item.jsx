@@ -35,6 +35,7 @@ class FeedItem extends React.Component {
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
         <p className="feed-header">{first} {last}</p>
+
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
         <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
         <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>

@@ -19,10 +19,18 @@
 }
 
 .category {
-  color: #636466;
-  font-weight: 400;
-  height: 23px;
-  line-height: 18.2px;
+    color: #636466;
+    font-weight: 400;
+    height: 23px;
+    line-height: 18.2px;
+    margin-bottom: 8px;
+    padding: 4px;
+    height: auto;
+}
+
+.category:hover {
+  text-decoration: underline;
+  background-color: #e6e7e8;
 }
 
 .feed {
@@ -60,6 +68,10 @@
   font-weight: bold;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.feed-question:hover {
+  text-decoration: underline;  
 }
 
 .feed-answer {
