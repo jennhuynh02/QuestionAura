@@ -16,9 +16,9 @@ export const receiveAnswer = (answer) => ({
   answer,
 });
 
-export const destroyAnswer = (answer) => ({
+export const destroyAnswer = (answerId) => ({
   type: DELETE_ANSWER,
-  answer,
+  answerId,
 });
 
 export const receiveErrors = (errors) => ({

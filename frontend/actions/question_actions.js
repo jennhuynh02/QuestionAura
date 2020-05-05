@@ -16,9 +16,9 @@ export const receiveQuestion = (question) => ({
   question,
 });
 
-export const destroyQuestion = (question) => ({
+export const destroyQuestion = (questionId) => ({
   type: DELETE_QUESTION,
-  question,
+  questionId,
 });
 
 export const receiveErrors = (errors) => ({

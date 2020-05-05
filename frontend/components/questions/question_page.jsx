@@ -9,7 +9,7 @@ class QuestionPage extends React.Component {
   }
 
   render() {
-    const { questions, answers, questionId, openModal, deleteQuestion } = this.props;
+    const { questions, answers, questionId, openModal, deleteQuestion, deleteAnswer } = this.props;
 
     let question;
     let q;
@@ -22,9 +22,10 @@ class QuestionPage extends React.Component {
     };
 
     let answersToQuestion = [];
+    let aId = [];
     for (let i = 0; i < answers.length; i++) {
       if (answers[i].question_id === questionId) {
-        answers[i].id = answers[i].id
+        aId.push(answers[i].id);
         answersToQuestion.push(answers[i]);
       }
     };
@@ -33,14 +34,14 @@ class QuestionPage extends React.Component {
     <div className="feed-item">
       <p className="feed-question">{ question }</p>
       <button onClick={() => openModal({ 'editQuestion': qId })}>Edit Question</button>
-      <button onClick={() => deleteQuestion(q.id)}>Delete Question</button>
+      <button onClick={() => deleteQuestion(qId)}>Delete Question</button>
 
       <AnswerFormContainer questionId={questionId} />
-        {answersToQuestion.map((answer) => (
+        {answersToQuestion.map((answer,i) => (
         <div key={answer.id}>
         <p>{answer.answer}</p>
-        <button onClick={() => openModal({ 'editAnswer': answer.id })}>Edit Answer</button>
-        <button onClick={() => deleteAnswer(answer.id)}>Delete Answer</button>  
+        <button onClick={() => openModal({ 'editAnswer': aId[i] })}>Edit Answer</button>
+        <button onClick={() => deleteAnswer(aId[i])}>Delete Answer</button>  
         </div>
       ))}
         

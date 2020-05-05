@@ -19,6 +19,7 @@ class EditAnswerForm extends React.Component {
       closeModal={closeModal}
       answer={answer}
       formType={formType}
+      id={answer.id}
     />
     );
   }

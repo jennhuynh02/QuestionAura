@@ -7,7 +7,7 @@ class AnswerForm extends React.Component {
       answer: this.props.answer.answer,
       responder_id: this.props.currentUser,
       question_id: this.props.questionId,
-      // id: this.props.answer.id,
+      id: this.props.answer.id,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
