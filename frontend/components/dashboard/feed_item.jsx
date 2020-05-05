@@ -44,12 +44,14 @@ class FeedItem extends React.Component {
         <p className="feed-answer">
         { a }  
         </p>
-        <br />
         {/* <AnswerFormContainer questionId={questionId} /> */}
-      <AnswerFormContainer questionId={questionId} />
+
         <button onClick={() => openModal({ answer: questionId })}>Answer</button>
         <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
         <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
+        
+        <br/>
+      <AnswerFormContainer questionId={questionId} />
 
       </div>
     );

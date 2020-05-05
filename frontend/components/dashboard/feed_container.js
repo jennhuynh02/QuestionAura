@@ -14,6 +14,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchQuestions: () => dispatch(fetchQuestions()),
   fetchAnswers: () => dispatch(fetchAnswers()),
+  // fetchResponder: () => d
   createAnswer: () => dispatch(createAnswer()),
   deleteQuestion: (question) => dispatch(deleteQuestion(question)),
   openModal: (modal) => dispatch(openModal(modal)),
