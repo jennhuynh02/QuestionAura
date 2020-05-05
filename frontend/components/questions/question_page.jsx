@@ -2,9 +2,6 @@ import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
 
 class QuestionPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
 
   componentDidMount() {
     this.props.fetchQuestion({ id: this.props.questionId });
@@ -16,10 +13,12 @@ class QuestionPage extends React.Component {
 
     let question;
     let q;
+    let qId;
 
     for (let i = 0; i < questions.length; i++) {
       question = questions[i].ask;
       q = questions[i];
+      qId = questions[i].id;
     };
 
     let answersToQuestion = [];
@@ -29,14 +28,14 @@ class QuestionPage extends React.Component {
         answersToQuestion.push(answers[i]);
       }
     };
-
+    
     return (
     <div className="feed-item">
       <p className="feed-question">{ question }</p>
-      <button onClick={() => openModal({ 'editQuestion': questionId })}>Edit Question</button>
-      <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
+      <button onClick={() => openModal({ 'editQuestion': qId })}>Edit Question</button>
+      <button onClick={() => deleteQuestion(q.id)}>Delete Question</button>
 
-      <AnswerFormContainer question_id={questionId} />
+      <AnswerFormContainer questionId={questionId} />
         {answersToQuestion.map((answer) => (
         <div key={answer.id}>
         <p>{answer.answer}</p>

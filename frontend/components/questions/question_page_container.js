@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => ({
   deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
   fetchAnswers: () => dispatch(fetchAnswers()),
   deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
-  openModal: () => dispatch(openModal()),
+  openModal: (modal) => dispatch(openModal(modal)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionPage);
