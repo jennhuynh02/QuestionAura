@@ -42,7 +42,7 @@ class QuestionAnswerForm extends React.Component {
       <div className="question-box"> Answer Form
         <form id="answer-form" onSubmit={this.handleSubmit}>
           <div className="answer-form-header">
-          <p className="question-name">{this.props.first} {this.props.last}</p>
+          <p className="feed-header">{this.props.first} {this.props.last}</p>
           </div>
 
 
@@ -53,7 +53,7 @@ class QuestionAnswerForm extends React.Component {
             placeholder="Write your answer"
             className="answer-input"
           />
-          <div id="cancel-or-submit-answer-section">
+          <div id="cancel-or-submit-question-section">
           <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>

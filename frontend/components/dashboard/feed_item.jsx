@@ -1,5 +1,5 @@
 import React from 'react';
-// import AnswerFormContainer from '../answer/answer_form_container';
+import AnswerFormContainer from '../answer/answer_form_container';
 
 class FeedItem extends React.Component {
   constructor(props) {
@@ -46,7 +46,7 @@ class FeedItem extends React.Component {
         </p>
         <br />
         {/* <AnswerFormContainer questionId={questionId} /> */}
-  
+      <AnswerFormContainer questionId={questionId} />
         <button onClick={() => openModal({ answer: questionId })}>Answer</button>
         <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
         <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>

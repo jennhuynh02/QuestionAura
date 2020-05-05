@@ -33,7 +33,7 @@ class QuestionPage extends React.Component {
     
     return (
     <div className="feed-item">
-      <p className="feed-question">{ question }</p>
+      <p className="question-page-question">{ question }</p>
       <button onClick={() => openModal({ 'editQuestion': qId })}>Edit Question</button>
       <button onClick={() => deleteQuestion(qId)}>Delete Question</button>
 
