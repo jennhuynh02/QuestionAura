@@ -8,6 +8,7 @@ class QuestionPage extends React.Component {
     this.props.fetchAnswers();
   }
 
+
   render() {
     const { questions, answers, questionId, openModal, deleteQuestion, deleteAnswer } = this.props;
 
