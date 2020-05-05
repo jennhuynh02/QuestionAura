@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
+import Header from "../header/header_container";
 
 class QuestionPage extends React.Component {
 
@@ -32,6 +33,8 @@ class QuestionPage extends React.Component {
     };
     
     return (
+    <div>
+      <Header />
     <div className="feed-item">
       <p className="question-page-question">{ question }</p>
       <button onClick={() => openModal({ 'editQuestion': qId })}>Edit Question</button>
@@ -46,6 +49,7 @@ class QuestionPage extends React.Component {
         </div>
       ))}
         
+      </div>
       </div>
     );
   }
