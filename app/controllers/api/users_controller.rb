@@ -1,5 +1,10 @@
 class Api::UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    render "api/users/index"
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -11,6 +16,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    render "api/users/show"
+  end
 
   private
 

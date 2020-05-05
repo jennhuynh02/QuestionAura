@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {
-  fetchAnswers, fetchAnswer, createAnswer, updateAnswer, deleteAnswer,
-} from './actions/answer_actions';
+  fetchUsers, fetchUser } from './actions/user_action';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -20,11 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchAnswers = fetchAnswers;
-  window.fetchAnswer = fetchAnswer;
-  window.createAnswer = createAnswer;
-  window.updateAnswer = updateAnswer;
-  window.deleteAnswer = deleteAnswer;
+  window.fetchUsers = fetchUsers;
+  window.fetchUser = fetchUser;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
