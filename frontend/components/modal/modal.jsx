@@ -29,6 +29,7 @@ function Modal({ modal, closeModal }) {
   }
 
   return (
+    // onClick={closeModal} <-- can add this to modal-parent to exit upon click outside of box
     <div id="modal-parent" onClick={closeModal}>
       <div id="modal-child" onClick={(e) => e.stopPropagation()}>
         {component}

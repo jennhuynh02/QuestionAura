@@ -38,8 +38,12 @@ class QuestionForm extends React.Component {
 
 
   render() {
+    const { closeModal } = this.props;
     return (
       <div className="question-box">
+        <div className="question-header">
+        <h1 className="question-form-name">Question Form</h1>
+        </div>
         <form id="question-form" onSubmit={this.handleSubmit}>
           <p>{this.props.first} {this.props.last} asked</p>
           <input
@@ -50,6 +54,7 @@ class QuestionForm extends React.Component {
             className="question-input"
           />
           <div id="cancel-or-submit-question-section">
+          <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
           <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>

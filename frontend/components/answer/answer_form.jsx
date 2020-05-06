@@ -17,6 +17,10 @@ class AnswerForm extends React.Component {
       [field]: e.currentTarget.value,
     });
   }
+
+  handleCancel(e) {
+    this.props.closeModal(e);
+  }
  
   handleSubmit(e) {
     e.preventDefault();
@@ -38,8 +42,10 @@ class AnswerForm extends React.Component {
   }
 
   render() {
+    const { closeModal } = this.props;
     return (
-      <div className="question-box"> Answer Form
+      <div className="question-box">
+        <h1 className="answer-header">Answer Form</h1>
         <form id="question-form" onSubmit={this.handleSubmit}>
           <p>{this.props.first} {this.props.last}</p>
           <input
@@ -50,6 +56,7 @@ class AnswerForm extends React.Component {
             className="question-input"
           />
           <div id="cancel-or-submit-answer-section">
+          <button onClick={(e) => closeModal(e)}>Cancel</button>
           <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>

@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
+// import { fetchUser } from "../../actions/user_action";
 
 class FeedItem extends React.Component {
   constructor(props) {
@@ -25,20 +26,24 @@ class FeedItem extends React.Component {
         answerObject = answers[i];
         a = answers[i].answer;
         answerId = answers[i].id;
-        break;
       }
+      break;
     }
-    let responder
-    let responderFirst
-    let responderLast
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].id === answerObject.responder_id) {
-        responder = users[i];
-        responderFirst = users[i].first_name;
-        responderLast = users[i].last_name;
-        break;
-      }
-    }
+
+    // let responderId = answerObject.responder_id
+
+    // let responder
+    // let responderFirst
+    // let responderLast
+    // for (let i = 0; i < users.length; i++) {
+    //   if (users[i].id === responderId) {
+    //     responder = users[i];
+    //     responderFirst = users[i].first_name;
+    //     responderLast = users[i].last_name;
+    //   }
+    //   break;
+    // }
+
 
     let questionId = question.id;
 
@@ -47,7 +52,7 @@ class FeedItem extends React.Component {
 
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
-        <p className="feed-header">{responderFirst} {responderLast}</p>
+        <p className="feed-header">Asker's First and Last Name</p>
 
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
         <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>

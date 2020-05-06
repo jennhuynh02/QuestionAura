@@ -12,7 +12,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { logout } = this.props;
+    const { logout, openModal } = this.props;
   return (
     <div id="header">
     <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
@@ -23,7 +23,7 @@ class Header extends React.Component {
         <p onClick={() => logout()}>Logout</p>
         </li>
     </ul>
-    <button type="submit" className="header-question-click" onClick={() => props.openModal({'question': -1})}>Ask Question</button>
+    <button type="submit" className="header-question-click" onClick={() => openModal({'question': -1})}>Ask Question</button>
   </div>)
 
 }};
