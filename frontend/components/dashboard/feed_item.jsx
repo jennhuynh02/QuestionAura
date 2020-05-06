@@ -71,11 +71,26 @@ class FeedItem extends React.Component {
         <ul className="dropdown">
           <p className="drop-button-dots">* * *</p>
           <li className="dropdown-content">
+            <p>
             <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
+            </p>
+        
+            <p>
             <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
+            </p>
+            
+            <p>
             <button onClick={() => openModal({ answer: questionId })}>Answer</button>
+            </p>
+            
+            <p>
             <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
-            <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>          
+              
+            </p>
+            
+            <p>
+            <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
+            </p>
           </li>
           {/* <li className="dropdown-content"><button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button></li>
           <li className="dropdown-content"><button onClick={() => deleteAnswer(answerId)}>Delete Answer</button></li> */}

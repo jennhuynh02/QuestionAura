@@ -68,7 +68,7 @@ background-color: white;
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .dropdown-content{
@@ -84,6 +84,8 @@ background-color: white;
 
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: inline-block;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0;
 }
 
