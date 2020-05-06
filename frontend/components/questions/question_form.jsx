@@ -40,25 +40,31 @@ class QuestionForm extends React.Component {
   render() {
     const { closeModal } = this.props;
     return (
+      <div>
       <div className="question-box">
         <div className="question-header">
         <h1 className="question-form-name">Question Form</h1>
         </div>
         <form id="question-form" onSubmit={this.handleSubmit}>
-          <p>{this.props.first} {this.props.last} asked</p>
+          <div className="inside-question-form">
+
+          <p className="question-author">{this.props.first} {this.props.last} asked</p>
           <input
             type="text"
             value={this.state.ask}
             onChange={this.update('ask')}
             placeholder="Start your question with What, How, Why, etc."
             className="question-input"
-          />
+            />
+
+          </div>
           <div id="cancel-or-submit-question-section">
           <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
           <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>
       </div>
+    </div>
     );
   }
 }

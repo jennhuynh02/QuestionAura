@@ -27,49 +27,59 @@
 }
 
 .question-box {
-  box-sizing:border-box;
+  box-sizing: border-box;
   background-color: white;
+  border-radius: 8px;
+  padding: 2px;
 }
 
 #question-form {
-  height: 300px;
-  padding-bottom: 24px;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 32px;
-  justify-content: space-around;
-    box-sizing: border-box;
-    direction: ltr;
-    display: flex;
-    position: relative;
-    min-height: 400px;
-    max-height: 80vh;
-    max-width: 90vw;
-    width: 620px;
-    border-radius: 8px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #dee0e1;
-    align-self: center;
-    flex-direction: column;
-    overflow-y: auto;
-    background-color: #fff;
-    line-height: 1.4;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    font-size: 15px;
-    font-weight: 400;
+justify-content: space-around;
+display: flex;
+position: relative;
+min-height: 320px;
+max-height: 80vh;
+width: 620px;
+flex-direction: column;
+}
+
+.inside-question-form {
+  padding: 32px;
 }
 
 .question-input {
-  width: 400px;
-  height: 60px;
+  box-sizing: border-box;
+  direction: ltr;
+  width: 100%;
+  box-shadow: none;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  flex: 1 1 0%;
+  min-height: 26px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  height: 26px;
+  line-height: 1.4;
   font-size: 18px;
+  padding: 0;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #dee0e1;
 }
 
 #cancel-or-submit-question-section {
-    background-color: #f7f7f8;
-    display: flex;
-    justify-content: flex-end;
+  background-color: #f7f7f8;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  direction: ltr;
+  padding: 10px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #dee0e1;
 }
 
 .ask-question-button {
@@ -96,6 +106,7 @@
   font-size: 14px;
   font-weight: 500;
   color: #636466;
+  padding: 7px 12px;
 }
 
 .question-header {
@@ -125,4 +136,12 @@
   text-align: inherit;
   text-size-adjust: 100%;
   border-bottom: solid 2px #b92b27;
+  cursor: pointer;
+}
+
+.question-author {
+  height: 25px;
+  font-size: 13px;
+  color: #939598;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
