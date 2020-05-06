@@ -55,8 +55,8 @@ class FeedItem extends React.Component {
         <p className="feed-header">Asker's First and Last Name</p>
 
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
-        <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
-        <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
+        {/* <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
+        <button onClick={() => deleteQuestion(questionId)}>Delete Question</button> */}
 
         <br/>
         <p className="feed-answer">
@@ -64,10 +64,22 @@ class FeedItem extends React.Component {
         </p>
         {/* <AnswerFormContainer questionId={questionId} /> */}
 
-        <button onClick={() => openModal({ answer: questionId })}>Answer</button>
+        {/* <button onClick={() => openModal({ answer: questionId })}>Answer</button>
         <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
-        <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
+        <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button> */}
         
+        <ul className="dropdown">
+          <p className="drop-button-dots">* * *</p>
+          <li className="dropdown-content">
+            <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
+            <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
+            <button onClick={() => openModal({ answer: questionId })}>Answer</button>
+            <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
+            <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>          
+          </li>
+          {/* <li className="dropdown-content"><button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button></li>
+          <li className="dropdown-content"><button onClick={() => deleteAnswer(answerId)}>Delete Answer</button></li> */}
+        </ul>
         <br/>
       <AnswerFormContainer questionId={questionId} />
 
