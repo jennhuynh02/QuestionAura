@@ -21,28 +21,31 @@ class FeedItem extends React.Component {
     let a = null;
     let answerId = null;
     let answerObject;
+    let responderId;
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
-        answerObject = answers[i];
+        responderId = answers[i].responder_id;
         a = answers[i].answer;
         answerId = answers[i].id;
       }
       break;
     }
 
-    // let responderId = answerObject.responder_id
+    console.log(responderId)
 
-    // let responder
-    // let responderFirst
-    // let responderLast
-    // for (let i = 0; i < users.length; i++) {
-    //   if (users[i].id === responderId) {
-    //     responder = users[i];
-    //     responderFirst = users[i].first_name;
-    //     responderLast = users[i].last_name;
-    //   }
-    //   break;
-    // }
+    let responder
+    let responderFirst
+    let responderLast
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id === responderId) {
+        responder = users[i];
+        responderFirst = users[i].first_name;
+        responderLast = users[i].last_name;
+      }
+      break;
+    }
+
+    console.log(responderFirst)
 
 
     let questionId = question.id;
@@ -55,49 +58,34 @@ class FeedItem extends React.Component {
         <p className="feed-header">Asker's First and Last Name</p>
 
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
-        {/* <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
-        <button onClick={() => deleteQuestion(questionId)}>Delete Question</button> */}
 
-        <br/>
-        <p className="feed-answer">
-        { a }  
-        </p>
+        <p className="feed-answer"> { a }  </p>
         
-        {/* <AnswerFormContainer questionId={questionId} /> */}
+        <div className="dropdown-area">
 
-        {/* <button onClick={() => openModal({ answer: questionId })}>Answer</button>
-        <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
-        <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button> */}
-        
         <div className="dropdown">
           <p className="drop-button-dots">* * *</p>
           <ul className="dropdown-content">
-            <li>
-            <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
+            <li className="dropdown-options" onClick={() => openModal({ editQuestion: questionId })}>Edit Question
             </li>
         
-            <li>
-            <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
+            <li className="dropdown-options" onClick={() => deleteQuestion(questionId)}>Delete Question
             </li>
             
-            <li>
-            <button onClick={() => openModal({ answer: questionId })}>Answer</button>
+            <li className="dropdown-options" onClick={() => openModal({ answer: questionId })}>Answer
             </li>
             
-            <li>
-            <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
-              
+            <li className="dropdown-options" onClick={() => openModal({ editAnswer: answerId })}>Edit Answer
             </li>
             
-            <li>
-            <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
+            <li className="dropdown-options" onClick={() => deleteAnswer(answerId)}>Delete Answer
             </li>
           </ul>
-          {/* <li className="dropdown-content"><button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button></li>
-          <li className="dropdown-content"><button onClick={() => deleteAnswer(answerId)}>Delete Answer</button></li> */}
         </div>
-        <br/>
-      <AnswerFormContainer questionId={questionId} />
+
+        </div>
+
+        <AnswerFormContainer questionId={questionId} />
 
       </div>
     );

@@ -20,9 +20,10 @@ class Header extends React.Component {
           <img className="profile-dropdown" src={window.profilePic} />
           <ul className="dropdown-content">
 
-            <li>
-              <button onClick={() => logout()}>Logout</button>
+            <li className="dropdown-options" onClick={() => logout()}>
+              Logout
             </li>
+
           </ul>
         </div>
         <button type="submit" className="header-question-click" onClick={() => openModal({ question: -1 })}>Ask Question</button>
