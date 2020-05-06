@@ -8,7 +8,7 @@ class EditAnswerForm extends React.Component {
   
   render() {
     const { errors, currentUser, first, last, action, closeModal, answer, formType } = this.props;
-
+    let id = answer.id;
     return (
     <AnswerForm    
       errors={errors}
@@ -19,7 +19,7 @@ class EditAnswerForm extends React.Component {
       closeModal={closeModal}
       answer={answer}
       formType={formType}
-      id={answer.id}
+      id={id}
     />
     );
   }

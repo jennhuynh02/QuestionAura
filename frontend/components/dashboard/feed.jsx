@@ -7,18 +7,18 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchQuestions();
     this.props.fetchAnswers();
   }
 
+
   render() {
     const {
-      deleteQuestion, openModal, createAnswer, answers, questions, first, last
+      deleteQuestion, openModal, createAnswer, answers, questions, first, last, users
     } = this.props;
     return (
       <div>
-        {this.props.questions.map((question) => (
-          <FeedItem question={question} key={question.id} deleteQuestion={deleteQuestion} openModal={openModal} createAnswer={createAnswer} answers={answers} first={first} last={last} />
+        {questions.map((question) => (
+          <FeedItem question={question} key={question.id} deleteQuestion={deleteQuestion} openModal={openModal} createAnswer={createAnswer} answers={answers} first={first} last={last} users={users} />
         ))}
       </div>
 

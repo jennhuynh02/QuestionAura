@@ -7,6 +7,7 @@ class FeedItem extends React.Component {
     this.handleQuestionLink = this.handleQuestionLink.bind(this);
   }
 
+
   handleQuestionLink(e) {
     e.preventDefault();
     location.href = `/#/questions/${this.props.question.id}`;
@@ -15,14 +16,26 @@ class FeedItem extends React.Component {
 
   render() {
 
-    const { question, deleteQuestion, openModal, answers, first, last } = this.props;
-
+    const { question, deleteQuestion, openModal, answers, users } = this.props;
     let a = null;
     let answerId = null;
+    let answerObject;
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
+        answerObject = answers[i];
         a = answers[i].answer;
         answerId = answers[i].id;
+        break;
+      }
+    }
+    let responder
+    let responderFirst
+    let responderLast
+    for (let i = 0; i < users.length; i++) {
+      if (users[i].id === answerObject.responder_id) {
+        responder = users[i];
+        responderFirst = users[i].first_name;
+        responderLast = users[i].last_name;
         break;
       }
     }
@@ -34,7 +47,7 @@ class FeedItem extends React.Component {
 
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
-        <p className="feed-header">{first} {last}</p>
+        <p className="feed-header">{responderFirst} {responderLast}</p>
 
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
         <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
