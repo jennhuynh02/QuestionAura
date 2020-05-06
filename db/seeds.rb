@@ -14,8 +14,8 @@ users = User.create([
   {id: 22, first_name: "Isaac", last_name: "Newdon", email: "isaacstein@gmail.com", password: "123456"},
   {id: 32, first_name: "Wayne", last_name: "Brazy", email: "allthewayne@yahoo.com", password: "123456"},
   {id: 42, first_name: "James", last_name: "Bands", email: "jayjames@hotmail.com", password: "123456"},
-  {id: 52, first_name: "Dadarick", last_name: "Yawns", email: "imthedad@me.com", password: "123456"},
-  {id: 62, first_name: "Dandan", last_name: "Who", email: "danny@dannydash.com", password: "123456"}
+  {id: 52, first_name: "Darrick", last_name: "Yawns", email: "imthedad@me.com", password: "123456"},
+  {id: 62, first_name: "Simon", last_name: "Says", email: "simon@simonsays.com", password: "123456"}
 ])
 
 questions = Question.create([
