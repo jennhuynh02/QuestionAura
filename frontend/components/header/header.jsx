@@ -13,19 +13,22 @@ class Header extends React.Component {
 
   render() {
     const { logout, openModal } = this.props;
-  return (
-    <div id="header">
-    <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
-    <ul className="dropdown">
-        <img className="profile-dropdown" src={window.profilePic} />
-        <li className="dropdown-content">
+    return (
+      <div id="header">
+        <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
+        <div className="dropdown">
+          <img className="profile-dropdown" src={window.profilePic} />
+          <ul className="dropdown-content">
 
-        <button onClick={() => logout()}>Logout</button>
-        </li>
-    </ul>
-    <button type="submit" className="header-question-click" onClick={() => openModal({'question': -1})}>Ask Question</button>
-  </div>)
-
-}};
+            <li>
+              <button onClick={() => logout()}>Logout</button>
+            </li>
+          </ul>
+        </div>
+        <button type="submit" className="header-question-click" onClick={() => openModal({ question: -1 })}>Ask Question</button>
+      </div>
+    );
+  }
+}
 
 export default Header;

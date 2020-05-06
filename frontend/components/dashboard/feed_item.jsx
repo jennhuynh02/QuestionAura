@@ -62,39 +62,40 @@ class FeedItem extends React.Component {
         <p className="feed-answer">
         { a }  
         </p>
+        
         {/* <AnswerFormContainer questionId={questionId} /> */}
 
         {/* <button onClick={() => openModal({ answer: questionId })}>Answer</button>
         <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
         <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button> */}
         
-        <ul className="dropdown">
+        <div className="dropdown">
           <p className="drop-button-dots">* * *</p>
-          <li className="dropdown-content">
-            <p>
+          <ul className="dropdown-content">
+            <li>
             <button onClick={() => openModal({ editQuestion: questionId })}>Edit Question</button>
-            </p>
+            </li>
         
-            <p>
+            <li>
             <button onClick={() => deleteQuestion(questionId)}>Delete Question</button>
-            </p>
+            </li>
             
-            <p>
+            <li>
             <button onClick={() => openModal({ answer: questionId })}>Answer</button>
-            </p>
+            </li>
             
-            <p>
+            <li>
             <button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button>
               
-            </p>
+            </li>
             
-            <p>
+            <li>
             <button onClick={() => deleteAnswer(answerId)}>Delete Answer</button>
-            </p>
-          </li>
+            </li>
+          </ul>
           {/* <li className="dropdown-content"><button onClick={() => openModal({ editAnswer: answerId })}>Edit Answer</button></li>
           <li className="dropdown-content"><button onClick={() => deleteAnswer(answerId)}>Delete Answer</button></li> */}
-        </ul>
+        </div>
         <br/>
       <AnswerFormContainer questionId={questionId} />
 
