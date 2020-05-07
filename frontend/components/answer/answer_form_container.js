@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { closeModal } from '../../actions/modal_actions';
 import { createAnswer } from '../../actions/answer_actions';
-import QuestionAnswerForm from './question_answer_form';
+import AnswerForm from './answer_form';
 
 const mapStateToProps = (state, {questionId}) => ({
   errors: state.answers.errors,
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => ({
   closeModal: () => dispatch(closeModal()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(QuestionAnswerForm);
+export default connect(mapStateToProps, mapDispatchToProps)(AnswerForm);

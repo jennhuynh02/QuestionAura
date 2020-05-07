@@ -21,7 +21,7 @@ class QuestionForm extends React.Component {
     e.preventDefault();
     const question = { ...this.state };
     this.props.action(question)
-    .then(this.props.closeModal);
+      .then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -41,30 +41,36 @@ class QuestionForm extends React.Component {
     const { closeModal } = this.props;
     return (
       <div>
-      <div className="question-box">
-        <div className="question-header">
-        <h1 className="question-form-name">Question Form</h1>
+        <div className="question-box">
+          <div className="question-header">
+            <h1 className="question-form-name">Question Form</h1>
+          </div>
+          <form id="question-form" onSubmit={this.handleSubmit}>
+            <div className="inside-question-form">
+
+              <p className="question-author">
+                {this.props.first}
+                {' '}
+                {this.props.last}
+                {' '}
+                asked
+              </p>
+              <input
+                type="text"
+                value={this.state.ask}
+                onChange={this.update('ask')}
+                placeholder="Start your question with What, How, Why, etc."
+                className="question-input"
+              />
+
+            </div>
+            <div id="cancel-or-submit-question-section">
+              <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
+              <button className="ask-question-button">{this.props.formType}</button>
+            </div>
+          </form>
         </div>
-        <form id="question-form" onSubmit={this.handleSubmit}>
-          <div className="inside-question-form">
-
-          <p className="question-author">{this.props.first} {this.props.last} asked</p>
-          <input
-            type="text"
-            value={this.state.ask}
-            onChange={this.update('ask')}
-            placeholder="Start your question with What, How, Why, etc."
-            className="question-input"
-            />
-
-          </div>
-          <div id="cancel-or-submit-question-section">
-          <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
-          <button className="ask-question-button">{this.props.formType}</button>
-          </div>
-        </form>
       </div>
-    </div>
     );
   }
 }

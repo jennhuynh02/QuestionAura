@@ -7,7 +7,6 @@ class SessionButtonsPocket extends React.Component {
       email: '',
       password: '',
     };
-
     this.handleSignUpButton = this.handleSignUpButton.bind(this);
     this.handleDemoLoginSubmit = this.handleDemoLoginSubmit.bind(this);
   }
@@ -31,9 +30,7 @@ class SessionButtonsPocket extends React.Component {
         <br />
         <button className="signup-form-button" onClick={(this.handleSignUpButton)}>Signup Form Page</button>
         <br />
-        <h5>
-          {this.props.navLink}
-          By signing up or logging in, you have read and agreed to asking questions without any hesitations and answering questions confidently with the wisdom of your own knowledges and life experiences.
+        <h5> {this.props.navLink} {' '} By signing up or logging in, you have read and agreed to asking questions without any hesitations and answering questions confidently with the wisdom of your own knowledges and life experiences.
         </h5>
       </div>
     );

@@ -19,9 +19,9 @@ class FeedItem extends React.Component {
     const {
       question, deleteQuestion, openModal, answers, users,
     } = this.props;
-    let a = null;
-    let answerId = null;
-    let photo;
+    let a = '';
+    let answerId = '';
+    // let photo;
 
     let responderId;
     for (let i = 0; i < answers.length; i++) {

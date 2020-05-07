@@ -21,7 +21,7 @@ class AnswerForm extends React.Component {
   handleCancel(e) {
     this.props.closeModal(e);
   }
- 
+
   handleSubmit(e) {
     e.preventDefault();
     const answer = { ...this.state };
@@ -45,19 +45,28 @@ class AnswerForm extends React.Component {
     const { closeModal } = this.props;
     return (
       <div className="question-box">
-        <h1 className="answer-header">Answer Form</h1>
+        <div className="question-header">
+          <h1 className="question-form-name">Answer Form</h1>
+        </div>
         <form id="question-form" onSubmit={this.handleSubmit}>
-          <p>{this.props.first} {this.props.last}</p>
-          <input
-            type="text"
-            value={this.state.answer}
-            onChange={this.update('answer')}
-            placeholder="Write your answer"
-            className="question-input"
-          />
-          <div id="cancel-or-submit-answer-section">
-          <button onClick={(e) => closeModal(e)}>Cancel</button>
-          <button className="ask-question-button">{this.props.formType}</button>
+          <div className="inside-question-form">
+
+            <p className="question-author">
+              {this.props.first}
+              {' '}
+              {this.props.last}
+            </p>
+            <input
+              type="text"
+              value={this.state.answer}
+              onChange={this.update('answer')}
+              placeholder="Write your answer"
+              className="question-input"
+            />
+          </div>
+          <div id="cancel-or-submit-question-section">
+            <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
+            <button className="ask-question-button">{this.props.formType}</button>
           </div>
         </form>
       </div>
