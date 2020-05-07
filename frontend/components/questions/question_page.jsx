@@ -34,7 +34,7 @@ class QuestionPage extends React.Component {
     }
 
     return (
-      <div>
+      <div className="question-page">
         <Header />
         <div className="question-page-box">
           <p className="question-page-question">{ question }</p>
@@ -55,11 +55,12 @@ class QuestionPage extends React.Component {
 
               </ul>
             </div>
-
           </div>
-          <AnswerFormContainer questionId={questionId} />
           {answersToQuestion.map((answer, i) => (
             <div className="question-answer-item" key={answer.id}>
+          <div>
+          <AnswerFormContainer questionId={questionId} />
+          </div>
               <p>{answer.answer}</p>
               {/*  */}
               <div className="dropdown-area">
