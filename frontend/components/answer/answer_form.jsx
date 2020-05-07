@@ -10,7 +10,10 @@ class AnswerForm extends React.Component {
       responder_id: this.props.currentUser,
       question_id: this.props.questionId,
       id: this.props.answer.id,
+      photoUrl: null,
+      photoFile: null,
     };
+    this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -24,10 +27,31 @@ class AnswerForm extends React.Component {
     this.props.closeModal(e);
   }
 
+  handleFile(e) {
+    e.preventDefault();
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({
+        photoFile: file,
+        photoUrl: fileReader.result,
+      });
+    };
+    if (file) {
+      fileReader.readAsDataURL(file);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const answer = { ...this.state };
-    this.props.action(answer)
+    let formData = new FormData();
+    formData.append('answer[answer]', this.state.answer);
+    formData.append('answer[responder_id]', this.state.responder_id);
+    formData.append('answer[question_id]', this.state.question_id);
+    if (this.state.photoFile) {
+      formData.append('answer[photo]', this.state.photoFile);
+    }
+    this.props.action(formData)
       .then(this.props.closeModal);
   }
 
@@ -44,7 +68,9 @@ class AnswerForm extends React.Component {
   }
 
   render() {
+    console.log(this.state)
     const { closeModal } = this.props;
+    const preview = this.state.photo ? <img src={this.state.photo} /> : null
     return (
       <div className="question-box">
         <div className="question-header">
@@ -65,6 +91,11 @@ class AnswerForm extends React.Component {
               placeholder="Write your answer"
               className="question-input"
             />
+            <input
+              type="file"
+              onChange={this.handleFile}
+            />
+            { preview }
           </div>
           <div id="cancel-or-submit-question-section">
             <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>

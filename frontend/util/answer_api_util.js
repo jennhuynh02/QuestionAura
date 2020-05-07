@@ -13,13 +13,15 @@ export const fetchAnswer = (answer) => (
   })
 );
 
-export const createAnswer = (answer) => (
-  $.ajax({
+export const createAnswer = (formData) => {
+  return $.ajax({
     method: 'POST',
     url: 'api/answers',
-    data: { answer },
-  })
-);
+    data: formData,
+    contentType: false,
+    processData: false,
+  });
+};
 
 export const updateAnswer = (answer) => (
   $.ajax({

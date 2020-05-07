@@ -3,13 +3,13 @@ import { closeModal } from '../../actions/modal_actions';
 import { createAnswer } from '../../actions/answer_actions';
 import AnswerForm from './answer_form';
 
-const mapStateToProps = (state, {questionId}) => ({
+const mapStateToProps = (state, { questionId }) => ({
   errors: state.answers.errors,
   currentUser: state.session.id,
   first: state.entities.users[state.session.id].first_name,
   last: state.entities.users[state.session.id].last_name,
   formType: 'Submit',
-  answer: { answer: '', responder_id: '', question_id: '', id: '' },
+  answer: { answer: '', responder_id: '', question_id: '', id: '', photo: null },
   questionId,
 });
 

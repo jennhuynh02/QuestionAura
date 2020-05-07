@@ -1,9 +1,12 @@
 #header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  height: 49px;
+  height: 50px;
+  padding: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 #logo {
