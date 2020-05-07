@@ -36,17 +36,50 @@ class QuestionPage extends React.Component {
     return (
       <div>
         <Header />
-        <div className="feed-item">
+        <div className="question-page-box">
           <p className="question-page-question">{ question }</p>
-          <button onClick={() => openModal({ editQuestion: qId })}>Edit Question</button>
-          <button onClick={() => deleteQuestion(qId)}>Delete Question</button>
+          {/* <button onClick={() => openModal({ editQuestion: qId })}>Edit Question</button> */}
+          {/* <button onClick={() => deleteQuestion(qId)}>Delete Question</button> */}
+          <div className="dropdown-area">
 
+            <div className="dropdown">
+              <p className="drop-button-dots">* * *</p>
+              <ul className="dropdown-content">
+                <li className="dropdown-options" onClick={() => openModal({ editQuestion: qId })}>
+                  Edit Question
+                </li>
+
+                <li className="dropdown-options" onClick={() => deleteQuestion(qId)}>
+                  Delete Question
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
           <AnswerFormContainer questionId={questionId} />
           {answersToQuestion.map((answer, i) => (
-            <div key={answer.id}>
+            <div className="question-answer-item" key={answer.id}>
               <p>{answer.answer}</p>
-              <button onClick={() => openModal({ editAnswer: aId[i] })}>Edit Answer</button>
-              <button onClick={() => deleteAnswer(aId[i])}>Delete Answer</button>
+              {/*  */}
+              <div className="dropdown-area">
+
+                <div className="dropdown">
+                  <p className="drop-button-dots">* * *</p>
+                  <ul className="dropdown-content">
+                    <li className="dropdown-options" onClick={() => openModal({ editAnswer: aId[i] })}>
+                      Edit Answer
+                    </li>
+
+                    <li className="dropdown-options" onClick={() => deleteAnswer(aId[i])}>
+                      Delete Answer
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              {/*  */}
+
             </div>
           ))}
 
