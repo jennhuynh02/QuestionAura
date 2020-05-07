@@ -4,7 +4,7 @@ import Header from '../header/header_container';
 
 class QuestionPage extends React.Component {
   componentDidMount() {
-    this.props.fetchQuestion({ id: this.props.questionId });
+    // this.props.fetchQuestion({ id: this.props.questionId });
     this.props.fetchAnswers();
   }
 
@@ -19,9 +19,12 @@ class QuestionPage extends React.Component {
     let qId;
 
     for (let i = 0; i < questions.length; i++) {
-      question = questions[i].ask;
-      q = questions[i];
       qId = questions[i].id;
+      if (qId === questionId) {
+        question = questions[i].ask;
+        q = questions[i];
+        break;
+      }
     }
 
     const answersToQuestion = [];
@@ -38,8 +41,7 @@ class QuestionPage extends React.Component {
         <Header />
         <div className="question-page-box">
           <p className="question-page-question">{ question }</p>
-          {/* <button onClick={() => openModal({ editQuestion: qId })}>Edit Question</button> */}
-          {/* <button onClick={() => deleteQuestion(qId)}>Delete Question</button> */}
+
           <div className="dropdown-area">
 
             <div className="dropdown">
@@ -58,9 +60,9 @@ class QuestionPage extends React.Component {
           </div>
           {answersToQuestion.map((answer, i) => (
             <div className="question-answer-item" key={answer.id}>
-          <div>
-          <AnswerFormContainer questionId={questionId} />
-          </div>
+              <div>
+                <AnswerFormContainer questionId={questionId} />
+              </div>
               <p>{answer.answer}</p>
               {/*  */}
               <div className="dropdown-area">
