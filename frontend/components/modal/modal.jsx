@@ -19,7 +19,7 @@ function Modal({ modal, closeModal }) {
       component = <EditQuestionContainer />;
       break;
     case 'answer':
-      component = <AnswerFormContainer />;
+      component = <AnswerFormContainer questionId={modal.answer} />;
       break;
     case 'editAnswer':
       component = <EditAnswerFormContainer />;

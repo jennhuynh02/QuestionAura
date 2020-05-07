@@ -3,6 +3,8 @@ import React from 'react';
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log('answerform');
+    console.log(this.props.questionId);
     this.state = {
       answer: this.props.answer.answer,
       responder_id: this.props.currentUser,

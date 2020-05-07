@@ -60,9 +60,6 @@ class QuestionPage extends React.Component {
           </div>
           {answersToQuestion.map((answer, i) => (
             <div className="question-answer-item" key={answer.id}>
-              <div>
-                <AnswerFormContainer questionId={questionId} />
-              </div>
               <p>{answer.answer}</p>
               {/*  */}
               <div className="dropdown-area">

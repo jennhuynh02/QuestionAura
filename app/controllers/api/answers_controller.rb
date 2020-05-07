@@ -2,7 +2,7 @@ class Api::AnswersController < ApplicationController
 
   def index
     @answers = Answer.all
-    render :index
+    render "api/answers/index"
   end
 
   def create
@@ -43,7 +43,7 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:answer, :question_id, :responder_id, :photo)
+    params.require(:answer).permit(:answer, :question_id, :responder_id)
   end
 
 
