@@ -4,7 +4,7 @@ import Header from '../header/header_container';
 
 class QuestionPage extends React.Component {
   componentDidMount() {
-    // this.props.fetchQuestion({ id: this.props.questionId });
+    this.props.fetchQuestion({ id: this.props.questionId });
     this.props.fetchAnswers();
   }
 
@@ -47,6 +47,11 @@ class QuestionPage extends React.Component {
             <div className="dropdown">
               <p className="drop-button-dots">* * *</p>
               <ul className="dropdown-content">
+
+                <li className="dropdown-options" onClick={() => openModal({ answer: qId })}>
+                  Answer
+                </li>
+
                 <li className="dropdown-options" onClick={() => openModal({ editQuestion: qId })}>
                   Edit Question
                 </li>
@@ -67,6 +72,7 @@ class QuestionPage extends React.Component {
                 <div className="dropdown">
                   <p className="drop-button-dots">* * *</p>
                   <ul className="dropdown-content">
+
                     <li className="dropdown-options" onClick={() => openModal({ editAnswer: aId[i] })}>
                       Edit Answer
                     </li>
@@ -74,6 +80,7 @@ class QuestionPage extends React.Component {
                     <li className="dropdown-options" onClick={() => deleteAnswer(aId[i])}>
                       Delete Answer
                     </li>
+
                   </ul>
                 </div>
 
