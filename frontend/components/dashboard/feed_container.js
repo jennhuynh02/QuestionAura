@@ -3,7 +3,7 @@ import Feed from './feed';
 import { deleteQuestion } from '../../actions/question_actions';
 import { openModal } from '../../actions/modal_actions';
 import { createAnswer, fetchAnswers } from '../../actions/answer_actions';
-import { fetchUser } from '../../actions/user_action';
+import { fetchUsers } from '../../actions/user_action';
 
 const mapStateToProps = (state) => ({
   questions: Object.values(state.entities.questions),
@@ -16,7 +16,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchAnswers: () => dispatch(fetchAnswers()),
   createAnswer: () => dispatch(createAnswer()),
-  fetchUser: () => dispatch(fetchUser()),
+  fetchUsers: () => dispatch(fetchUsers()),
   deleteQuestion: (question) => dispatch(deleteQuestion(question)),
   openModal: (modal) => dispatch(openModal(modal)),
 });

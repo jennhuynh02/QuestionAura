@@ -10,11 +10,10 @@ class Dashboard extends React.Component {
 
   componentDidMount () {
     this.props.fetchQuestions();
-    this.props.fetchUsers();
   }
 
   render() {
-    const { openModal, closeModal, first, second, users } = this.props;
+    const { openModal, closeModal, first, second } = this.props;
     return (
     <div className="dashboard">
       <HeaderContainer openModal={openModal, closeModal} />
@@ -25,7 +24,7 @@ class Dashboard extends React.Component {
           <p className="question-name">{first} {second}</p>
             <h1 id="question-invite">What is your question or link?</h1>
           </div>
-          <FeedContainer users={users} />
+          <FeedContainer />
         </div>
       </div>
     </div>

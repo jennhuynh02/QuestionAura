@@ -19,4 +19,6 @@ class Answer < ApplicationRecord
   belongs_to :responder,
   class_name: :User
 
+  has_one_attached :photo
+
 end
