@@ -22,28 +22,23 @@ class FeedItem extends React.Component {
     let a = null;
     let answerId = null;
     let photo;
-    // let answerObject;
+
     let responderId;
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
         responderId = answers[i].responder_id;
         a = answers[i].answer;
-        if (answers[i].photoUrl) {
-          photo = answers[i].photoUrl
-        }
+        // if (answers[i].photoUrl) {
+        //   photo = answers[i].photoUrl;
+        // }
         answerId = answers[i].id;
         break;
       }
     }
 
-    // console.log(photo)
-
-    // console.log(photo);
-    // console.log(responderId)
-
-    let responder
-    let responderFirst
-    let responderLast
+    let responder;
+    let responderFirst;
+    let responderLast;
 
     for (let i = 0; i < users.length; i++) {
       if (users[i].id === responderId) {
@@ -54,9 +49,6 @@ class FeedItem extends React.Component {
       }
     }
 
-    // console.log(responderFirst)
-
-
     const questionId = question.id;
 
 
@@ -64,7 +56,11 @@ class FeedItem extends React.Component {
 
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
-        <p className="feed-header">{responderFirst} {responderLast}</p>
+        <p className="feed-header">
+          {responderFirst}
+          {' '}
+          {responderLast}
+        </p>
 
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
 
