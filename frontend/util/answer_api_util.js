@@ -23,11 +23,13 @@ export const createAnswer = (formData) => {
   });
 };
 
-export const updateAnswer = (answer) => (
+export const updateAnswer = (formData) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/answers/${answer.id}`,
-    data: { answer },
+    url: `api/answers/${formData.get('answer[id]')}`,
+    data: formData,
+    contentType: false,
+    processData: false,
   })
 );
 

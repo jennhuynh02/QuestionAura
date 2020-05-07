@@ -43,7 +43,7 @@ class Api::AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:answer, :question_id, :responder_id, :photo)
+    params.require(:answer).permit(:answer, :question_id, :responder_id, :photo, :id)
   end
 
 end

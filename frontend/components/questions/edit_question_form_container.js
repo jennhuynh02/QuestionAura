@@ -25,7 +25,7 @@ class EditQuestionForm extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
   const question = state.entities.questions[Object.values(state.ui.modal)[0]];
   return ({
     errors: state.errors.session,

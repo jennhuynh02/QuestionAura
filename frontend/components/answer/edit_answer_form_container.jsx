@@ -7,7 +7,7 @@ import { closeModal } from '../../actions/modal_actions';
 class EditAnswerForm extends React.Component {
   
   render() {
-    const { errors, currentUser, first, last, action, closeModal, answer, formType } = this.props;
+    const { errors, currentUser, first, last, action, closeModal, answer, formType, questionId } = this.props;
     let id = answer.id;
     return (
     <AnswerForm    
