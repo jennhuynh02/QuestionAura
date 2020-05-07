@@ -63,6 +63,7 @@ class QuestionPage extends React.Component {
               </ul>
             </div>
           </div>
+          <div className="answers-count">{answersToQuestion.length}+ Answers</div>
           {answersToQuestion.map((answer, i) => (
             <div className="question-answer-item" key={answer.id}>
               <p>{answer.answer}</p>
