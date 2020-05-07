@@ -12,14 +12,15 @@ class EditAnswerForm extends React.Component {
     return (
     <AnswerForm    
       errors={errors}
-      currentUser={currentUser}
+      currentUser={answer.responder_id}
       first={first}
       last={last}
       action={action}
       closeModal={closeModal}
       answer={answer}
       formType={formType}
-      id={id}
+      answerId={id}
+      questionId={answer.question_id}
     />
     );
   }

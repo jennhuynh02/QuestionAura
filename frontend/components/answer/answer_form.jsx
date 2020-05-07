@@ -3,11 +3,13 @@ import React from 'react';
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
+    console.log('answerform');
+
     this.state = {
       answer: this.props.answer.answer,
-      responder_id: this.props.answer.responder_id,
-      question_id: this.props.answer.question_id,
-      id: this.props.answer.id,
+      responder_id: this.props.currentUser,
+      question_id: this.props.questionId,
+      id: this.props.answerId,
       photoUrl: null,
       photoFile: null,
     };
@@ -46,7 +48,9 @@ class AnswerForm extends React.Component {
     formData.append('answer[answer]', this.state.answer);
     formData.append('answer[responder_id]', this.state.responder_id);
     formData.append('answer[question_id]', this.state.question_id);
-    formData.append('answer[id]', this.state.id);
+    // if (this.state.id !== null) {
+    //   formData.append('answer[id]', this.state.id);
+    // }
     if (this.state.photoFile) {
       formData.append('answer[photo]', this.state.photoFile);
     }

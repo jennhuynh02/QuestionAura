@@ -9,7 +9,7 @@ const mapStateToProps = (state, { questionId }) => ({
   first: state.entities.users[state.session.id].first_name,
   last: state.entities.users[state.session.id].last_name,
   formType: 'Submit',
-  answer: { answer: '', responder_id: '', question_id: '', id: '', photo: null },
+  answer: { answer: '', responder_id: '', question_id: '', photoUrl: null },
   questionId,
 });
 
