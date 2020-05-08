@@ -45,5 +45,49 @@ Altogether, these technologies were incorporated to:
 5. Run "rails s" to start the rails server
 6. Navigate to "localhost:3000" on browser to view app
 
+Code Snippet of Modal:
+  - This modal component allowed for the rendering of different containers/components (aka the question/answer post forms).  It incorporated the use of a hash to carry a slice of state to the modal, to create/edit/delete the appropriate object (post).
+``` function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal }) {
+  if (!modal) {
+    return null;
+  }
+  let component;
+  switch (Object.keys(modal)[0]) {
+    case 'question':
+      component = <QuestionFormContainer />;
+      break;
+    case 'editQuestion':
+      component = <EditQuestionContainer />;
+      break;
+    case 'answer':
+      component = <AnswerFormContainer questionId={modal.answer} />;
+      break;
+    case 'editAnswer':
+      component = <EditAnswerFormContainer answerId={modal.editAnswer} />;
+      break;
+    default:
+      return null;
+  }
 
+  return (
+    // onClick={closeModal} <-- can add this to modal-parent to exit upon click outside of box
+    <div id="modal-parent" onClick={closeModal}>
+      <div id="modal-child" onClick={(e) => e.stopPropagation()}>
+        {component}
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  modal: state.ui.modal,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  closeModal: () => dispatch(closeModal()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+```
 
