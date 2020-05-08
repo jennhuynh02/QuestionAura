@@ -67,7 +67,7 @@ class QuestionPage extends React.Component {
           {answersToQuestion.map((answer, i) => (
             <div className="question-answer-item" key={answer.id}>
               <p>{answer.answer}</p>
-              <img src={answer.photoUrl} />
+              <img className="image" src={answer.photoUrl} />
               {/*  */}
               <div className="dropdown-area">
 
