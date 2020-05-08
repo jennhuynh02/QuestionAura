@@ -11,6 +11,7 @@ const mapStateToProps = (state, { questionId }) => ({
   formType: 'Submit',
   answer: { answer: '', responder_id: '', question_id: '', id: '', photoUrl: null },
   questionId,
+  answerId: null,
 });
 
 const mapDispatchToProps = (dispatch) => ({

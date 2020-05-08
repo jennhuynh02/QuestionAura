@@ -49,7 +49,9 @@ class AnswerForm extends React.Component {
     formData.append('answer[responder_id]', this.state.responder_id);
     formData.append('answer[question_id]', this.state.question_id);
 
-    formData.append('answer[id]', this.state.id);
+    if (this.state.id !== null) {
+      formData.append('answer[id]', this.state.id);
+    }
 
     if (this.state.photoFile) {
       formData.append('answer[photo]', this.state.photoFile);
