@@ -21,16 +21,16 @@ class FeedItem extends React.Component {
     } = this.props;
     let a = '';
     let answerId = '';
-    // let photo;
+    let photo;
 
     let responderId;
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
         responderId = answers[i].responder_id;
         a = answers[i].answer;
-        // if (answers[i].photoUrl) {
-        //   photo = answers[i].photoUrl;
-        // }
+        if (answers[i].photoUrl) {
+          photo = answers[i].photoUrl;
+        }
         answerId = answers[i].id;
         break;
       }
@@ -66,7 +66,7 @@ class FeedItem extends React.Component {
 
         <p className="feed-answer">
           { a }
-          {/* <img src={photo} /> */}
+          <p> <img src={photo} /> </p>
         </p>
 
         <div className="dropdown-area">
