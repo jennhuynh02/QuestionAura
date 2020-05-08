@@ -7,8 +7,7 @@ import { closeModal } from '../../actions/modal_actions';
 class EditAnswerForm extends React.Component {
   
   render() {
-    const { errors, currentUser, first, last, action, closeModal, answer, formType, questionId } = this.props;
-    let id = answer.id;
+    const { errors, currentUser, first, last, action, closeModal, answer, formType, questionId, answerId } = this.props;
     return (
     <AnswerForm    
       errors={errors}
@@ -19,15 +18,16 @@ class EditAnswerForm extends React.Component {
       closeModal={closeModal}
       answer={answer}
       formType={formType}
-      answerId={id}
+      answerId={answerId}
       questionId={answer.question_id}
     />
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, { answerId } ) => {
   const answer = state.entities.answers[Object.values(state.ui.modal)[0]];
+  console.log(answerId)
   return ({
     errors: state.errors.session,
     currentUser: state.entities.users[state.session.id],
@@ -35,6 +35,7 @@ const mapStateToProps = (state) => {
     last: state.entities.users[state.session.id].last_name,
     formType: 'Update Answer',
     answer,
+    answerId,
   });
 };
 

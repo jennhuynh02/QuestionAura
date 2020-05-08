@@ -22,7 +22,7 @@ function Modal({ modal, closeModal }) {
       component = <AnswerFormContainer questionId={modal.answer} />;
       break;
     case 'editAnswer':
-      component = <EditAnswerFormContainer />;
+      component = <EditAnswerFormContainer answerId={modal.editAnswer} />;
       break;
     default:
       return null;
