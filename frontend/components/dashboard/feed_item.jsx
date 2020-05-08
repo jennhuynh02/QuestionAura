@@ -66,7 +66,7 @@ class FeedItem extends React.Component {
 
         <p className="feed-answer">
           { a }
-          <p> <img className="image" src={photo} /> </p>
+          <p> <img className="image-dashboard" src={photo} /> </p>
         </p>
 
         <div className="dropdown-area">
