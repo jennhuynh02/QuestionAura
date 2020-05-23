@@ -34,8 +34,8 @@ Altogether, these technologies were incorporated to:
 (1) Create secure user authentication for secure login and logout of sessions.
 (2) Allow users to create, read, update, and delete questions.
 (3) Render modals that allowed users to answer questions, as well as edit and update their responses.
-(3) Users are able to post and delete pictures along with their posts with jsut a few clicks.
-(4) Question view page which contains all related answers, while dashboard contains the newest answer to all questions.
+(4) Users are able to post and delete pictures along with their posts with jsut a few clicks.
+(5) Question view page which contains all related answers, while dashboard contains the newest answer to all questions.
 
 ## Configuration and Deployment Instructions:
 1. Download the zip from github 
@@ -44,6 +44,7 @@ Altogether, these technologies were incorporated to:
 4. Run "bundle install" to install associated ruby/rails gems
 5. Turn on PostgresQL
 6. Run "rails s" to start the rails server
+7. Run "npm run webpack" to run bundler in browser
 7. Navigate to "localhost:3000" on browser to view app
 
 Code Snippet of Modal:
