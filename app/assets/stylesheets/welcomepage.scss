@@ -93,6 +93,10 @@
    font-weight: 500;
    border-radius: 3px;
   }
+
+ .form-login-buttons:hover {
+   cursor: pointer;  
+  }
   
   .session-buttons-pocket {
     line-height: 1.4;
@@ -123,6 +127,13 @@
     box-sizing: border-box;
     transition: opacity ease-in-out 100ms,color ease-in-out 100ms,background-color ease-in-out 100ms,border-color ease-in-out 100ms;
     border-radius: 3px;
+}
+.demo-login-button {
+  cursor: pointer;  
+}
+
+.signup-form-button {
+  cursor: pointer;  
 }
 
 .signup-form-button {
@@ -158,6 +169,11 @@
     border: 1px solid #e2e2e2;
     border-radius: 3px;
     box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+}
+
+.info-links {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .error-messages {

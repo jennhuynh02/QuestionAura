@@ -100,6 +100,9 @@ flex-direction: column;
   padding-top: 7px;
   border-color: #2e69ff;
 }
+.ask-question-button:hover {
+  cursor: pointer;  
+}
 
 .cancel-button {
   background-color: transparent;
@@ -108,6 +111,10 @@ flex-direction: column;
   font-weight: 500;
   color: #636466;
   padding: 7px 12px;
+}
+
+.cancel-button:hover {
+  cursor: pointer;  
 }
 
 .question-header {

@@ -32,12 +32,18 @@
     border: solid 2px #B92B27;
     border-radius: 25px;
 }
+.profile-dropdown:hover {
+  cursor: pointer;  
+}
 
 // dropdown button for feed item
 .drop-button-dots {
   color: #B92B27;
   font-size: 20px;
   padding: 15px;
+}
+.drop-button-dots:hover {
+  cursor: pointer;  
 }
 
 // ul
