@@ -61,7 +61,6 @@ class LoginForm extends React.Component {
 
           <button className="form-login-buttons">Login</button>
         </form>
-
         <p>Forgot Password?</p>
         {this.renderErrors()}
       </div>
