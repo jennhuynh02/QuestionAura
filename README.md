@@ -42,8 +42,9 @@ Altogether, these technologies were incorporated to:
 2. Open terminal
 3. Run "npm install" to run webpack
 4. Run "bundle install" to install associated ruby/rails gems
-5. Run "rails s" to start the rails server
-6. Navigate to "localhost:3000" on browser to view app
+5. Turn on PostgresQL
+6. Run "rails s" to start the rails server
+7. Navigate to "localhost:3000" on browser to view app
 
 Code Snippet of Modal:
   - This modal component allowed for the rendering of different containers/components (aka the question/answer post forms).  It incorporated the use of a hash to carry a slice of state to the modal, to create/edit/delete the appropriate object (post).
