@@ -3,7 +3,6 @@ import React from 'react';
 class AnswerForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log('answerform');
 
     this.state = {
       answer: this.props.answer.answer,
@@ -73,7 +72,6 @@ class AnswerForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     const { closeModal } = this.props;
     const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
     return (

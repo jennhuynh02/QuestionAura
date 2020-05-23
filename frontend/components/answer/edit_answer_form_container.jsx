@@ -27,7 +27,6 @@ class EditAnswerForm extends React.Component {
 
 const mapStateToProps = (state, { answerId } ) => {
   const answer = state.entities.answers[Object.values(state.ui.modal)[0]];
-  console.log(answerId)
   return ({
     errors: state.errors.session,
     currentUser: state.entities.users[state.session.id],
