@@ -18,7 +18,7 @@
   width: 300px;
 }
 
-.category {
+.category-header {
     color: #636466;
     font-weight: 400;
     height: 23px;
@@ -27,10 +27,19 @@
     padding: 4px;
     height: auto;
 }
+.category {
+    color: #636466;
+    font-weight: 400;
+    height: 23px;
+    line-height: 18.2px;
+    margin-bottom: 8px;
+    padding: 4px;
+}
 
 .category:hover {
   text-decoration: underline;
   background-color: #e6e7e8;
+  cursor: pointer;  
 }
 
 .header-question-click {
@@ -100,6 +109,7 @@
 
 .feed-question:hover {
   text-decoration: underline;  
+  cursor: pointer; 
 }
 
 .feed-answer {

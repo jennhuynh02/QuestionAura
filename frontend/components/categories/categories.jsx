@@ -28,13 +28,13 @@ class Categories extends React.Component {
     return (
       <div className="categories-bar">
         <br/>
-        <h1 className="category">Categories:</h1>
+        <h1 className="category-header">Categories:</h1>
         <p className="category" onClick={this.handleCodingQuestionLink}>Coding</p>
         <p className="category" onClick={this.handleBootCampQuestionLink}>Bootcamp</p>
         <p className="category" onClick={this.handleCareerQuestionLink}>Career</p>
         <p className="category" onClick={this.handleFinanceQuestionLink}> Finance</p>
 
-        <p className="resources">About * Careers * Terms * Privacy * Acceptable Use * Businesses</p>
+        {/* <p className="resources">About * Careers * Terms * Privacy * Acceptable Use * Businesses</p> */}
       </div>
     );
   }

@@ -17,6 +17,7 @@
 
  #logo:hover {
    text-decoration: underline;
+   cursor: pointer; 
  }
 
  
@@ -66,12 +67,14 @@
   display: block;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0;
+  cursor: pointer; 
 }
 
 // ul > li
 .dropdown-content > li:hover {
   display: block;
   background-color: #B92B27;
+  cursor: pointer; 
 }
 
 .dropdown-options {
