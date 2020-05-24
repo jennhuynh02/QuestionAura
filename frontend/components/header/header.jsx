@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchBarContainer from '../searchbar/searchbar_container';
 
 class Header extends React.Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class Header extends React.Component {
     return (
       <div id="header">
         <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
+
+        <SearchBarContainer />
+
         <div className="dropdown">
           <img className="profile-dropdown" src={window.profilePic} />
           <ul className="dropdown-content">
