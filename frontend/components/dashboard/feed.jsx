@@ -1,5 +1,5 @@
 import React from 'react';
-import FeedItem from './feed_item';
+import FeedItemContainer from './feed_item_container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -7,19 +7,18 @@ class Feed extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAnswers();
-    this.props.fetchUsers();
+    this.props.fetchQuestions();
   }
 
 
   render() {
     const {
-      deleteQuestion, openModal, createAnswer, answers, questions, first, last, users
+      questions
     } = this.props;
     return (
       <div>
         {questions.map((question) => (
-          <FeedItem question={question} key={question.id} deleteQuestion={deleteQuestion} openModal={openModal} createAnswer={createAnswer} answers={answers} first={first} last={last} users={users} />
+          <FeedItemContainer question={question} key={question.id} />
         ))}
       </div>
 

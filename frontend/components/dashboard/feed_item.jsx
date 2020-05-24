@@ -1,23 +1,80 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
-// import { fetchUser } from "../../actions/user_action";
 
 class FeedItem extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleQuestionLink = this.handleQuestionLink.bind(this);
   }
 
+  componentDidMount() {
+    const { fetchAnswers,fetchUsers } = this.props;
+    fetchAnswers();
+    fetchUsers();
+  }
 
+
+  
+  getDropdown() {
+    if (this.props.question.asker_id === this.props.currentUser.id) {
+      return (
+        <div className="dropdown">
+          <p className="drop-button-dots">* * *</p>
+          <ul className="dropdown-content">
+            <li className="dropdown-options" onClick={() => openModal({ editQuestion: questionId })}>
+              Edit Question
+            </li>
+
+            <li className="dropdown-options" onClick={() => deleteQuestion(questionId)}>
+              Delete Question
+            </li>
+          </ul>
+        </div>
+      );
+    }
+    return (
+      <div className="dropdown">
+        <p className="drop-button-dots">* * *</p>
+        <ul className="dropdown-content">
+          <li className="dropdown-options" onClick={() => openModal({ answer: questionId })}>
+            Answer Question
+          </li>
+
+          {/* <li className="dropdown-options" onClick={() => openModal({ editAnswer: answerId })}>
+            Edit Answer
+            </li>
+            
+            <li className="dropdown-options" onClick={() => deleteAnswer(answerId)}>
+            Delete Answer
+          </li> */}
+        </ul>
+      </div>
+    );
+  }
+  
+  getEditAccess() {
+    return (
+      <ui>
+        <li className="dropdown-options" onClick={() => openModal({ editAnswer: answerId })}>
+          Edit Answer
+        </li>
+
+        <li className="dropdown-options" onClick={() => deleteAnswer(answerId)}>
+          Delete Answer
+        </li>
+      </ui>
+    );
+  }
+  
   handleQuestionLink(e) {
     e.preventDefault();
     location.href = `/#/questions/${this.props.question.id}`;
   }
 
-
   render() {
     const {
-      question, deleteQuestion, openModal, answers, users,
+      question, deleteQuestion, openModal, answers, users, currentUser,
     } = this.props;
     let a = '';
     let answerId = '';
@@ -49,8 +106,8 @@ class FeedItem extends React.Component {
       }
     }
 
-    const questionId = question.id;
 
+    const questionId = question.id;
 
     return (
 
@@ -71,31 +128,7 @@ class FeedItem extends React.Component {
 
         <div className="dropdown-area">
 
-          <div className="dropdown">
-            <p className="drop-button-dots">* * *</p>
-            <ul className="dropdown-content">
-              <li className="dropdown-options" onClick={() => openModal({ editQuestion: questionId })}>
-                Edit Question
-              </li>
-
-              <li className="dropdown-options" onClick={() => deleteQuestion(questionId)}>
-                Delete Question
-              </li>
-
-              <li className="dropdown-options" onClick={() => openModal({ answer: questionId })}>
-                Answer
-              </li>
-
-              <li className="dropdown-options" onClick={() => openModal({ editAnswer: answerId })}>
-                Edit Answer
-              </li>
-
-              <li className="dropdown-options" onClick={() => deleteAnswer(answerId)}>
-                Delete Answer
-              </li>
-            </ul>
-          </div>
-
+          { this.getDropdown() }
         </div>
 
         {/* <AnswerFormContainer questionId={questionId} /> */}
