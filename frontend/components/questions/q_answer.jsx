@@ -41,7 +41,6 @@ class qAnswer extends React.Component {
 
     for (let i = 0; i < users.length; i += 1) {
       if (users[i].id === answer.responder_id) {
-        console.log(users[i]);
         this.responder = users[i];
         this.responderFirst = users[i].first_name;
         this.responderLast = users[i].last_name;
@@ -56,7 +55,7 @@ class qAnswer extends React.Component {
           {' '}
           {this.responderLast}
         </p>
-        
+
         <p>{answer.answer}</p>
         <img className="image" src={answer.photoUrl} />
         <div className="dropdown-area">

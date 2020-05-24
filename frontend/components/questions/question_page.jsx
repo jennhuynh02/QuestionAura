@@ -10,6 +10,9 @@ class QuestionPage extends React.Component {
     this.question = '';
     this.answer = '';
     this.users = this.props.users;
+    this.asker = '';
+    this.askerFirst = '';
+    this.askerLast = '';
   }
 
   componentDidMount() {
@@ -19,18 +22,18 @@ class QuestionPage extends React.Component {
   }
 
   getQuestionDropdown() {
-    const { currentUser } = this.props;
+    const { currentUser, openModal } = this.props;
     if (currentUser.id === this.question.asker_id) {
       return (
         <div className="dropdown">
           <p className="drop-button-dots">* * *</p>
           <ul className="dropdown-content">
 
-            <li className="dropdown-options" onClick={() => openModal({ editQuestion: qId })}>
+            <li className="dropdown-options" onClick={() => openModal({ editQuestion: this.question.id })}>
               Edit Question
             </li>
 
-            <li className="dropdown-options" onClick={() => deleteQuestion(qId)}>
+            <li className="dropdown-options" onClick={() => deleteQuestion(this.question.id)}>
               Delete Question
             </li>
 
@@ -43,7 +46,7 @@ class QuestionPage extends React.Component {
         <p className="drop-button-dots">* * *</p>
         <ul className="dropdown-content">
 
-          <li className="dropdown-options" onClick={() => openModal({ answer: qId })}>
+          <li className="dropdown-options" onClick={() => openModal({ answer: this.question.id })}>
             Answer
           </li>
 
@@ -54,7 +57,7 @@ class QuestionPage extends React.Component {
 
   render() {
     const {
-      questions, answers, questionId, openModal, deleteQuestion, deleteAnswer,
+      questions, answers, questionId, openModal, deleteQuestion, deleteAnswer, users
     } = this.props;
 
     let q;
@@ -65,6 +68,15 @@ class QuestionPage extends React.Component {
       if (qId === questionId) {
         this.questionString = questions[i].ask;
         this.question = questions[i];
+        break;
+      }
+    }
+
+    for (let i = 0; i < users.length; i += 1) {
+      if (users[i].id === this.question.asker_id) {
+        this.asker = users[i];
+        this.askerFirst = users[i].first_name;
+        this.askerLast = users[i].last_name;
         break;
       }
     }
@@ -82,6 +94,12 @@ class QuestionPage extends React.Component {
       <div className="question-page">
         <Header />
         <div className="question-page-box">
+        <p className="">
+          Question By  :
+          {this.askerFirst}
+          {' '}
+          {this.askerLast}
+        </p>
           <p className="question-page-question">{ this.questionString }</p>
 
           <div className="dropdown-area">
