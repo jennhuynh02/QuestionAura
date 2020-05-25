@@ -70,6 +70,13 @@
   cursor: pointer; 
 }
 
+// .dropdown-content:hover {
+//   display: block;
+//   font-family: inherit; /* Important for vertical align on mobile phones */
+//   margin: 0;
+//   cursor: pointer; 
+// }  
+
 // ul > li
 .dropdown-content > li:hover {
   display: block;

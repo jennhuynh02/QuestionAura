@@ -7,6 +7,7 @@ class SearchBar extends React.Component {
       searchInput: '',
     };
     this.searchResults = [];
+    // this.handleQuestionLink = this.handleQuestionLink.bind(this);
   }
 
   componentDidMount() {
@@ -15,45 +16,39 @@ class SearchBar extends React.Component {
   }
 
   update(field) {
-    return (e) => this.setState({ [field]: e.currentTarget.value })
+    return (e) => this.setState({ [field]: e.currentTarget.value });
   }
 
   search() {
     this.searchResults = [];
     const { questions } = this.props;
-    console.log("all questions");
-    console.log(questions);
-    // const qObject = Object.values(questions)[0];
-    // console.log(qObject.ask);
     for (let i = 0; i < questions.length; i += 1) {
       if (questions[i].ask.includes(this.state.searchInput)) {
         this.searchResults.push(questions[i]);
       }
     }
-    console.log("search results after input");
-    console.log(this.searchResults);
-    console.log("first result");
-    console.log(this.searchResults[0]);
     if (this.searchResults.length > 0) {
-      console.log(this.searchResults[0].ask);
       return (
         <ul className="dropdown-content">
-          <li>{this.searchResults[0].ask}</li>
+          {this.searchResults.map((question) => (
+            <li onClick={(e) => {e.preventDefault();
+    location.href = `/#/questions/${question.id}`;}} key={question.id} >{question.ask}</li>
+          ))}
         </ul>
       );
     }
   }
 
-  handleQuestionLink(e) {
-    e.preventDefault();
-    location.href = `/#/questions/${question.id}`;
-  }
+  // handleQuestionLink(e) {
+  //   e.preventDefault();
+  //   location.href = `/#/questions/${this.searchResults[0].id}`;
+  // }
 
 
   render() {
     return (
-      <div>
-        <form className="dropdown">
+      <div className="dropdown">
+        <form>
           <input
             type="text"
             placeholder="searchbar"
@@ -61,8 +56,8 @@ class SearchBar extends React.Component {
             onChange={this.update('searchInput')}
             className="form-input-boxes"
           />
-          {this.search()}
         </form>
+          {this.search()}
       </div>
     );
   }
