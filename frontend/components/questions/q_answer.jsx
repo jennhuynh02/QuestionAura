@@ -56,7 +56,7 @@ class qAnswer extends React.Component {
           {this.responderLast}
         </p>
 
-        <p>{answer.answer}</p>
+        <p className="answer-text">{answer.answer}</p>
         <img className="image" src={answer.photoUrl} />
         <div className="dropdown-area">
           {this.getAnswerDropdown(answer)}
