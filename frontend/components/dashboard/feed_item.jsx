@@ -120,6 +120,7 @@ class FeedItem extends React.Component {
 
         <p className="feed-answer">
           { a }
+          <br />
           <img className="image-dashboard" src={photo} />
         </p>
 

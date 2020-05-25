@@ -73,7 +73,7 @@ class AnswerForm extends React.Component {
 
   render() {
     const { closeModal } = this.props;
-    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null
+    const preview = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
     return (
       <div className="question-box">
         <div className="question-header">
