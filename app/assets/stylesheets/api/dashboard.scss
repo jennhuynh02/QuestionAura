@@ -126,3 +126,23 @@
   border-width: 1px;
   border-color: #dee0e1;
 }
+
+.searchbar {
+  width: 300px;
+  font-size: 13px;
+  line-height: 1.4;
+  padding-left: 8px;
+  padding-right: 8px;
+  min-height: 32px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  display: block;
+  outline: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+}
+
+.searchbar:hover {
+  border: solid 1px #2e69ff;
+}

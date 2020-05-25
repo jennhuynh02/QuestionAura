@@ -7,7 +7,6 @@ class SearchBar extends React.Component {
       searchInput: '',
     };
     this.searchResults = [];
-    // this.handleQuestionLink = this.handleQuestionLink.bind(this);
   }
 
   componentDidMount() {
@@ -32,18 +31,13 @@ class SearchBar extends React.Component {
         <ul className="dropdown-content">
           {this.searchResults.map((question) => (
             <li onClick={(e) => {e.preventDefault();
-    location.href = `/#/questions/${question.id}`;}} key={question.id} >{question.ask}</li>
+              location.href = `/#/questions/${question.id}`}} 
+              key={question.id} >{question.ask}</li>
           ))}
         </ul>
       );
     }
   }
-
-  // handleQuestionLink(e) {
-  //   e.preventDefault();
-  //   location.href = `/#/questions/${this.searchResults[0].id}`;
-  // }
-
 
   render() {
     return (
@@ -51,10 +45,10 @@ class SearchBar extends React.Component {
         <form>
           <input
             type="text"
-            placeholder="searchbar"
+            placeholder="Search Question Aura"
             value={this.state.searchInput}
             onChange={this.update('searchInput')}
-            className="form-input-boxes"
+            className="searchbar"
           />
         </form>
           {this.search()}
