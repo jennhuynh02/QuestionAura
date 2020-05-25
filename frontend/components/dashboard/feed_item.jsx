@@ -110,7 +110,7 @@ class FeedItem extends React.Component {
 
       <div className="feed-item">
         <p className="feed-header">Answer * Recommended for you</p>
-        <p className="feed-header">
+        <p className="feed-author-name">
           {this.responderFirst}
           {' '}
           {this.responderLast}

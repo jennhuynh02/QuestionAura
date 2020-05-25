@@ -16,7 +16,9 @@ class Dashboard extends React.Component {
     } = this.props;
     return (
       <div className="dashboard">
-        <HeaderContainer openModal={openModal, closeModal} />
+        <div className="dashboard-header">
+          <HeaderContainer openModal={openModal, closeModal} />
+        </div>
         <div className="feed">
           <CategoriesContainer />
           <div className="the-content">

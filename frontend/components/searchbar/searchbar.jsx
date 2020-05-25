@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
           {this.searchResults.map((question) => (
             <li onClick={(e) => {e.preventDefault();
               location.href = `/#/questions/${question.id}`}} 
-              key={question.id} >{question.ask}</li>
+              key={question.id} className="searchbar-result" >{question.ask}</li>
           ))}
         </ul>
       );

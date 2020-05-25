@@ -12,11 +12,13 @@
   border: solid 1px lightgrey;
   background-color: white;
   margin-bottom: 10px;
+  border-radius: 3px;
 }
 
 .question-name {
-  font-size: 13px;
   color: #939598;
+  margin-bottom: 8px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 #question-invite {
@@ -24,7 +26,7 @@
   font-size: 18px;
   text-align: left;
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 .question-box {
