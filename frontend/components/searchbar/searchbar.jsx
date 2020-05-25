@@ -43,13 +43,16 @@ class SearchBar extends React.Component {
     return (
       <div className="dropdown">
         <form>
+          <div className="searchbar">
+            <img className="mag-glass" src={window.magnifyingGlass} />
           <input
             type="text"
             placeholder="Search Question Aura"
             value={this.state.searchInput}
             onChange={this.update('searchInput')}
-            className="searchbar"
-          />
+            className="search-input"
+            />
+          </div>
         </form>
           {this.search()}
       </div>
