@@ -7,9 +7,9 @@ import SignUpPage from './sessions/sign_up_page';
 import QuestionContainer from './questions/question_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DashboardContainer from './dashboard/dashboard_container';
-import Modal from "./modal/modal";
-import QuestionPageContainer from '../components/questions/question_page_container';
-import CategoryPageContainer from '../components/categories/category_page_container';
+import Modal from './modal/modal';
+import QuestionPageContainer from './questions/question_page_container';
+import CategoryPageContainer from './categories/category_page_container';
 
 const App = () => (
   <div>
@@ -20,7 +20,7 @@ const App = () => (
       <ProtectedRoute exact path="/" component={DashboardContainer} />
       <ProtectedRoute path="/askquestion" component={QuestionContainer} />
       <ProtectedRoute path="/questions/:questionId" component={QuestionPageContainer} />
-      <ProtectedRoute path="/category/:category" component={CategoryPageContainer} />
+      <ProtectedRoute exact path="/category/:category" component={CategoryPageContainer} />
     </Switch>
   </div>
 );

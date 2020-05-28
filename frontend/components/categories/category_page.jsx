@@ -1,5 +1,7 @@
 import React from 'react';
 import FeedItemContainer from '../dashboard/feed_item_container';
+import HeaderContainer from '../header/header_container';
+import CategoriesContainer from './categories_container';
 
 class CategoryPage extends React.Component {
   constructor(props) {
@@ -13,32 +15,34 @@ class CategoryPage extends React.Component {
     fetchQuestions();
   }
 
-  search() {
-    console.log(this.category);
+  render() {
     const { questions } = this.props;
-    for (let i = 0; i < questions.length; i += 1) {
-      if (questions[i].ask.includes(this.category)) {
+    console.log(this.props.category);
+    console.log(questions);
+    this.categoryResults = [];
+    for (let i = 0; i < questions.length; i++) {
+      if (questions[i].ask.toLowerCase().includes(this.props.category)) {
         this.categoryResults.push(questions[i]);
-        console.log(this.categoryResults);
       }
     }
-    if (this.categoryResults.length > 0) {
-      // return (<div>{this.categoryResults[0].ask}</div>);
-      // this.categoryResults.map((question) => {
-      //   console.log(question)
-        return(
-          <FeedItemContainer question={this.categoryResults[0]} key={this.categoryResults[0].id} />
-          )
-      // });
-    }
-  }
-
-  render() {
+    console.log(this.categoryResults);
+    const {
+      openModal, closeModal, first, second,
+    } = this.props;
     return (
-      <div>
-        {this.search()}
+      <div className="dashboard">
+        <div className="dashboard-header">
+          <HeaderContainer openModal={openModal, closeModal} />
+        </div>
+        <div className="feed">
+          <CategoriesContainer />
+          <div className="the-content">
+            {this.categoryResults.map((question) => (
+              <FeedItemContainer question={question} />
+            ))}
+          </div>
+        </div>
       </div>
-
     );
   }
 }

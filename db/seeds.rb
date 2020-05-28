@@ -21,9 +21,9 @@ users = User.create([
 questions = Question.create([
   {id: 10, ask: "What is Question Aura?", asker_id: 12},
   {id: 20, ask: "What's the best strategy for becoming a Leet-codeist?", asker_id: 22},
-  {id: 30, ask: "What was your experience like at App Academy?", asker_id: 32},
-  {id: 40, ask: "What are some of the best tech companies to work for in terms of: culture, room for growth, salary, perks, etc.?", asker_id: 42},
-  {id: 50, ask: "How do I help myself better understand recursions?", asker_id: 52},
+  {id: 30, ask: "What was your experience like at App Academy?  Did you learn how to code well?", asker_id: 32},
+  {id: 40, ask: "What are some of the best tech companies to work for in terms of: culture, career growth, salary, perks, etc.?", asker_id: 42},
+  {id: 50, ask: "How do I help myself better understand recursions?  I want to code more complex algorithms.", asker_id: 52},
   {id: 60, ask: "What are useful websites/applications for finance?  I'm looking for tools for investing and managing my finances.", asker_id: 62}
 ])
 answers = Answer.create([
