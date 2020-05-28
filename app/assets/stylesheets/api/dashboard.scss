@@ -43,10 +43,10 @@
     line-height: 18.2px;
     margin-bottom: 8px;
     padding: 10px;
+    width: -webkit-fill-available;
 }
 
-.category:hover {
-  text-decoration: underline;
+.category-bar:hover {
   background-color: #e6e7e8;
   cursor: pointer;  
 }
@@ -143,4 +143,18 @@
   border-top-style: solid;
   border-width: 1px;
   border-color: #dee0e1;
+}
+
+.category-bar {
+  display: flex;
+}
+
+.category-icon {
+  height: 25px;
+  width: 25px;
+  padding-top: 10px;
+}
+
+#feed-icon {
+  color: #B92B27;
 }
