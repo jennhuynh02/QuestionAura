@@ -24,7 +24,7 @@
   padding-left: 16px;
   padding-right: 16px;
   position: sticky;
-  width: 300px;
+  max-width: 300px;
 }
 
 .category-header {
@@ -43,7 +43,6 @@
     line-height: 18.2px;
     margin-bottom: 8px;
     padding: 10px;
-    width: -webkit-fill-available;
 }
 
 .category-bar:hover {
