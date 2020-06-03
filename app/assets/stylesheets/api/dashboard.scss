@@ -6,13 +6,11 @@
 }
 
 .dashboard-header {
-  position: fixed;
-  top: 0;
   width: 100%
 }
 
 .dashboard-header + .feed {
-  padding-top: 102px;
+  padding-top: 30px;
 }
 .categories-bar {
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
