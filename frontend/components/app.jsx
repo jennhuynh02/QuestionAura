@@ -11,12 +11,10 @@ import Modal from './modal/modal';
 import QuestionPageContainer from './questions/question_page_container';
 import TopicsPageContainer from './topics/topics_page_container';
 import TopicsContainer from './topics/topics_container';
-import HeaderContainer from './header/header_container';
 
 const App = () => (
   <div>
     <Modal />
-    <HeaderContainer />
     <Switch>
       <AuthRoute exact path="/login" component={WelcomePage} />
       <AuthRoute exact path="/signup" component={SignUpPage} />
