@@ -1,7 +1,6 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
 import AnswerContainer from './q_answer_container';
-import HeaderContainer from '../header/header_container';
 
 class QuestionPage extends React.Component {
   constructor(props) {
@@ -92,7 +91,6 @@ class QuestionPage extends React.Component {
 
     return (
       <div className="question-page">
-        <HeaderContainer />
         <div className="question-page-box">
         <p className="">
           {/* Question By:

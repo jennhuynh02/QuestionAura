@@ -12,8 +12,9 @@ class Dashboard extends React.Component {
 
   render() {
     const {
-      openModal, closeModal, first, second,
+      openModal, closeModal, first, second
     } = this.props;
+
     return (
       <div className="dashboard">
         <div className="feed">

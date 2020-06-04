@@ -15,6 +15,7 @@ class Feed extends React.Component {
     const {
       questions
     } = this.props;
+
     return (
       <div>
         {questions.map((question) => (

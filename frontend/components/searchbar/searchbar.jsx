@@ -22,7 +22,7 @@ class SearchBar extends React.Component {
     this.searchResults = [];
     const { questions } = this.props;
     for (let i = 0; i < questions.length; i += 1) {
-      if (questions[i].ask.includes(this.state.searchInput)) {
+      if (questions[i].ask.includes(this.state.searchInput) && this.searchResults.length !== 5) {
         this.searchResults.push(questions[i]);
       }
     }
