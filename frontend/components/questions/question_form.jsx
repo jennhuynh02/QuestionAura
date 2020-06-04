@@ -1,4 +1,5 @@
 import React from 'react';
+import TopicSelection from './topic_selection';
 
 class QuestionForm extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class QuestionForm extends React.Component {
       ask: this.props.question.ask,
       asker_id: this.props.currentUser,
       id: this.props.question.id,
+      topic_id: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -38,7 +40,8 @@ class QuestionForm extends React.Component {
 
 
   render() {
-    const { closeModal } = this.props;
+    const { closeModal, topics } = this.props;
+    console.log(this.state.topic_id)
     return (
       <div>
         <div className="question-box">
@@ -64,6 +67,7 @@ class QuestionForm extends React.Component {
               />
 
             </div>
+              {/* <TopicSelection topics={topics} topicId={this.state.topic_id} update={this.update('topic_id')} /> */}
             <div id="cancel-or-submit-question-section">
               <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
               <button className="ask-question-button">{this.props.formType}</button>
