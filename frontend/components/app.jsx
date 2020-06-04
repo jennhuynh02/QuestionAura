@@ -9,7 +9,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import DashboardContainer from './dashboard/dashboard_container';
 import Modal from './modal/modal';
 import QuestionPageContainer from './questions/question_page_container';
-import CategoryPageContainer from './categories/category_page_container';
 import TopicsPageContainer from './topics/topics_page_container';
 import TopicsContainer from './topics/topics_container';
 import HeaderContainer from './header/header_container';
@@ -24,7 +23,6 @@ const App = () => (
       <ProtectedRoute exact path="/" component={DashboardContainer} />
       <ProtectedRoute path="/askquestion" component={QuestionContainer} />
       <ProtectedRoute path="/questions/:questionId" component={QuestionPageContainer} />
-      <ProtectedRoute exact path="/category/:category" component={CategoryPageContainer} />
       <ProtectedRoute exact path="/topics" component={TopicsContainer} />
       <ProtectedRoute exact path="/topics/:topic" component={TopicsPageContainer} />
     </Switch>

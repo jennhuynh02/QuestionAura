@@ -1,4 +1,5 @@
 import React from 'react';
+import FeedItemContainer from '../dashboard/feed_item_container';
 
 class TopicPage extends React.Component {
   constructor(props) {
