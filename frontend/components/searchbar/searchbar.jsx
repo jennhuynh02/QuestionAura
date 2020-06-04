@@ -20,7 +20,14 @@ class SearchBar extends React.Component {
 
   search() {
     this.searchResults = [];
-    const { questions } = this.props;
+    const { questions, topics } = this.props;
+    let topicList = {};
+    if (topics.length > 0) {
+      for (let i = 0; i < topics.length; i++) {
+        topicList[topics[i].id] = topics[i].name
+      }
+    }
+    console.log(topicList)
     for (let i = 0; i < questions.length; i += 1) {
       if (questions[i].ask.includes(this.state.searchInput) && this.searchResults.length !== 5) {
         this.searchResults.push(questions[i]);
@@ -32,7 +39,11 @@ class SearchBar extends React.Component {
           {this.searchResults.map((question) => (
             <li onClick={(e) => {e.preventDefault();
               location.href = `/#/questions/${question.id}`}} 
-              key={question.id} className="searchbar-result" >{question.ask}</li>
+              key={question.id} className="searchbar-result" >
+                {/* <span className="topic-search">Question</span> */}
+                <img className="search-img" src={window[topicList[question.topic_id]]} />
+                {question.ask}
+                </li>
           ))}
         </ul>
       );
