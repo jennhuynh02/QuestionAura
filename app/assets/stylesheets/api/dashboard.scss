@@ -1,8 +1,10 @@
+#page {
+  background-color: #efefef;
+}
+
 .dashboard {
   height: 100%;
   width: 100%;
-  background-color: #efefef;
-
 }
 
 .dashboard-header {
@@ -34,6 +36,7 @@
     padding: 10px;
     height: auto;
 }
+
 .category {
     color: #636466;
     font-weight: 400;
@@ -41,6 +44,7 @@
     line-height: 18.2px;
     margin-bottom: 8px;
     padding: 10px;
+    font-size: 13px;
 }
 
 .category-bar:hover {

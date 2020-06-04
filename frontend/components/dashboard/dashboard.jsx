@@ -1,7 +1,7 @@
 import React from 'react';
 import HeaderContainer from '../header/header_container';
-import CategoriesContainer from '../categories/categories_container';
 import FeedContainer from './feed_container';
+import TopicsContainer from '../topics/topics_container';
 
 class Dashboard extends React.Component {
 
@@ -16,11 +16,8 @@ class Dashboard extends React.Component {
     } = this.props;
     return (
       <div className="dashboard">
-        <div className="dashboard-header">
-          <HeaderContainer openModal={openModal, closeModal} />
-        </div>
         <div className="feed">
-          <CategoriesContainer />
+          <TopicsContainer />
           <div className="the-content">
             <div className="question-click" onClick={() => openModal({ question: -1 })}>
               <p className="question-name">

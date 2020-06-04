@@ -17,12 +17,10 @@ class Question < ApplicationRecord
   belongs_to :asker,
   class_name: :User
 
-  belongs_to :topic,
-  class_name: :Topic
-
   has_many :answers,
   foreign_key: :question_id,
   dependent: :destroy
 
+  has_and_belongs_to_many :topics
 
 end

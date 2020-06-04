@@ -1,11 +1,12 @@
 # == Schema Information
 #
-# Table name: topics
+# Table name: topic_questions
 #
-#  id         :bigint           not null, primary key
-#  name       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :bigint           not null, primary key
+#  question_id :integer
+#  topic_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # This model initially had no columns defined. If you add columns to the

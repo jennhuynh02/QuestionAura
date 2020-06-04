@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import {
-  fetchUsers, fetchUser } from './actions/user_action';
+// import { fetchTopics, fetchTopic } from "./actions/topic_actions";
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -19,8 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     store = configureStore();
   }
-  window.fetchUsers = fetchUsers;
-  window.fetchUser = fetchUser;
+
+  // window.fetchTopics = fetchTopics;
+  // window.fetchTopic = fetchTopic;
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;

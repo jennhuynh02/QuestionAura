@@ -1,7 +1,6 @@
 import React from 'react';
 import FeedItemContainer from '../dashboard/feed_item_container';
 import HeaderContainer from '../header/header_container';
-import CategoriesContainer from './categories_container';
 
 class CategoryPage extends React.Component {
   constructor(props) {
@@ -35,7 +34,6 @@ class CategoryPage extends React.Component {
           <HeaderContainer openModal={openModal, closeModal} />
         </div>
         <div className="feed">
-          <CategoriesContainer />
           <div className="the-content">
             {this.categoryResults.map((question) => (
               <FeedItemContainer question={question} />

@@ -19,11 +19,11 @@ users = User.create([
 ])
 
 questions = Question.create([
-  {id: 10, ask: "What is Question Aura?", asker_id: 12},
-  {id: 20, ask: "What's the best strategy for becoming a Leet-codeist?", asker_id: 22},
+  {id: 10, ask: "What is Question Aura?", asker_id: 12, topic_id: 10},
+  {id: 20, ask: "What's the best strategy for becoming a Leet-codeist?", asker_id: 22, topic_id: 1},
   {id: 30, ask: "What was your experience like at App Academy?  Did you learn how to code well?", asker_id: 32},
   {id: 40, ask: "What are some of the best tech companies to work for in terms of: culture, career growth, salary, perks, etc.?", asker_id: 42},
-  {id: 50, ask: "How do I help myself better understand recursions?  I want to code more complex algorithms.", asker_id: 52},
+  {id: 50, ask: "How do I help myself better understand recursions?  I want to code more complex algorithms.", asker_id: 52, topic_id: 1},
   {id: 60, ask: "What are useful websites/applications for finance?  I'm looking for tools for investing and managing my finances.", asker_id: 62}
 ])
 answers = Answer.create([
@@ -33,4 +33,20 @@ answers = Answer.create([
   {id: 404, answer: "The best tech companies to work for are in San Francisco and Silicon Valley - companies include Google, Facebook, Square, Splunk, DoorDash, Samsara, Salesforces, and other startups that value a good culture.", responder_id: 12, question_id: 40},
   {id: 505, answer: "A good strategy for understanding recursions is to draw out each stack frame of the recursive problem/solution.  Doing so will help you understand that value that is being returned at each recursive step.", responder_id: 32, question_id: 50},
   {id: 606, answer: "Good finance management apps include Capital One, Robinhood, Chase Bank, and a good excel sheet to help you keep track of your finances.  An excel sheet, while tedious, will walk you through your spending habits.", responder_id: 42, question_id: 60}
+])
+
+
+topics = Topic.create([
+  {id: 1, name: "Programming"},
+  {id: 2, name: "Finance"},
+  {id: 3, name: "Books"},
+  {id: 4, name: "Criminology"},
+  {id: 5, name: "Philosophy"},
+  {id: 6, name: "Nature"},
+  {id: 7, name: "Psychology"},
+  {id: 8, name: "Music"},
+  {id: 9, name: "Career"},
+  {id: 10, name: "Technology"},
+  {id: 11, name: "Art"},
+  {id: 12, name: "History"}
 ])
