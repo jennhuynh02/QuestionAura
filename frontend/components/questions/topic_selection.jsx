@@ -3,7 +3,8 @@ import React from 'react';
 const TopicSelection = (props) => {
   return (
     <div>
-      {props.topics.map((el) => (
+      {props.topics.map((el) => {
+      return (
         <label className="container" key={el.id}>
           <p className="topic-label">
             {el.name}
@@ -14,7 +15,8 @@ const TopicSelection = (props) => {
           onChange={props.update}/>
           <span className="checkmark" />
         </label>
-      ))}
+      )
+      })}
     </div>
   );
 };
