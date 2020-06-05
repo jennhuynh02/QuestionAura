@@ -15,11 +15,11 @@ const WelcomePage = () => (
       </div>
       <div className="author-info">
         <p className="author-name">
-          <a href="https://www.linkedin.com/in/jenniferanhhuynh/">
+          <a href="https://www.linkedin.com/in/jenniferanhhuynh/" target="_blank">
             <i className="fa fa-linkedin-square" style={{ color: '#0077b5', fontSize: '60px', marginRight: '20px' }} />
           </a>
           Made by: Jennifer Huynh
-          <a href="https://github.com/jennhuynh02">
+          <a href="https://github.com/jennhuynh02" target="_blank">
             <i className="fa fa-github" style={{ color: 'black', fontSize: '60px', marginLeft: '20px' }} />
           </a>
         </p>

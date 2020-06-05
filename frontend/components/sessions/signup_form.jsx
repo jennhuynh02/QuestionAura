@@ -27,6 +27,11 @@ class SignupForm extends React.Component {
     this.props.processForm(user);
   }
 
+  cancelClick(e) {
+    e.preventDefault();
+    location.href="/#/login";
+  }
+
   // renderErrors() {
   //   return (
   //     <ul >
@@ -90,13 +95,14 @@ class SignupForm extends React.Component {
             onChange={this.update('password')}
             className="form-input-boxes"
           />
+          <p className="signup-agreement">By clicking "Sign Up" you indicate that you have read and agree to Question Aura's Terms of Human Discourse and Group Education.</p>
 
-          <button type="submit" className="form-login-buttons">Sign Up</button>
+          <div className="signup-form-buttons">
+            <button type="submit" className="form-login-buttons">Sign Up</button>
+            <button onClick={(e) =>this.cancelClick(e)} className="form-login-buttons">Cancel</button>
+          </div>
+
         </form>
-        <h5>
-          {this.props.navLink}
-        </h5>
-        {/* {this.renderErrors()} */}
       </div>
     );
   }

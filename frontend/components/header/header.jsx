@@ -17,6 +17,10 @@ class Header extends React.Component {
     return (
       <div id="header">
         <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
+        <h1 id="feedlogo" onClick={this.handleLogoClick}>
+          <img className="home-category-icon" src={window.Home} />
+          <p className="home-name">Home</p>
+        </h1>
 
         <SearchBarContainer />
 

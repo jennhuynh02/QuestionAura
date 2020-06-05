@@ -50,7 +50,6 @@ class LoginForm extends React.Component {
             />
 
           <br />
-
           <input
             type="password"
             placeholder="Password"
