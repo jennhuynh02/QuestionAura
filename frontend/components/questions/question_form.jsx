@@ -99,7 +99,7 @@ class QuestionForm extends React.Component {
 
           </div>
           <div id="cancel-or-submit-question-section">
-            <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
+            <button className="cancel-button" onClick={(e) => this.props.closeModal(e)}>Cancel</button>
             <button className="ask-question-button" onClick={(e) => this.handleQuestion(e)}>{this.props.formType}</button>
           </div>
         </form>
