@@ -95,7 +95,7 @@ class QuestionPage extends React.Component {
         <HeaderContainer />
         <div className="question-page-box">
         <p className="">
-          Question By:
+          Question asked by:
           {' '}
           {this.askerFirst}
           {' '}
