@@ -98,8 +98,8 @@ class SignupForm extends React.Component {
           <p className="signup-agreement">By clicking "Sign Up" you indicate that you have read and agree to Question Aura's Terms of Human Discourse and Group Education.</p>
 
           <div className="signup-form-buttons">
-            <button type="submit" className="form-login-buttons">Sign Up</button>
             <button onClick={(e) =>this.cancelClick(e)} className="form-login-buttons">Cancel</button>
+            <button type="submit" className="form-login-buttons">Sign Up</button>
           </div>
 
         </form>
