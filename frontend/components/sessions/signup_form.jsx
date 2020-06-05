@@ -47,24 +47,28 @@ class SignupForm extends React.Component {
           <br />
           <div className="fit-names">
 
-            FIRST NAME
-            <input
-              type="text"
-              placeholder="First Name"
-              value={this.state.first_name}
-              onChange={this.update('first_name')}
-              className="form-input-boxes"
+            <div className="name-fit">
+              <label className="signup-input-labels">FIRST NAME</label>
+              <input
+                type="text"
+                placeholder="First Name"
+                value={this.state.first_name}
+                onChange={this.update('first_name')}
+                className="session-form-input-boxes"
+                id="adjust-signup-boxes"
               />
+            </div>
 
-            <br />
-            LAST NAME
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={this.state.last_name}
-              onChange={this.update('last_name')}
-              className="form-input-boxes"
+            <div className="name-fit">
+              <label className="signup-input-labels">LAST NAME</label>
+              <input
+                type="text"
+                placeholder="Last Name"
+                value={this.state.last_name}
+                onChange={this.update('last_name')}
+                className="session-form-input-boxes"
               />
+            </div>
 
           </div>
           <br />
@@ -75,7 +79,7 @@ class SignupForm extends React.Component {
             value={this.state.email}
             onChange={this.update('email')}
             className="form-input-boxes"
-            />
+          />
 
           <br />
           PASSWORD
@@ -85,7 +89,7 @@ class SignupForm extends React.Component {
             value={this.state.password}
             onChange={this.update('password')}
             className="form-input-boxes"
-            />
+          />
 
           <button type="submit" className="form-login-buttons">Sign Up</button>
         </form>

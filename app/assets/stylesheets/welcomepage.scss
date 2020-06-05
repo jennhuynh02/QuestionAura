@@ -58,7 +58,7 @@
 }
 
  .session-form {
-    width: 200px;
+    width: 220px;
     color: #949494;
     font-size: 13px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -79,7 +79,11 @@
   
   .fit-names {
     display: flex;
-    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #adjust-signup-boxes {
+    margin-right: 10px;
   }
 
   #form-title-name {
@@ -169,7 +173,7 @@
     line-height: 1.4;
     padding-left: 8px;
     padding-right: 8px;
-    min-height: 32px;
+    min-height: 27px;
     margin-bottom: 8px;
     font-weight: 400;
     display: block;
@@ -178,6 +182,33 @@
     border: 1px solid #e2e2e2;
     border-radius: 3px;
     box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+}
+
+.name-fit {
+  display: inline-block;
+}
+
+.signup-input-labels {
+  display: block;
+}
+
+.session-form-input-boxes {
+    float: right;
+    box-sizing: border-box;
+    padding: 3px 5px;
+    height: 15px;
+    width: 115px;
+    min-height: 27px;
+    background: #fff;
+    outline: 0;
+    border: 1px solid #e2e2e2;
+    border-radius: 3px;
+    box-shadow: inset 0 1px 1px rgba(200,200,200,0.3);
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    font-weight: 400;
+    display: block;
 }
 
 .info-links {

@@ -22,10 +22,43 @@ class FeedItem extends React.Component {
 
   getDropdown() {
     if (this.props.question.asker_id === this.props.currentUser.id) {
+      if (this.responderId === this.props.currentUser.id) {
+        return (
+          <div className="dropdown">
+            <p className="drop-button-dots">* * *</p>
+            <ul className="dropdown-content">
+            <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
+              Answer Question
+            </li>
+
+            <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
+              Edit Answer
+            </li>
+
+            <li className="dropdown-options" onClick={() => this.props.deleteAnswer(this.answerId)}>
+              Delete Answer
+            </li>
+
+
+            <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
+              Edit Question
+            </li>
+
+            <li className="dropdown-options" onClick={() => this.props.deleteQuestion(this.questionId)}>
+              Delete Question
+            </li>
+            </ul>
+          </div>
+        );
+      }
       return (
         <div className="dropdown">
           <p className="drop-button-dots">* * *</p>
           <ul className="dropdown-content">
+            <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
+              Answer Question
+            </li>
+
             <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
               Edit Question
             </li>
@@ -36,7 +69,8 @@ class FeedItem extends React.Component {
           </ul>
         </div>
       );
-    } if (this.responderId === this.props.currentUser.id) {
+    }
+    if (this.responderId === this.props.currentUser.id) {
       return (
         <div className="dropdown">
           <p className="drop-button-dots">* * *</p>
