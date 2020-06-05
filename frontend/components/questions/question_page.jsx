@@ -95,11 +95,11 @@ class QuestionPage extends React.Component {
         <HeaderContainer />
         <div className="question-page-box">
         <p className="">
-          {/* Question By:
+          Question By:
           {' '}
           {this.askerFirst}
           {' '}
-          {this.askerLast} */}
+          {this.askerLast}
         </p>
           <p className="question-page-question">{ this.questionString }</p>
 

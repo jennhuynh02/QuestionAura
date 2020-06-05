@@ -9,6 +9,7 @@ class QuestionForm extends React.Component {
       asker_id: this.props.currentUser,
       id: this.props.question.id,
       topic_id: '',
+      topicToggle: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,6 +17,13 @@ class QuestionForm extends React.Component {
   update(field) {
     return (e) => this.setState({
       [field]: e.currentTarget.value,
+    });
+  }
+
+  handleQuestion(e) {
+    e.preventDefault();
+    this.setState({
+      topicToggle: !this.state.topicToggle
     });
   }
 
@@ -38,41 +46,75 @@ class QuestionForm extends React.Component {
     );
   }
 
+  showForm() {
+    if (this.state.topicToggle === false) {
+      return (
+      <div>
+        <div className="question-header">
+          <h1 className="question-form-topics-header">Edit Topics</h1>
+        </div>
+        <form id="question-form" onSubmit={this.handleSubmit}>
+          <div className="inside-question-topic-form">
+            <p className="question-topic-instructions">
+              Make sure this question has the right topics:
+            </p>
+            <p className="question-on-topics-form">
+              {this.state.ask}
+            </p>
+        <div>
+          <TopicSelection topics={this.props.topics} topicId={this.state.topic_id} update={this.update('topic_id')} />
+        </div>
+
+          </div>
+          <div id="cancel-or-submit-question-section">
+            <button className="cancel-button" onClick={(e) => this.props.closeModal(e)}>Cancel</button>
+            <button className="ask-question-button">Done</button>
+          </div>
+        </form>
+      </div>
+      );
+    }
+    return (
+      <div>
+        <div className="question-header">
+          <h1 className="question-form-name">Question Form</h1>
+        </div>
+        <form id="question-form" onSubmit={this.handleQuestion}>
+          <div className="inside-question-form">
+
+            <p className="question-author">
+              {this.props.first}
+              {' '}
+              {this.props.last}
+              {' '}
+              asked
+            </p>
+            <input
+              type="text"
+              value={this.state.ask}
+              onChange={this.update('ask')}
+              placeholder="Start your question with ''What'', ''How'', ''Why'', etc."
+              className="question-input"
+            />
+
+          </div>
+          <div id="cancel-or-submit-question-section">
+            <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
+            <button className="ask-question-button" onClick={(e) => this.handleQuestion(e)}>{this.props.formType}</button>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
 
   render() {
     const { closeModal, topics } = this.props;
-    console.log(this.state.topic_id)
+
     return (
       <div>
         <div className="question-box">
-          <div className="question-header">
-            <h1 className="question-form-name">Question Form</h1>
-          </div>
-          <form id="question-form" onSubmit={this.handleSubmit}>
-            <div className="inside-question-form">
-
-              <p className="question-author">
-                {this.props.first}
-                {' '}
-                {this.props.last}
-                {' '}
-                asked
-              </p>
-              <input
-                type="text"
-                value={this.state.ask}
-                onChange={this.update('ask')}
-                placeholder="Start your question with What, How, Why, etc."
-                className="question-input"
-              />
-
-            </div>
-              {/* <TopicSelection topics={topics} topicId={this.state.topic_id} update={this.update('topic_id')} /> */}
-            <div id="cancel-or-submit-question-section">
-              <button className="cancel-button" onClick={(e) => closeModal(e)}>Cancel</button>
-              <button className="ask-question-button">{this.props.formType}</button>
-            </div>
-          </form>
+          {this.showForm()}
         </div>
       </div>
     );
