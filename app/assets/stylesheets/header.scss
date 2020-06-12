@@ -82,14 +82,10 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  width: inherit;
+  width: max-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 14px 18px;
   z-index: 1;
   height: auto;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 16px;
   border: solid 1px lightgray;
 }
 
@@ -110,6 +106,7 @@
 // ul > li
 .dropdown-content > li:hover {
   background-color: #efefef;
+  margin: 0;
   cursor: pointer; 
 }
 
@@ -124,7 +121,6 @@
   padding-bottom: 8px;
   padding-left: 16px;
   padding-right: 16px;
-  width: max-content;
   font-size: 13px;
   color: #282829;
 }
@@ -185,4 +181,22 @@
   outline: none;
   border: none;
   flex: 1 1 0%;
+}
+
+.user-dropdown-name{
+  font-weight: bold;
+  font-size: 18px;
+  color: #282829;
+  font-weight: bold;
+  font-size: 18px;
+  color: #282829;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.user-dropdown-pic{
+  height: 40px;
+  padding: 10px;
 }

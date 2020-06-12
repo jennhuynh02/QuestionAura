@@ -13,7 +13,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { logout, openModal } = this.props;
+    const { logout, openModal, first, second } = this.props;
     return (
       <div id="header">
         <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
@@ -27,7 +27,8 @@ class Header extends React.Component {
         <div className="dropdown">
           <img className="profile-dropdown" src={window.profilePic} />
           <ul className="dropdown-content">
-
+            <img className="user-dropdown-pic" src={window.profilePic} />
+            <p className="user-dropdown-name">{first} {second}</p>
             <li className="dropdown-options" onClick={() => logout()}>
               Logout
             </li>

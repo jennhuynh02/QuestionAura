@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
-        <HeaderContainer />
+        <HeaderContainer first={first} second={second}/>
         <div className="feed">
           <TopicsContainer />
           <div className="the-content">
