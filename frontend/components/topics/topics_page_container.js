@@ -11,6 +11,8 @@ const mapStateToProps = (state, { match }) => ({
   topics: Object.values(state.entities.topics),
   questions: Object.values(state.entities.questions),
   answers: Object.values(state.entities.answers),
+  first: state.entities.users[state.session.id].first_name,
+  second: state.entities.users[state.session.id].last_name,
   users: Object.values(state.entities.users),
   currentUser: state.entities.users[state.session.id],
 });

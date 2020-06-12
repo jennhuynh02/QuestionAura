@@ -12,7 +12,7 @@ class TopicPage extends React.Component {
   }
 
   render() {
-    const { questions, topicName, topics } = this.props;
+    const { questions, topicName, topics, first, second } = this.props;
 
     const mainTopic = [];
     let mainTopicId = 1;
@@ -36,7 +36,7 @@ class TopicPage extends React.Component {
 
     return (
       <div>
-        <HeaderContainer />
+        <HeaderContainer first={first} second={second} />
 
         <div className="topic-page">
           <TopicsContainer />
