@@ -20,7 +20,7 @@
  }
 
  #logo:hover {
-   text-decoration: underline;
+  //  text-decoration: underline;
    cursor: pointer; 
  }
 
@@ -90,6 +90,7 @@
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 16px;
+  border: solid 1px lightgray;
 }
 
 // div ul
