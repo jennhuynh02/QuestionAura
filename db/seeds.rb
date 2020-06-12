@@ -87,7 +87,7 @@ answers = Answer.create([
   {id: 333, answer: "The best tech companies to work for are in San Francisco and Silicon Valley - companies include Google, Facebook, Square, Splunk, DoorDash, Samsara, Salesforces, and other startups that value a good culture.", responder_id: 104, question_id: 217, topic_id: 9},
   {id: 334, answer: "Startups are a good place to work if you’re interested in learning a lot and trying both front and back end development.", responder_id: 103, question_id: 217, topic_id: 9},
   {id: 335, answer: "App Academy was a very intense and rewarding experience.  I attended this program to further my programming skills and code with others.  It was worth it, as I soon got my dream job after!", responder_id: 104, question_id: 218, topic_id: 9},
-  {id: 336, answer: "I attended App Academy because I was interested in learning how to code.  I learned how to code in Ruby and Javascript, and use other technologies as well (PostgreSQL & MongoDB).  I've made a lot of great friends and learned a lot while I was in the program.  I would highly recommend this program to anyone who is serious about learning to code and becoming a programmer.", responder_id: 103, question_id: 218, topic_id: 9},
+  {id: 336, answer: "I attended App Academy because I was interested in learning how to code and becoming a great programmer.  I learned how to code in Ruby and Javascript, as well as use other technologies (like database storage with PostgreSQL & MongoDB).  I've made a lot of great friends and learned a lot while I was in the program.  I would highly recommend this program to anyone who is serious about learning to code and becoming a programmer.", responder_id: 103, question_id: 218, topic_id: 9},
   {id: 337, answer: "In 1832, it was developed by Robert Anderson.  It was first successfully made in 1890 by William Morrison.", responder_id: 104, question_id: 219, topic_id: 10},
   {id: 338, answer: "Tesla was the first company to mass produce electric cars.  While not the first, it was the first successful company that made electric cars common.", responder_id: 103, question_id: 219, topic_id: 10},
   {id: 339, answer: "Question Aura is web application that serves as a question and answer online forum.  It was an inspired clone of the author programmer's favorite website - Quora.", responder_id: 104, question_id: 220, topic_id: 10},
@@ -98,8 +98,8 @@ answers = Answer.create([
   {id: 344, answer: "It is an expression of human creativity and skills.", responder_id: 101, question_id: 222, topic_id: 11},
   {id: 345, answer: "World War II (1939-1945, many countries were involved and there is an estimate of 70 million deaths.", responder_id: 102, question_id: 223, topic_id: 12},
   {id: 346, answer: "The War in Afganistan - this took place after the 9/11 attacks and is a war against terrorism.", responder_id: 101, question_id: 223, topic_id: 12},
-  {id: 347, answer: "The Vietnam War, also known as the Second IndoChina War, in which the communist regime aimed to take over the South, which they did.", responder_id: 102, question_id: 224, topic_id: 12},
-  {id: 348, answer: "Korean war between North and South Korea.  The countries remain divided till this day.", responder_id: 101, question_id: 224, topic_id: 12}
+  {id: 347, answer: "The Vietnam War, also known as the Second IndoChina War, in which the communist regime had aimed to take over the Southern part of the country.  The Americans tried to help but was unable to do so.  The terrain made guerilla warfare possible, and the Viet Cong used this as their strategy to win.", responder_id: 102, question_id: 224, topic_id: 12},
+  {id: 348, answer: "The Korean war between North and South Korea.  The two countries remain divided till this day.", responder_id: 101, question_id: 224, topic_id: 12}
 ])
 
 

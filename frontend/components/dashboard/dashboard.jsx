@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
 
 
   componentDidMount() {
-    this.props.fetchQuestions();
+    this.props.fetchQuestions(); 
   }
 
   render() {
