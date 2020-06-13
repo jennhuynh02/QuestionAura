@@ -59,6 +59,10 @@ class FeedItem extends React.Component {
               Answer Question
             </li>
 
+            <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
+              Edit Answer
+            </li>
+
             <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
               Edit Question
             </li>
