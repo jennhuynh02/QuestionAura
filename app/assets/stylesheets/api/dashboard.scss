@@ -169,6 +169,13 @@
 }
 
 .center-feed-image {
-  background-color: rgb(247, 247, 248);
   text-align: center;
+  box-sizing: border-box;
+  background-color: rgb(247, 247, 248);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 3px;
 }
