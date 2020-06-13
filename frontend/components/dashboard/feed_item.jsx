@@ -144,6 +144,7 @@ class FeedItem extends React.Component {
       }
     }
 
+    const photoImageShow = <div className="center-feed-image"><img className="image-dashboard" src={photo} /></div>;
 
     this.questionId = question.id;
 
@@ -162,9 +163,12 @@ class FeedItem extends React.Component {
         <p className="feed-answer">
           { a }
           <br />
-          <div className="center-feed-image">
-            <img className="image-dashboard" src={photo} />
-          </div>
+          {
+            photo
+            ? photoImageShow :
+            ""
+          }
+
         </p>
 
         <div className="dropdown-area">
