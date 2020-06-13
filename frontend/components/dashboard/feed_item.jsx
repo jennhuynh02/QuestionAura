@@ -27,26 +27,25 @@ class FeedItem extends React.Component {
           <div className="dropdown">
             <p className="drop-button-dots">* * *</p>
             <ul className="dropdown-content">
-            <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
-              Answer Question
-            </li>
+              <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
+                Answer Question
+              </li>
 
-            <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
-              Edit Answer
-            </li>
+              <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
+                Edit Answer
+              </li>
 
-            <li className="dropdown-options" onClick={() => this.props.deleteAnswer(this.answerId)}>
-              Delete Answer
-            </li>
+              <li className="dropdown-options" onClick={() => this.props.deleteAnswer(this.answerId)}>
+                Delete Answer
+              </li>
 
+              <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
+                Edit Question
+              </li>
 
-            <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
-              Edit Question
-            </li>
-
-            <li className="dropdown-options" onClick={() => this.props.deleteQuestion(this.questionId)}>
-              Delete Question
-            </li>
+              <li className="dropdown-options" onClick={() => this.props.deleteQuestion(this.questionId)}>
+                Delete Question
+              </li>
             </ul>
           </div>
         );
@@ -57,10 +56,6 @@ class FeedItem extends React.Component {
           <ul className="dropdown-content">
             <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
               Answer Question
-            </li>
-
-            <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
-              Edit Answer
             </li>
 
             <li className="dropdown-options" onClick={() => this.props.openModal({ editQuestion: this.questionId })}>
@@ -100,9 +95,6 @@ class FeedItem extends React.Component {
         <ul className="dropdown-content">
           <li className="dropdown-options" onClick={() => this.props.openModal({ answer: this.props.question.id })}>
             Answer Question
-          </li>
-          <li className="dropdown-options" onClick={() => this.props.openModal({ editAnswer: this.answerId })}>
-            Edit Answer
           </li>
         </ul>
       </div>
@@ -165,8 +157,8 @@ class FeedItem extends React.Component {
           <br />
           {
             photo
-            ? photoImageShow :
-            ""
+              ? photoImageShow
+              : ''
           }
 
         </p>
