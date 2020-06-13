@@ -16,7 +16,7 @@ class Topics extends React.Component {
   render() {
     const topics = this.props.topics.map((topic) => (
       <li key={topic.id}>
-        <Link className="link" to={"/topics/" + topic.name}>
+        <Link className="link" to={`/topics/${topic.name}`}>
           <div className="category-bar">
             <img className="category-icon" src={window[topic.name]} />
             <span className="category">{topic.name}</span>
@@ -39,7 +39,12 @@ class Topics extends React.Component {
           </li>
           {topics}
         </ul>
-        <p className="resources">About * Careers * Terms * Privacy * Acceptable Use * Businesses</p>
+        <p>
+          <a className="resources" href="https://github.com/jennhuynh02" target="_blank">GitHub</a>
+          <span className="resources-spacing">*</span>
+          <a className="resources" href="https://www.linkedin.com/in/jenniferanhhuynh/" target="_blank">LinkedIn</a>
+          {/* About * Careers * Terms * Privacy * Acceptable Use * Businesses */}
+        </p>
       </div>
     );
   }

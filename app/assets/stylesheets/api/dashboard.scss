@@ -142,9 +142,12 @@
 .resources {
   font-size: 13px;
   color: #939598;
-  border-top-style: solid;
-  border-width: 1px;
-  border-color: #dee0e1;
+  border-color: #dee0e1;    
+  text-decoration: none;
+}
+
+.resources:hover {
+  text-decoration-line: underline;
 }
 
 .category-bar {
