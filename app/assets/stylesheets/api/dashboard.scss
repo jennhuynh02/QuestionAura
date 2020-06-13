@@ -23,7 +23,7 @@
   margin-left: -16px;  
   padding-left: 16px;
   padding-right: 16px;
-  position: sticky;
+  position: fixed;
   max-width: 140px;
 }
 
@@ -178,4 +178,8 @@
   border-color: initial;
   border-image: initial;
   border-radius: 3px;
+}
+
+.the-content {
+  padding-left: 150px;
 }
