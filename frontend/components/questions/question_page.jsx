@@ -57,7 +57,7 @@ class QuestionPage extends React.Component {
 
   render() {
     const {
-      questions, answers, questionId, openModal, deleteQuestion, deleteAnswer, users
+      questions, answers, questionId, openModal, deleteQuestion, deleteAnswer, users, first, second,
     } = this.props;
 
     let q;
@@ -92,15 +92,15 @@ class QuestionPage extends React.Component {
 
     return (
       <div className="question-page">
-        <HeaderContainer />
+        <HeaderContainer first={first} second={second} />
         <div className="question-page-box">
-        <p className="">
-          Question asked by:
-          {' '}
-          {this.askerFirst}
-          {' '}
-          {this.askerLast}
-        </p>
+          <p className="question-page-author-name">
+            Question asked by:
+            {' '}
+            {this.askerFirst}
+            {' '}
+            {this.askerLast}
+          </p>
           <p className="question-page-question">{ this.questionString }</p>
 
           <div className="dropdown-area">
