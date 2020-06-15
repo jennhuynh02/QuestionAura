@@ -3,6 +3,10 @@
   justify-content: space-around;
   align-items: center;
   background-color: rgb(255, 255, 255);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: -webkit-fill-available;
   height: 40px;
   padding: 5px;
   padding-right: 25px;

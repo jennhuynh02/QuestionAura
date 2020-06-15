@@ -24,6 +24,7 @@
   padding-left: 16px;
   padding-right: 16px;
   max-width: 140px;
+  position: fixed;
 }
 
 .category-header {
@@ -85,6 +86,7 @@
   width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
   padding-top: 30px;
   padding-left: 24px;
   padding-right: 24px;
@@ -177,4 +179,8 @@
   border-color: initial;
   border-image: initial;
   border-radius: 3px;
+}
+
+.the-content {
+  margin-left: 170px;
 }
