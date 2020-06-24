@@ -11,10 +11,7 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
-  padding-top: 30px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
+  padding: 30px 24px 24px 24px;
 }
 
 .topic-dash {
@@ -36,10 +33,7 @@
 
 .topic-info {
   display: flex;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  padding-bottom: 8px;
+  padding: 16px 16px 8px 16px;
   box-sizing: border-box;
   direction: ltr;
   border-left-style: solid;
@@ -77,6 +71,5 @@
 
 .resources-spacing{
   color: lightgrey;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 0px 5px 0px 5px;
 }

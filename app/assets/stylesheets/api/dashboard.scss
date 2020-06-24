@@ -12,7 +12,7 @@
 }
 
 .dashboard-header + .feed {
-  padding-top: 30px;
+  padding: 30px 0px 0px 0px;
 }
 .categories-bar {
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
@@ -21,8 +21,7 @@
   height: 632px;
   line-height: 21px;
   margin-left: -16px;  
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 0px 16px 0px 16px;
   max-width: 140px;
   position: fixed;
 }
@@ -74,10 +73,7 @@
   font-weight: 400;
   height: 30px;
   line-height: 21px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
+  padding: 5px 15px 5px 15px;
   color: white;
  }
 
@@ -87,20 +83,14 @@
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
-  padding-top: 30px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 24px;
+  padding: 30px 24px 24px 24px;
 }
 
 .feed-item {
   height: auto;
   border: solid 1px lightgray;
   background-color: white;
-  padding-bottom: 4px;
-  padding-top: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 16px 16px 4px 16px;
   margin-bottom: 10px;
   border-radius: 3px;
 }
@@ -158,7 +148,7 @@
 .category-icon {
   height: 25px;
   width: 25px;
-  padding-top: 10px;
+  padding: 10px 0px 0px 0px;
 }
 
 #feed-icon {

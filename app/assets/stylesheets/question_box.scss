@@ -1,10 +1,7 @@
 
 .question-click {
   line-height: 21px;
-  padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
+  padding: 16px;
   background: border-box;
   display: flex;
   flex-direction: column;
@@ -97,10 +94,7 @@ flex-direction: column;
   border-top-right-radius: 1000px;
   font-weight: 500;
   text-size-adjust: 100%;
-  padding-bottom: 7px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 7px;
+  padding: 7px 20px 7px 20px;
   border-color: #2e69ff;
 }
 .ask-question-button:hover {
@@ -139,10 +133,7 @@ flex-direction: column;
   direction: ltr;
   font-weight: 500;
   color: #b92b27;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 16px 24px 16px 24px;
   display: block;
   text-align: inherit;
   text-size-adjust: 100%;
@@ -162,8 +153,7 @@ flex-direction: column;
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #dee0e1;
-  padding-bottom: 8px;
-  padding-top: 20px
+  padding: 20px 0px 8px 0px;
 }
 
 .answer-text {

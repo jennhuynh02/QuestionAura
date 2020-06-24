@@ -2,7 +2,7 @@
 .container {
   display: flex;
   position: relative;
-  padding-left: 35px;
+  padding: 0px 0px 0px 35px;
   margin-top: 12px;
   margin-bottom: 12px;
   cursor: pointer;
@@ -75,10 +75,7 @@
   color: rgb(40, 40, 41);
   box-sizing: border-box;
   direction: ltr;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding: 16px 24px 16px 24px;
   cursor: pointer;
 }
 
@@ -109,12 +106,9 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   box-sizing: border-box;
   direction: ltr;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding: 5px 8px 5px 8px;
   display: inline-flex;
   border-radius: 3px;
   white-space: nowrap;
-  padding-left: 8px;
-  padding-right: 8px;
   background-color: #f7f7f8;
 }
