@@ -66,17 +66,6 @@ ActiveRecord::Schema.define(version: 2020_06_04_051346) do
     t.index ["name"], name: "index_topics_on_name", unique: true
   end
 
-  create_table "topics_questions_{:id=>false}", id: false, force: :cascade do |t|
-    t.bigint "topics_question_id", null: false
-    t.bigint "{:id=>false}_id", null: false
-    t.bigint "question_id"
-    t.bigint "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["question_id"], name: "index_topics_questions_{:id=>false}_on_question_id"
-    t.index ["topic_id"], name: "index_topics_questions_{:id=>false}_on_topic_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -90,6 +79,4 @@ ActiveRecord::Schema.define(version: 2020_06_04_051346) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "topics_questions_{:id=>false}", "questions"
-  add_foreign_key "topics_questions_{:id=>false}", "topics"
 end

@@ -20,6 +20,12 @@ class Answer < ApplicationRecord
   belongs_to :responder,
   class_name: :User
 
+  belongs_to :topic,
+  class_name: :Topic
+
+  has_many :topics,
+  through: :question
+
   has_one_attached :photo
 
 end
