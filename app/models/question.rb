@@ -21,6 +21,6 @@ class Question < ApplicationRecord
   foreign_key: :question_id,
   dependent: :destroy
 
-  # has_and_belongs_to_many :topics
+  has_and_belongs_to_many :topics
 
 end

@@ -8,7 +8,7 @@ const questionsReducer = (state = {}, action) => {
     case RECEIVE_QUESTIONS:
       return action.questions;
     case RECEIVE_QUESTION:
-      return { ...state, [action.question.id]: action.question };
+      return { [action.question.id]: action.question };
     case DELETE_QUESTION: {
       const nextState = { ...state };
       delete nextState[action.questionId];

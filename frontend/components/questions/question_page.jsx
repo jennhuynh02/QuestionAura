@@ -89,7 +89,7 @@ class QuestionPage extends React.Component {
         answersToQuestion.push(answers[i]);
       }
     }
-
+    console.log(questions);
     return (
       <div className="question-page">
         <HeaderContainer first={first} second={second} />

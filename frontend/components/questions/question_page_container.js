@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 import { fetchUsers } from '../../actions/user_action';
 
 const mapStateToProps = (state, { match }) => ({
-  questionId: parseInt(match.params.questionId),
+  questionId: parseInt(match.params.questionId, 10),
   questions: Object.values(state.entities.questions),
   answers: Object.values(state.entities.answers),
   first: state.entities.users[state.session.id].first_name,
