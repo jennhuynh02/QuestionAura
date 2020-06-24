@@ -2,6 +2,10 @@
   json.set! q.id do
     json.extract! q, :id, :ask, :asker_id, :topic_id
 
+    json.asker do
+      json.extract! q.asker, :first_name, :last_name, :email
+    end
+
     json.answers q.answers do |ans|
       json.answer ans.answer
       json.id ans.id

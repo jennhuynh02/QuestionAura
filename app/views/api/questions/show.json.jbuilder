@@ -8,3 +8,7 @@ json.answers @question.answers do |ans|
   json.topic_id ans.topic_id
   json.created_at ans.created_at
 end
+
+json.asker do
+  json.extract! @question.asker, :first_name, :last_name, :email
+end
