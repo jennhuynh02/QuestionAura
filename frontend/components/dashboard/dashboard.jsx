@@ -5,7 +5,6 @@ import TopicsContainer from '../topics/topics_container';
 
 class Dashboard extends React.Component {
 
-
   componentDidMount() {
     this.props.fetchQuestions(); 
   }
