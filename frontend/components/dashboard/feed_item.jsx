@@ -15,9 +15,6 @@ class FeedItem extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchAnswers, fetchUsers } = this.props;
-    fetchAnswers();
-    fetchUsers();
   }
 
   getDropdown() {

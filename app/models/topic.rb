@@ -10,11 +10,14 @@
 class Topic < ApplicationRecord
 
   validates :name, presence: true
-
+  
+  has_many :question_topics,
+  foreign_key: :topic_id,
+  class_name: :QuestionTopic
+  
   has_many :questions,
-  foreign_key: :topic_id
-
+  through: :question_topics
+  
   has_many :answers,
-  foreign_key: :topic_id
-
+  through: :questions
 end

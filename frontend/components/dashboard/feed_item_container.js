@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
 import { deleteQuestion } from '../../actions/question_actions';
 import { openModal } from '../../actions/modal_actions';
-import { createAnswer, fetchAnswers, deleteAnswer } from '../../actions/answer_actions';
-import { fetchUsers } from '../../actions/user_action';
+import { createAnswer, deleteAnswer } from '../../actions/answer_actions';
 import FeedItem from './feed_item';
 
 const mapStateToProps = (state, { question }) => ({
@@ -13,9 +12,7 @@ const mapStateToProps = (state, { question }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchAnswers: () => dispatch(fetchAnswers()),
   createAnswer: () => dispatch(createAnswer()),
-  fetchUsers: () => dispatch(fetchUsers()),
   deleteQuestion: (question) => dispatch(deleteQuestion(question)),
   deleteAnswer: (answer) => dispatch(deleteAnswer(answer)),
   openModal: (modal) => dispatch(openModal(modal)),

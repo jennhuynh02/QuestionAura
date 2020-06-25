@@ -16,13 +16,14 @@ class QuestionPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchQuestion({ id: this.props.questionId });
-    this.props.fetchAnswers();
-    this.props.fetchUsers();
+    const { fetchAnswers,fetchUsers } = this.props;
+    fetchAnswers();
+    fetchUsers();
   }
 
   getQuestionDropdown() {
     const { currentUser, openModal } = this.props;
+
     if (currentUser.id === this.question.asker_id) {
       return (
         <div className="dropdown">
@@ -89,7 +90,7 @@ class QuestionPage extends React.Component {
         answersToQuestion.push(answers[i]);
       }
     }
-    console.log(questions);
+
     return (
       <div className="question-page">
         <HeaderContainer first={first} second={second} />

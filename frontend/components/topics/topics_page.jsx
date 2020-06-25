@@ -14,29 +14,29 @@ class TopicPage extends React.Component {
   render() {
     const { questions, topicName, topics, first, second } = this.props;
 
-    const mainTopic = [];
-    let mainTopicId = 1;
-    if (topics.length > 0) {
-      for (let i = 0; i < topics.length; i++) {
-        if (topics[i].name === topicName) {
-          mainTopic.push(topics[i]);
-          mainTopicId = mainTopic[0].id;
-        }
-      }
-    }
+    // const mainTopic = [];
+    // let mainTopicId = 1;
+    // if (topics.length > 0) {
+    //   for (let i = 0; i < topics.length; i++) {
+    //     if (topics[i].name === topicName) {
+    //       mainTopic.push(topics[i]);
+    //       mainTopicId = mainTopic[0].id;
+    //     }
+    //   }
+    // }
 
-    const toRender = [];
-    if (questions.length > 0) {
-      for (let i = 0; i < questions.length; i++) {
-        if (questions[i].topic_id === mainTopicId) {
-          toRender.push(questions[i]);
-        }
-      }
-    }
+    // const toRender = [];
+    // if (questions.length > 0) {
+    //   for (let i = 0; i < questions.length; i++) {
+    //     if (questions[i].topic_id === mainTopicId) {
+    //       toRender.push(questions[i]);
+    //     }
+    //   }
+    // }
 
     return (
       <div>
-        <HeaderContainer first={first} second={second} />
+        {/* <HeaderContainer first={first} second={second} />
 
         <div className="topic-page">
           <TopicsContainer />
@@ -52,7 +52,7 @@ class TopicPage extends React.Component {
               <FeedItemContainer question={question} key={question.id} />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

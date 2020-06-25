@@ -8,7 +8,6 @@ class QuestionForm extends React.Component {
       ask: this.props.question.ask,
       asker_id: this.props.currentUser,
       id: this.props.question.id,
-      topic_id: this.props.question.topic_id,
       topicToggle: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);

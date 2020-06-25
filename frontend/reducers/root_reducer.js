@@ -7,6 +7,7 @@ import errorsReducer from './errors_reducer';
 import uiReducer from './ui_reducer';
 import answersReducer from './answers_reducer';
 import usersReducer from './users_reducer';
+import questionTopicsReducer from './question_topics_reducer';
 
 const rootReducer = combineReducers({
   entities: entitiesReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   questions: questionsReducer,
   answers: answersReducer,
   topics: topicsReducer,
+  questionTopics: questionTopicsReducer,
   errors: errorsReducer,
   ui: uiReducer,
 });

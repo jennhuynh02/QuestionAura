@@ -4,8 +4,12 @@ import FeedContainer from './feed_container';
 import TopicsContainer from '../topics/topics_container';
 
 class Dashboard extends React.Component {
+
   componentDidMount() {
-    this.props.fetchQuestions();
+    const { fetchQuestions, fetchAnswers, fetchUsers } = this.props;
+    fetchQuestions();
+    fetchAnswers();
+    fetchUsers();
   }
 
   render() {
