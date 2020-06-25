@@ -9,34 +9,36 @@ class TopicPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchAnswers();
   }
 
   render() {
-    const { questions, topicName, topics, first, second } = this.props;
+    const { topicName, topics, first, second } = this.props;
 
-    // const mainTopic = [];
-    // let mainTopicId = 1;
-    // if (topics.length > 0) {
-    //   for (let i = 0; i < topics.length; i++) {
-    //     if (topics[i].name === topicName) {
-    //       mainTopic.push(topics[i]);
-    //       mainTopicId = mainTopic[0].id;
-    //     }
-    //   }
-    // }
+    let mainTopic = 0;
+    let mainTopicId = 0;
+    let showMe = 0;
 
-    // const toRender = [];
-    // if (questions.length > 0) {
-    //   for (let i = 0; i < questions.length; i++) {
-    //     if (questions[i].topic_id === mainTopicId) {
-    //       toRender.push(questions[i]);
-    //     }
-    //   }
-    // }
+    if (topics.length > 0) {
+      for (let i = 0; i < topics.length; i++) {
+        if (topics[i].name === topicName) {
+          mainTopic = topics[i];
+          showMe = mainTopic.questions;
+          mainTopicId = mainTopic.id;
+        }
+      }
+    }
+
+    const toRender = [];
+    if (showMe.length > 0) {
+      for (let i = 0; i < showMe.length; i++) {
+        toRender.push(showMe[i]);
+      }
+    }
 
     return (
       <div>
-        {/* <HeaderContainer first={first} second={second} />
+        <HeaderContainer first={first} second={second} />
 
         <div className="topic-page">
           <TopicsContainer />
@@ -52,7 +54,7 @@ class TopicPage extends React.Component {
               <FeedItemContainer question={question} key={question.id} />
             ))}
           </div>
-        </div> */}
+        </div>
       </div>
     );
   }
