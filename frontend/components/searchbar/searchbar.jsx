@@ -21,12 +21,7 @@ class SearchBar extends React.Component {
   search() {
     this.searchResults = [];
     const { questions, topics } = this.props;
-    const topicList = {};
-    if (topics.length > 0) {
-      for (let i = 0; i < topics.length; i++) {
-        topicList[topics[i].id] = topics[i].name;
-      }
-    }
+
     if (this.state.searchInput.length !== 0) {
       for (let i = 0; i < questions.length; i += 1) {
         if (questions[i].ask.includes(this.state.searchInput) && this.searchResults.length !== 5) {
@@ -34,6 +29,7 @@ class SearchBar extends React.Component {
         }
       }
     }
+    console.log(this.searchResults);
     if (this.searchResults.length > 0) {
       return (
         <ul className="dropdown-content">
@@ -47,7 +43,7 @@ class SearchBar extends React.Component {
               className="searchbar-result"
             >
               {/* <span className="topic-search">Topic:  </span> */}
-              <img className="search-img" src={window[topicList[question.topic_id]]} />
+              <img className="search-img" src={window[question.topics[0].name]} />
               {/* {topicList[question.topic_id]} */}
               {question.ask}
             </li>
