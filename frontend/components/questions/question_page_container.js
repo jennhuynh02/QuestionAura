@@ -5,6 +5,7 @@ import { fetchQuestion, deleteQuestion } from "../../actions/question_actions";
 import { fetchAnswers, deleteAnswer } from '../../actions/answer_actions';
 import { openModal } from '../../actions/modal_actions';
 import { fetchUsers } from '../../actions/user_action';
+import { fetchTopics } from "../../actions/topic_actions";
 
 const mapStateToProps = (state, { match }) => ({
   questionId: parseInt(match.params.questionId, 10),
@@ -20,6 +21,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
   deleteQuestion: (questionId) => dispatch(deleteQuestion(questionId)),
   fetchAnswers: () => dispatch(fetchAnswers()),
+  fetchTopics: () => dispatch(fetchTopics()),
   fetchUsers: () => dispatch(fetchUsers()),
   deleteAnswer: (answerId) => dispatch(deleteAnswer(answerId)),
   openModal: (modal) => dispatch(openModal(modal)),

@@ -62,5 +62,8 @@ export const updateQuestionTopic = (questionTopic) => (dispatch) => (
 
 export const deleteQuestionTopic = (questionTopic) => (dispatch) => (
   APIUtil.deleteQuestionTopic(questionTopic)
-    .then((questionTopicId) => dispatch(fetchQuestions()))
+    .then(() => (dispatch(fetchQuestions())),
+      (err) => (
+        dispatch(receiveErrors(err.responseJSON))
+      ))
 );

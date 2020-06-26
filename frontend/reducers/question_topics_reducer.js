@@ -4,7 +4,7 @@ const questionTopicReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_QUESTION_TOPICS:
-      return action.question_topics;
+      return action.questionTopics;
     case RECEIVE_QUESTION_TOPIC:
       return { ...state, [action.questionTopic.id]: action.questionTopic };
     case DELETE_QUESTION_TOPIC: {

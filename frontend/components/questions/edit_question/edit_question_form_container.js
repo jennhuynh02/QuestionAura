@@ -1,30 +1,8 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import QuestionForm from './question_form';
-import { updateQuestion } from '../../actions/question_actions';
-import { closeModal } from '../../actions/modal_actions';
+import EditQuestionForm from './edit_question_form';
+import { updateQuestion, fetchQuestions } from '../../../actions/question_actions';
+import { closeModal } from '../../../actions/modal_actions';
 
-class EditQuestionForm extends React.Component {
-
-  render() {
-    const {
-      errors, currentUser, first, last, action, closeModal, question, formType, topics
-    } = this.props;
-    return (
-      <QuestionForm
-        errors={errors}
-        currentUser={currentUser}
-        first={first}
-        last={last}
-        action={action}
-        closeModal={closeModal}
-        question={question}
-        formType={formType}
-        topics={topics}
-      />
-    );
-  }
-}
 
 const mapStateToProps = (state) => {
   const question = state.entities.questions[Object.values(state.ui.modal)[0]];
@@ -41,7 +19,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   action: (questionId) => dispatch(updateQuestion(questionId)),
-  fetchQuestion: (question) => dispatch(fetchQuestion(question)),
+  fetchQuestions: () => dispatch(fetchQuestions()),
   removeErrors: () => dispatch(removeErrors()),
   closeModal: () => dispatch(closeModal()),
 });

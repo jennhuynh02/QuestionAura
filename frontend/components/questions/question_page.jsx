@@ -16,9 +16,10 @@ class QuestionPage extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchAnswers,fetchUsers } = this.props;
+    const { fetchAnswers, fetchUsers, fetchTopics } = this.props;
     fetchAnswers();
     fetchUsers();
+    fetchTopics();
   }
 
   getQuestionDropdown() {

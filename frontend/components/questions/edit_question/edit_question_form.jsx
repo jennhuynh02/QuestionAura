@@ -1,7 +1,6 @@
 import React from 'react';
-import TopicSelection from './topic_selection/topic_selection_container';
 
-class QuestionForm extends React.Component {
+class EditQuestionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +10,9 @@ class QuestionForm extends React.Component {
       topicToggle: true,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
   }
 
   update(field) {
@@ -30,15 +32,16 @@ class QuestionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const question = { ...this.state };
-    this.props.action(question);
-    this.setState({
-        topicToggle: !this.state.topicToggle
-      });
-    }
-    
-    renderErrors() {
-      return (
-        <ul>
+    this.props.action(question)
+    this.props.closeModal();
+    // this.setState({
+    //     topicToggle: !this.state.topicToggle
+    //   });
+  }
+
+  renderErrors() {
+    return (
+      <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -47,19 +50,19 @@ class QuestionForm extends React.Component {
       </ul>
     );
   }
-  
+
   showForm() {
-    if (this.state.topicToggle === false) {
-      return (
-        <div>
-          <TopicSelection topics={this.props.topics} question={this.props.questions[0]} />
-      </div>
-      );
-    }
+    // if (this.state.topicToggle === false) {
+    //   return (
+    //     <div>
+    //       <TopicSelection topics={this.props.topics} question={this.props.questions[0]} />
+    //     </div>
+    //   );
+    // }
     return (
       <div>
         <div className="question-header">
-          <h1 className="question-form-name">Question Form</h1>
+          <h1 className="question-form-name">Edit Question Form</h1>
         </div>
         <form id="question-form">
           <div className="inside-question-form">
@@ -104,4 +107,4 @@ class QuestionForm extends React.Component {
 }
 
 
-export default QuestionForm;
+export default EditQuestionForm;

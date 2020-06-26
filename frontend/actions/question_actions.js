@@ -40,6 +40,7 @@ export const createQuestion = (question) => (dispatch) => (
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))
+    .then((questions) => (dispatch(fetchQuestions(questions))))
 );
 
 export const fetchQuestion = (question) => (dispatch) => (
@@ -56,6 +57,7 @@ export const updateQuestion = (question) => (dispatch) => (
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))
+    .then((questions) => (dispatch(fetchQuestions(questions))))
 );
 
 export const deleteQuestion = (questionId) => (dispatch) => (

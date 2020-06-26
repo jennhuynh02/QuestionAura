@@ -20,7 +20,7 @@ class TopicPage extends React.Component {
     let showMe = 0;
 
     if (topics.length > 0) {
-      for (let i = 0; i < topics.length; i++) {
+      for (let i = 0; i < topics.length; i += 1) {
         if (topics[i].name === topicName) {
           mainTopic = topics[i];
           showMe = mainTopic.questions;
@@ -31,7 +31,7 @@ class TopicPage extends React.Component {
 
     const toRender = [];
     if (showMe.length > 0) {
-      for (let i = 0; i < showMe.length; i++) {
+      for (let i = 0; i < showMe.length; i += 1) {
         toRender.push(showMe[i]);
       }
     }
@@ -45,7 +45,7 @@ class TopicPage extends React.Component {
           <div className="topic-dash">
 
             <div className="topic-info">
-              <img className="topic-img" src={window[topicName]} />
+              <img className="topic-img" src={window[topicName]} alt={topicName} />
               <div className="topic-name">
                 {topicName}
               </div>

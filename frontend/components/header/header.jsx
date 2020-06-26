@@ -16,8 +16,8 @@ class Header extends React.Component {
     const { logout, openModal, first, second } = this.props;
     return (
       <div id="header">
-        <h1 id="logo" onClick={this.handleLogoClick}>Question Aura</h1>
-        <h1 id="feedlogo" onClick={this.handleLogoClick}>
+        <h1 id="logo" onClick={this.handleLogoClick} alt="Logo">Question Aura</h1>
+        <h1 id="feedlogo" onClick={this.handleLogoClick} alt="Feed Logo">
           <img className="home-category-icon" src={window.Home} />
           <p className="home-name">Home</p>
         </h1>
