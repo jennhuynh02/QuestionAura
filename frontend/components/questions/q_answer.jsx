@@ -1,5 +1,6 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
+import getDate from "../../util/date_util";
 
 class qAnswer extends React.Component {
   constructor(props) {
@@ -39,21 +40,25 @@ class qAnswer extends React.Component {
   render() {
     const { answer, users } = this.props;
 
+    let date = ''
     for (let i = 0; i < users.length; i += 1) {
       if (users[i].id === answer.responder_id) {
         this.responder = users[i];
         this.responderFirst = users[i].first_name;
         this.responderLast = users[i].last_name;
+        date = getDate(answer.created_at);
         break;
       }
     }
 
     return (
       <div className="question-answer-item" key={answer.id}>
-        <p className="feed-header">
+        <p className="feed-author-name">
           {this.responderFirst}
           {' '}
           {this.responderLast}
+          
+          <p className="date">Answered {date}</p>
         </p>
 
         <p className="answer-text">{answer.answer}</p>

@@ -9,7 +9,9 @@ class TopicPage extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchAnswers();
+    const { fetchAnswers, fetchUsers } = this.props;
+    fetchAnswers();
+    fetchUsers();
   }
 
   render() {
