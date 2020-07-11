@@ -1,5 +1,7 @@
 import React from 'react';
 import TopicSelection from '../topic_selection/topic_selection_container';
+import getDate from '../../../util/date_util';
+
 
 class EditQuestionForm extends React.Component {
   constructor(props) {

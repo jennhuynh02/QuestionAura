@@ -1,5 +1,7 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
+import getDate from '../../util/date_util';
+
 
 class FeedItem extends React.Component {
   constructor(props) {
@@ -111,12 +113,14 @@ class FeedItem extends React.Component {
     let a = '';
     const answerId = '';
     let photo;
+    let created = '';
 
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
         this.responderId = answers[i].responder_id;
         this.answer = answers[i].answer;
         a = answers[i].answer;
+        created = getDate(answers[i].created_at);
         if (answers[i].photoUrl) {
           photo = answers[i].photoUrl;
         }
@@ -146,8 +150,9 @@ class FeedItem extends React.Component {
           {this.responderFirst}
           {' '}
           {this.responderLast}
+          {' · '}
+          <span className="date">{created}</span>
         </p>
-
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
 
         <p className="feed-answer">
