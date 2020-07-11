@@ -65,14 +65,15 @@ class QuestionForm extends React.Component {
           <div className="inside-question-form">
 
             <p className="question-author">
-              {this.props.first}
-              {' '}
-              {this.props.last}
-              {' '}
+              <img className="user-dash-question-pic" src={window.profilePic} />
+              <span>
+                {this.props.first}
+                {' '}
+                {this.props.second}
+              </span>
               asked
             </p>
-            <input
-              type="text"
+            <textarea
               value={this.state.ask}
               onChange={this.update('ask')}
               placeholder="Start your question with ''What'', ''How'', ''Why'', etc."
