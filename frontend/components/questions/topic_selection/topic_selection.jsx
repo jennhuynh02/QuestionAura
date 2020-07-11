@@ -44,8 +44,6 @@ class TopicSelection extends React.Component {
         createQuestionTopic(questionTopic);
       }
     }
-    console.log(this.props.associated)
-    console.log(toAssociate)
     for (let i = 0; i < this.props.associated.length; i++) {
       if (!toAssociate.includes(this.props.associated[i])) {
         const questionTopic = {
@@ -59,7 +57,6 @@ class TopicSelection extends React.Component {
   }
 
   render() {
-    console.log(this.state.toAssociate);
     const { question, topics, closeModal, associated } = this.props;
     const { ask } = question;
     return (

@@ -29,7 +29,6 @@ class SearchBar extends React.Component {
         }
       }
     }
-    console.log(this.searchResults);
     if (this.searchResults.length > 0) {
       return (
         <ul className="dropdown-content">
