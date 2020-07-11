@@ -25,9 +25,12 @@ class Dashboard extends React.Component {
           <div className="the-content">
             <div className="question-click" onClick={() => openModal({ question: -1 })}>
               <p className="question-name">
+                <img className="user-dash-question-pic" src={window.profilePic} />
+                <span>
                 {first}
                 {' '}
                 {second}
+                </span>
               </p>
               <h1 id="question-invite">What is your question or link?</h1>
             </div>
