@@ -53,13 +53,13 @@ class qAnswer extends React.Component {
 
     return (
       <div className="question-answer-item" key={answer.id}>
-        <p className="feed-author-name">
+        <div className="feed-author-name">
           {this.responderFirst}
           {' '}
           {this.responderLast}
           
           <p className="date">Answered {date}</p>
-        </p>
+        </div>
 
         <p className="answer-text">{answer.answer}</p>
         <img className="image-dashboard" src={answer.photoUrl} />
