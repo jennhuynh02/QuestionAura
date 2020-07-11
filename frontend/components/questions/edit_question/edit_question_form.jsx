@@ -81,8 +81,7 @@ class EditQuestionForm extends React.Component {
               {' '}
               asked
             </p>
-            <input
-              type="text"
+            <textarea
               value={this.state.ask}
               onChange={this.update('ask')}
               placeholder="Start your question with ''What'', ''How'', ''Why'', etc."
