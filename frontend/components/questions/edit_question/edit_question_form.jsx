@@ -1,4 +1,5 @@
 import React from 'react';
+import TopicSelection from '../topic_selection/topic_selection_container';
 
 class EditQuestionForm extends React.Component {
   constructor(props) {
@@ -33,10 +34,10 @@ class EditQuestionForm extends React.Component {
     e.preventDefault();
     const question = { ...this.state };
     this.props.action(question)
-    this.props.closeModal();
-    // this.setState({
-    //     topicToggle: !this.state.topicToggle
-    //   });
+    // this.props.closeModal();
+    this.setState({
+        topicToggle: !this.state.topicToggle
+      });
   }
 
   renderErrors() {
@@ -52,13 +53,19 @@ class EditQuestionForm extends React.Component {
   }
 
   showForm() {
-    // if (this.state.topicToggle === false) {
-    //   return (
-    //     <div>
-    //       <TopicSelection topics={this.props.topics} question={this.props.questions[0]} />
-    //     </div>
-    //   );
-    // }
+    if (this.state.topicToggle === false) {
+      const associated = [];
+      if (this.props.question.topics) {
+        this.props.question.topics.forEach((topic) => (
+          associated.push(topic.id)
+        ))
+      }
+      return (
+        <div>
+          <TopicSelection associated={associated} topics={this.props.topics} question={this.props.question} />
+        </div>
+      );
+    }
     return (
       <div>
         <div className="question-header">

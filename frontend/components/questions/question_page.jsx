@@ -100,7 +100,7 @@ class QuestionPage extends React.Component {
           <p className="question-page-author-name">
             {this.topics ? 
             this.topics.map((topic) => (
-              <Link className="link" to={`/topics/${topic.name}`}>
+              <Link key={topic.id} className="link" to={`/topics/${topic.name}`}>
               <span className="topic-tags" key={topic.id}>{topic.name}</span>
               </Link>
             )) : <p></p>}

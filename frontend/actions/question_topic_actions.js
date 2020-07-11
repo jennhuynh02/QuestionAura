@@ -38,7 +38,7 @@ export const fetchQuestionTopics = (questionTopics) => (dispatch) => (
 
 export const createQuestionTopic = (questionTopic) => (dispatch) => (
   APIUtil.createQuestionTopic(questionTopic)
-    .then((questionTopic) => (dispatch(fetchQuestionTopics())),
+    .then(() => (dispatch(fetchQuestions())),
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))

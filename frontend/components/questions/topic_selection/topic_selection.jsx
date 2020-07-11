@@ -1,10 +1,11 @@
 import React from 'react';
+import { deleteQuestionTopic } from '../../../actions/question_topic_actions';
 
 class TopicSelection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toAssociate: [],
+      toAssociate: [...this.props.associated],
     };
     this.addOrRemoveAssocation.bind(this);
     this.addTopicsToQuestion.bind(this);
@@ -31,7 +32,7 @@ class TopicSelection extends React.Component {
   }
 
   addTopicsToQuestion(questionId) {
-    const { createQuestionTopic, closeModal } = this.props;
+    const { createQuestionTopic, closeModal, deleteQuestionTopic } = this.props;
     const { toAssociate } = this.state;
 
     for (let i = 0; i < toAssociate.length; i += 1) {
@@ -39,15 +40,27 @@ class TopicSelection extends React.Component {
         question_id: questionId,
         topic_id: toAssociate[i],
       };
-      console.log(questionTopic);
-      createQuestionTopic(questionTopic);
+      if (!this.props.associated.includes(toAssociate[i])) {
+        createQuestionTopic(questionTopic);
+      }
+    }
+    console.log(this.props.associated)
+    console.log(toAssociate)
+    for (let i = 0; i < this.props.associated.length; i++) {
+      if (!toAssociate.includes(this.props.associated[i])) {
+        const questionTopic = {
+          question_id: questionId,
+          topic_id: this.props.associated[i],
+        };
+        deleteQuestionTopic(questionTopic);
+      }
     }
     closeModal();
   }
 
   render() {
     console.log(this.state.toAssociate);
-    const { question, topics, closeModal } = this.props;
+    const { question, topics, closeModal, associated } = this.props;
     const { ask } = question;
     return (
       <div>
@@ -70,11 +83,19 @@ class TopicSelection extends React.Component {
                   <p className="topic-label">
                     {el.name}
                   </p>
+                  {this.state.toAssociate.includes(el.id) ?
+                  <input
+                    type="checkbox"
+                    value={el.id}
+                    onChange={() => this.addOrRemoveAssocation(el.id)}
+                    checked
+                  /> :
                   <input
                     type="checkbox"
                     value={el.id}
                     onClick={() => this.addOrRemoveAssocation(el.id)}
                   />
+                  }
                   <span className="checkmark" />
                 </label>
               ))}

@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import TopicSelection from './topic_selection';
 import { closeModal } from '../../../actions/modal_actions';
-import { createQuestionTopic } from '../../../actions/question_topic_actions';
+import { createQuestionTopic, deleteQuestionTopic } from '../../../actions/question_topic_actions';
 
-const mapStateToProps = (state, { question }) => ({
+const mapStateToProps = (state, { question, associated }) => ({
   errors: state.questions.errors,
-  topics: Object.values(state.entities.topics),
+  associated,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   createQuestionTopic: (questionTopic) => dispatch(createQuestionTopic(questionTopic)),
+  deleteQuestionTopic: (questionTopic) => dispatch(deleteQuestionTopic(questionTopic)),
   closeModal: () => dispatch(closeModal()),
 });
 
