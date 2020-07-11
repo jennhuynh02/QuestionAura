@@ -9,6 +9,7 @@ class TopicSelection extends React.Component {
     };
     this.addOrRemoveAssocation.bind(this);
     this.addTopicsToQuestion.bind(this);
+    if (this.props.associated) this.setState({toAssociate: this.props.associated});
   }
 
   addOrRemoveAssocation(id) {
@@ -40,6 +41,7 @@ class TopicSelection extends React.Component {
         question_id: questionId,
         topic_id: toAssociate[i],
       };
+      console.log(this.props.associated)
       if (!this.props.associated.includes(toAssociate[i])) {
         createQuestionTopic(questionTopic);
       }
@@ -59,7 +61,6 @@ class TopicSelection extends React.Component {
   render() {
     const { question, topics, closeModal, associated } = this.props;
     const { ask } = question;
-    if (associated) this.setState({associated: associated});
     return (
       <div>
         <div className="question-header">

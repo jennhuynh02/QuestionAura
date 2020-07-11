@@ -3,7 +3,7 @@ import TopicSelection from './topic_selection';
 import { closeModal } from '../../../actions/modal_actions';
 import { createQuestionTopic, deleteQuestionTopic } from '../../../actions/question_topic_actions';
 
-const mapStateToProps = (state, { question, associated }) => ({
+const mapStateToProps = (state, { question, associated = [] }) => ({
   errors: state.questions.errors,
   associated,
 });

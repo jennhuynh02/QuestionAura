@@ -25,7 +25,7 @@ class QuestionPage extends React.Component {
   }
 
   getQuestionDropdown() {
-    const { currentUser, openModal } = this.props;
+    const { currentUser, openModal, deleteQuestion } = this.props;
 
     if (currentUser.id === this.question.asker_id) {
       return (
@@ -37,9 +37,9 @@ class QuestionPage extends React.Component {
               Edit Question
             </li>
 
-            <li className="dropdown-options" onClick={() => deleteQuestion(this.question.id)}>
+            {/* <li className="dropdown-options" onClick={() => deleteQuestion(this.question.id)}>
               Delete Question
-            </li>
+            </li> */}
 
           </ul>
         </div>
