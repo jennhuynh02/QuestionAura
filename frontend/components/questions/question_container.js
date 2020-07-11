@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import QuestionForm from './question_form';
-import { createQuestion } from '../../actions/question_actions';
+import { createQuestion, fetchQuestion } from '../../actions/question_actions';
 import { closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => ({
@@ -18,6 +18,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   action: (question) => dispatch(createQuestion(question)),
+  fetchQuestion: (questionId) => dispatch(fetchQuestion(questionId)),
   closeModal: () => dispatch(closeModal()),
 });
 

@@ -23,7 +23,8 @@
   margin-left: -16px;  
   padding: 0px 16px 0px 16px;
   max-width: 140px;
-  position: fixed;
+  position: sticky;
+  z-index: -1;
 }
 
 .category-header {
@@ -80,9 +81,7 @@
 .feed {
   display: flex;
   width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 40px;
+  margin: 0px auto 0px auto;
   padding: 30px 24px 24px 24px;
 }
 
@@ -104,7 +103,7 @@
 }
 
 .feed-author-name {
-  font-size: 15px;
+  font-size: 13px;
   color: #282829;
   font-weight: bold;
   margin-bottom: 8px;
@@ -113,7 +112,7 @@
 
 .feed-question {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   margin-bottom: 10px
 }
@@ -172,5 +171,4 @@
 }
 
 .the-content {
-  margin-left: 170px;
 }

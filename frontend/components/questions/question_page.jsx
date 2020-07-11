@@ -1,7 +1,7 @@
 import React from 'react';
-import AnswerFormContainer from '../answer/answer_form_container';
 import AnswerContainer from './q_answer_container';
 import HeaderContainer from '../header/header_container';
+import { Link } from 'react-router-dom';
 
 class QuestionPage extends React.Component {
   constructor(props) {
@@ -13,10 +13,12 @@ class QuestionPage extends React.Component {
     this.asker = '';
     this.askerFirst = '';
     this.askerLast = '';
+    this.topics = [];
   }
 
   componentDidMount() {
-    const { fetchAnswers, fetchUsers, fetchTopics } = this.props;
+    const { fetchAnswers, fetchUsers, fetchTopics, fetchQuestion, questionId } = this.props;
+    fetchQuestion(questionId);
     fetchAnswers();
     fetchUsers();
     fetchTopics();
@@ -62,12 +64,12 @@ class QuestionPage extends React.Component {
       questions, answers, questionId, openModal, deleteQuestion, deleteAnswer, users, first, second,
     } = this.props;
 
-    let q;
     let qId;
 
     for (let i = 0; i < questions.length; i++) {
       qId = questions[i].id;
       if (qId === questionId) {
+        this.topics = questions[i].topics;
         this.questionString = questions[i].ask;
         this.question = questions[i];
         break;
@@ -91,17 +93,22 @@ class QuestionPage extends React.Component {
         answersToQuestion.push(answers[i]);
       }
     }
-
     return (
       <div className="question-page">
         <HeaderContainer first={first} second={second} />
         <div className="question-page-box">
           <p className="question-page-author-name">
-            Question asked by:
+            {this.topics ? 
+            this.topics.map((topic) => (
+              <Link className="link" to={`/topics/${topic.name}`}>
+              <span className="topic-tags" key={topic.id}>{topic.name}</span>
+              </Link>
+            )) : <p></p>}
+            {/* Question asked by:
             {' '}
             {this.askerFirst}
             {' '}
-            {this.askerLast}
+            {this.askerLast} */}
           </p>
           <p className="question-page-question">{ this.questionString }</p>
 

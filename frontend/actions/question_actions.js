@@ -43,9 +43,9 @@ export const createQuestion = (question) => (dispatch) => (
     .then((questions) => (dispatch(fetchQuestions(questions))))
 );
 
-export const fetchQuestion = (question) => (dispatch) => (
-  APIUtil.fetchQuestion(question)
-    .then((question) => (dispatch(receiveQuestion(question))),
+export const fetchQuestion = (questionId) => (dispatch) => (
+  APIUtil.fetchQuestion(questionId)
+    .then((questionId) => (dispatch(receiveQuestion(questionId))),
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))
