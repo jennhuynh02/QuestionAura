@@ -5,7 +5,7 @@ class TopicSelection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toAssociate: [...this.props.associated],
+      toAssociate: [],
     };
     this.addOrRemoveAssocation.bind(this);
     this.addTopicsToQuestion.bind(this);
@@ -59,6 +59,7 @@ class TopicSelection extends React.Component {
   render() {
     const { question, topics, closeModal, associated } = this.props;
     const { ask } = question;
+    if (associated) this.setState({associated: associated});
     return (
       <div>
         <div className="question-header">
