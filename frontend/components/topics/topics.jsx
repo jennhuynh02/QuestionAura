@@ -39,12 +39,15 @@ class Topics extends React.Component {
           </li>
           {topics}
         </ul>
-        <p>
+        <div>
           <a className="resources" href="https://github.com/jennhuynh02" target="_blank">GitHub</a>
           <span className="resources-spacing">·</span>
           <a className="resources" href="https://www.linkedin.com/in/jenniferanhhuynh/" target="_blank">LinkedIn</a>
+          <span className="resources-spacing">·</span>
+          <br />
+          <a className="resources" href="https://jennhuynh02.github.io/jenniferhuynh/" target="_blank">Website</a>
           {/* About * Careers * Terms * Privacy * Acceptable Use * Businesses */}
-        </p>
+        </div>
       </div>
     );
   }
