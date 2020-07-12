@@ -5,11 +5,12 @@ class TopicSelection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toAssociate: [],
+      toAssociate: [...this.props.associated],
+      checked: true,
+      notChecked: false,
     };
     this.addOrRemoveAssocation.bind(this);
     this.addTopicsToQuestion.bind(this);
-    if (this.props.associated) this.setState({toAssociate: this.props.associated});
   }
 
   addOrRemoveAssocation(id) {
@@ -87,7 +88,7 @@ class TopicSelection extends React.Component {
                     type="checkbox"
                     value={el.id}
                     onChange={() => this.addOrRemoveAssocation(el.id)}
-                    checked
+                    defaultChecked
                   /> :
                   <input
                     type="checkbox"

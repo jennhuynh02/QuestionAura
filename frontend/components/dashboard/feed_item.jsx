@@ -151,7 +151,7 @@ class FeedItem extends React.Component {
           {' '}
           {this.responderLast}
           {' · '}
-          <span className="date">{created}</span>
+          <span className="date">Updated {created}</span>
         </p>
         <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
 
