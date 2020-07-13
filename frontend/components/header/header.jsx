@@ -16,12 +16,12 @@ class Header extends React.Component {
     location.href = '/#/';
   }
 
-  searchGrey() {
-    if (this.state.grey) {
-      this.setState({ grey: false });
-    } else {
-      this.setState({ grey: true });
-    }
+  searchGrey(e) {
+    this.setState({ grey: true });
+  }
+
+  offGrey(e) {
+    this.setState({ grey: false });
   }
 
   render() {
@@ -50,7 +50,7 @@ class Header extends React.Component {
           </ul>
         </div>
         <button type="submit" className="header-question-click" onClick={() => openModal({ question: -1 })}>Ask Question</button>
-        { this.state.grey ? <div className="back" onClick={(e) => this.searchGrey(e)}></div> : <span /> }
+        { this.state.grey ? <div className="back" onClick={(e) => this.offGrey(e)}></div> : <span /> }
       </div>
     );
   }
