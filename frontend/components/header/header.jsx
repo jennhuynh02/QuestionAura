@@ -50,7 +50,7 @@ class Header extends React.Component {
           </ul>
         </div>
         <button type="submit" className="header-question-click" onClick={() => openModal({ question: -1 })}>Ask Question</button>
-        { this.state.grey ? <div className="back" onClick={() => this.offGrey()}></div> : <span /> }
+        { this.state.grey ? <div className="back" onClick={() => this.offGrey()}></div> : <div style={{position: 'fixed'}} /> }
       </div>
     );
   }
