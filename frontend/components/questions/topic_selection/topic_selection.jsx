@@ -42,7 +42,6 @@ class TopicSelection extends React.Component {
         question_id: questionId,
         topic_id: toAssociate[i],
       };
-      console.log(this.props.associated)
       if (!this.props.associated.includes(toAssociate[i])) {
         createQuestionTopic(questionTopic);
       }

@@ -20,7 +20,6 @@ class Feed extends React.Component {
 
 
   scrollFunction(e) {
-    console.log("hello")
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
       this.setState({ topButton: 'block'})
     } else {
