@@ -39,7 +39,7 @@ class TopicPage extends React.Component {
     }
 
     return (
-      <div>
+      <div className="topic-page-background">
         <HeaderContainer first={first} second={second} />
 
         <div className="topic-page">

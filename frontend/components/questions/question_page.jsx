@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AnswerContainer from './q_answer_container';
 import HeaderContainer from '../header/header_container';
-import { Link } from 'react-router-dom';
 
 class QuestionPage extends React.Component {
   constructor(props) {
@@ -17,7 +17,9 @@ class QuestionPage extends React.Component {
   }
 
   componentDidMount() {
-    const { fetchAnswers, fetchUsers, fetchTopics, fetchQuestion, questionId } = this.props;
+    const {
+      fetchAnswers, fetchUsers, fetchTopics, fetchQuestion, questionId,
+    } = this.props;
     fetchQuestion(questionId);
     fetchAnswers();
     fetchUsers();
@@ -94,35 +96,40 @@ class QuestionPage extends React.Component {
       }
     }
     return (
-      <div className="question-page">
+      <div>
         <HeaderContainer first={first} second={second} />
-        <div className="question-page-box">
-          <p className="question-page-author-name">
-            {this.topics ? 
-            this.topics.map((topic) => (
-              <Link key={topic.id} className="link" to={`/topics/${topic.name}`}>
-              <span className="topic-tags" key={topic.id}>{topic.name}</span>
-              </Link>
-            )) : <p></p>}
-            {/* Question asked by:
+        <div className="question-page">
+          <div className="question-page-box">
+            <p className="question-page-author-name">
+              {this.topics
+                ? this.topics.map((topic) => (
+                  <Link key={topic.id} className="link" to={`/topics/${topic.name}`}>
+                    <span className="topic-tags" key={topic.id}>{topic.name}</span>
+                  </Link>
+                )) : <p />}
+            </p>
+              Question asked by:
             {' '}
             {this.askerFirst}
             {' '}
-            {this.askerLast} */}
-          </p>
-          <p className="question-page-question">{ this.questionString }</p>
+            {this.askerLast}
+            <p className="question-page-question">{this.questionString}</p>
 
-          <div className="dropdown-area">
-            { this.getQuestionDropdown() }
-          </div>
-          <div className="answers-count">
-            {answersToQuestion.length}
-            + Answers
-          </div>
-          {answersToQuestion.map((answer) => (
-            <AnswerContainer answer={answer} key={answer.id} users={this.users} />
-          ))}
+            <div className="dropdown-area">
+              {this.getQuestionDropdown()}
+            </div>
+            <div className="answers-count">
+              {answersToQuestion.length}
+              + Answers
+            </div>
+            {answersToQuestion.map((answer) => (
+              <AnswerContainer answer={answer} key={answer.id} users={this.users} />
+            ))}
 
+          </div>
+          <div className="related-questions">
+            <p className="related-questions-title">Related Questions</p>
+          </div>
         </div>
       </div>
     );
