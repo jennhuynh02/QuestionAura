@@ -8,12 +8,12 @@ const SignUpPage = () => (
     <div className="welcome-content">
 
       <header className="welcome-logo">Question Aura</header>
-      <h2 className="welcome-quote-signup">"I know that I know nothing." ~ Socratic Paradox</h2>
-      <div className="forms" id="signup-page-height">
+      <h2 className="welcome-quote">"I know that I know nothing." ~ Socratic Paradox</h2>
+      <div className="forms">
         <SignupContainer />
         <LoginContainer />
       </div>
-            <div className="author-info-signup">
+            <div className="author-info">
           <p className="author-name">
             <a href="https://www.linkedin.com/in/jenniferanhhuynh/" target="_blank">
               <i className="fa fa-linkedin-square" style={{ color: '#0077b5', fontSize: '60px', marginRight: '20px' }} />
