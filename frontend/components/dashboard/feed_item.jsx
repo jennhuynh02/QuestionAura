@@ -2,11 +2,9 @@ import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
 import getDate from '../../util/date_util';
 
-
 class FeedItem extends React.Component {
   constructor(props) {
     super(props);
-    this.answer = '';
     this.answerId = '';
     this.questionId = '';
     this.responderId = '';
@@ -14,9 +12,6 @@ class FeedItem extends React.Component {
     this.responderFirst = '';
     this.responderLast = '';
     this.handleQuestionLink = this.handleQuestionLink.bind(this);
-  }
-
-  componentDidMount() {
   }
 
   getDropdown() {
@@ -107,18 +102,18 @@ class FeedItem extends React.Component {
 
   render() {
     const {
-      question, deleteQuestion, openModal, answers, users, currentUser,
+      question, answers
     } = this.props;
 
+    let answer = '';
     let a = '';
-    const answerId = '';
     let photo;
     let created = '';
 
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
         this.responderId = answers[i].responder_id;
-        this.answer = answers[i].answer;
+        answer = answers[i]
         a = answers[i].answer;
         created = getDate(answers[i].created_at);
         if (answers[i].photoUrl) {
@@ -128,14 +123,9 @@ class FeedItem extends React.Component {
         break;
       }
     }
-
-    for (let i = 0; i < users.length; i++) {
-      if (users[i].id === this.responderId) {
-        this.responder = users[i];
-        this.responderFirst = users[i].first_name;
-        this.responderLast = users[i].last_name;
-        break;
-      }
+    if (answer instanceof Object) {
+      this.responderFirst = answer.responder.first_name;
+      this.responderLast = answer.responder.last_name;
     }
 
     const photoImageShow = <div className="center-feed-image"><img className="image-dashboard" src={photo} /></div>;
@@ -175,6 +165,5 @@ class FeedItem extends React.Component {
     );
   }
 }
-
 
 export default FeedItem;

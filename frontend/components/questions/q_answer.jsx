@@ -49,6 +49,7 @@ class qAnswer extends React.Component {
 
           <p className="date">
             Answered
+            {' '}
             {date}
           </p>
         </div>

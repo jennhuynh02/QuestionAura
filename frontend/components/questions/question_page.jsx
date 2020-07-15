@@ -9,20 +9,15 @@ class QuestionPage extends React.Component {
     this.questionString = '';
     this.question = '';
     this.answer = '';
-    this.users = this.props.users;
-    this.asker = '';
-    this.askerFirst = '';
-    this.askerLast = '';
     this.topics = [];
   }
 
   componentDidMount() {
     const {
-      fetchAnswers, fetchUsers, fetchTopics, fetchQuestion, questionId,
+      fetchAnswers, fetchTopics, fetchQuestion, questionId,
     } = this.props;
     fetchQuestion(questionId);
     fetchAnswers();
-    fetchUsers();
     fetchTopics();
   }
 
@@ -61,30 +56,52 @@ class QuestionPage extends React.Component {
     );
   }
 
+  handleQuestionLink(e, id) {
+    e.preventDefault();
+    location.href = `/#/questions/${id}`;
+  }
+
+  relatedQuestions() {
+    if (this.topics instanceof Object) {
+      for (let i = 0; i < this.topics.length; i++) {
+        if (this.topics[i].questions) {
+          const related = this.topics[i].questions;
+          return (
+            <div>
+              {related.map((question) => (
+                <div className="related-link-section">
+                  <Link className="related-links" to={`/questions/${question.id}`} key={question.id}>{question.ask}</Link>
+                </div>
+              ))}
+            </div>
+          );
+        }
+      }
+    }
+  }
+
   render() {
     const {
-      questions, answers, questionId, openModal, deleteQuestion, deleteAnswer, users, first, second,
+      questions, answers, questionId, first, second,
     } = this.props;
-
     let qId;
+    let question = '';
+    let firstName = '';
+    let lastName = '';
 
     for (let i = 0; i < questions.length; i++) {
       qId = questions[i].id;
       if (qId === questionId) {
+        question = questions[i];
         this.topics = questions[i].topics;
         this.questionString = questions[i].ask;
         this.question = questions[i];
         break;
       }
     }
-
-    for (let i = 0; i < users.length; i += 1) {
-      if (users[i].id === this.question.asker_id) {
-        this.asker = users[i];
-        this.askerFirst = users[i].first_name;
-        this.askerLast = users[i].last_name;
-        break;
-      }
+    if (question instanceof Object) {
+      firstName = question.asker.first_name;
+      lastName = question.asker.last_name;
     }
 
     const answersToQuestion = [];
@@ -108,11 +125,11 @@ class QuestionPage extends React.Component {
                   </Link>
                 )) : <p />}
             </p>
-              Question asked by:
+            Question asked by:
             {' '}
-            {this.askerFirst}
+            {firstName}
             {' '}
-            {this.askerLast}
+            {lastName}
             <p className="question-page-question">{this.questionString}</p>
 
             <div className="dropdown-area">
@@ -129,6 +146,7 @@ class QuestionPage extends React.Component {
           </div>
           <div className="related-questions">
             <p className="related-questions-title">Related Questions</p>
+            {this.relatedQuestions()}
           </div>
         </div>
       </div>

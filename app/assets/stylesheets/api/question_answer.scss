@@ -115,3 +115,20 @@
   width: 300px;
   padding-left: 50px;
 }
+
+.related-link-section {
+  margin: 5px 0px 10px 0px;
+}
+
+.related-links {
+  color: #195faa;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.related-links:hover {
+  text-decoration: underline;
+}
