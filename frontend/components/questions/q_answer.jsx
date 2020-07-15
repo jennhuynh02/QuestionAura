@@ -55,7 +55,9 @@ class qAnswer extends React.Component {
         </div>
 
         <p className="answer-text">{answer.answer}</p>
-        <img className="image-dashboard" src={answer.photoUrl} />
+        {answer.photoUrl
+          ? <div className="center-feed-image"><img className="image-dashboard" src={answer.photoUrl} /></div>
+          : <span />}
         <div className="dropdown-area">
           {this.getAnswerDropdown(answer)}
         </div>

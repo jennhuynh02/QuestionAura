@@ -69,8 +69,8 @@ class QuestionPage extends React.Component {
           return (
             <div>
               {related.map((question) => (
-                <div className="related-link-section">
-                  <Link className="related-links" to={`/questions/${question.id}`} key={question.id}>{question.ask}</Link>
+                <div className="related-link-section" key={question.id}>
+                  <Link className="related-links" to={`/questions/${question.id}`}>{question.ask}</Link>
                 </div>
               ))}
             </div>
