@@ -25,7 +25,7 @@ const SignUpPage = () => (
           </p>
         </div>
         <div className="mainpage-footer">
-
+        <span className="signup-agreement">Inspired by Quora</span>
         </div>
     </div>
   </div>
