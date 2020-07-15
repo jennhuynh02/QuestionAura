@@ -6,7 +6,7 @@ class Feed extends React.Component {
     super(props);
     this.state = {
       topButton: 'none',
-    }
+    };
     this.scrollFunction = this.scrollFunction.bind(this);
   }
 
@@ -18,22 +18,21 @@ class Feed extends React.Component {
     window.removeEventListener('scroll', this.scrollFunction);
   }
 
-
-  scrollFunction(e) {
+  scrollFunction() {
     if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-      this.setState({ topButton: 'block'})
+      this.setState({ topButton: 'block' });
     } else {
-      this.setState({ topButton: 'none' })
+      this.setState({ topButton: 'none' });
     }
   }
-  
+
   topFunction() {
-    document.getElementById('question-invite').scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('question-invite').scrollIntoView({ behavior: 'smooth' });
   }
 
   render() {
     const {
-      questions
+      questions,
     } = this.props;
 
     return (
@@ -42,7 +41,7 @@ class Feed extends React.Component {
           <FeedItemContainer question={question} key={question.id} />
         ))}
 
-        <button onClick={() => this.topFunction()} id="myBtn" title="Go to top" style={{display: this.state.topButton}}>Top</button>
+        <button onClick={() => this.topFunction()} id="myBtn" title="Go to top" style={{ display: this.state.topButton }}>Top</button>
       </div>
 
     );
