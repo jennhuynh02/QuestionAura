@@ -123,7 +123,7 @@ class QuestionPage extends React.Component {
               + Answers
             </div>
             {answersToQuestion.map((answer) => (
-              <AnswerContainer answer={answer} key={answer.id} users={this.users} />
+              <AnswerContainer answer={answer} key={answer.id} />
             ))}
 
           </div>

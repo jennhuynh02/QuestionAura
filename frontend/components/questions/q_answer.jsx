@@ -1,18 +1,16 @@
 import React from 'react';
 import AnswerFormContainer from '../answer/answer_form_container';
-import getDate from "../../util/date_util";
+import getDate from '../../util/date_util';
 
 class qAnswer extends React.Component {
   constructor(props) {
     super(props);
-      this.responder = '';
-      this.responderFirst = '';
-      this.responderLast = '';
+    this.responder = '';
+    this.responderFirst = '';
+    this.responderLast = '';
   }
 
   componentDidMount() {
-    const { fetchUsers } = this.props;
-    fetchUsers();
   }
 
   getAnswerDropdown(answer) {
@@ -38,27 +36,21 @@ class qAnswer extends React.Component {
   }
 
   render() {
-    const { answer, users } = this.props;
-
-    let date = ''
-    for (let i = 0; i < users.length; i += 1) {
-      if (users[i].id === answer.responder_id) {
-        this.responder = users[i];
-        this.responderFirst = users[i].first_name;
-        this.responderLast = users[i].last_name;
-        date = getDate(answer.created_at);
-        break;
-      }
-    }
+    const { answer } = this.props;
+    const date = getDate(answer.created_at);
 
     return (
       <div className="question-answer-item" key={answer.id}>
         <div className="feed-author-name">
-          {this.responderFirst}
+
+          {answer.responder.first_name}
           {' '}
-          {this.responderLast}
-          
-          <p className="date">Answered {date}</p>
+          {answer.responder.last_name}
+
+          <p className="date">
+            Answered
+            {date}
+          </p>
         </div>
 
         <p className="answer-text">{answer.answer}</p>
@@ -70,6 +62,5 @@ class qAnswer extends React.Component {
     );
   }
 }
-
 
 export default qAnswer;
