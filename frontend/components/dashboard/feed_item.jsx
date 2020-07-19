@@ -102,7 +102,7 @@ class FeedItem extends React.Component {
 
   render() {
     const {
-      question, answers
+      question, answers,
     } = this.props;
 
     let answer = '';
@@ -110,10 +110,12 @@ class FeedItem extends React.Component {
     let photo;
     let created = '';
 
+    let questionDate = getDate(question.created_at)
+
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
         this.responderId = answers[i].responder_id;
-        answer = answers[i]
+        answer = answers[i];
         a = answers[i].answer;
         created = getDate(answers[i].created_at);
         if (answers[i].photoUrl) {
@@ -131,22 +133,47 @@ class FeedItem extends React.Component {
     const photoImageShow = <div className="center-feed-image"><img className="image-dashboard" src={photo} /></div>;
 
     this.questionId = question.id;
-
+    console.log(question)
     return (
 
       <div className="feed-item">
-        <p className="feed-header">Answer · Recommended for you</p>
-        <p className="feed-author-name">
-          {this.responderFirst}
-          {' '}
-          {this.responderLast}
-          {' · '}
-          <span className="date">Updated {created}</span>
-        </p>
-        <p className="feed-question" onClick={this.handleQuestionLink}>{ question.ask }</p>
+        {a.length !== 0
+          ? (
+            <div>
+              <p className="feed-header">Answer · Recommended for you</p>
+              <p className="feed-author-name">
+                {this.responderFirst}
+                {' '}
+                {this.responderLast}
+                {' · '}
+                <span className="date">
+                  Updated
+                  {' '}
+                  {created}
+                </span>
+              </p>
+            </div>
+          )
+          : (
+            <div>
+              <p className="feed-header">Be the first to answer this question</p>
+              <p className="feed-author-name">
+                {question.asker.first_name}
+                {' '}
+                {question.asker.last_name}
+                {' · '}
+                <span className="date">
+                  Created
+                  {' '}
+                  {questionDate}
+                </span>
+              </p>
+            </div>
+          )}
+        <p className="feed-question" onClick={this.handleQuestionLink}>{question.ask}</p>
 
         <p className="feed-answer">
-          { a }
+          {a}
           <br />
           {
             photo
@@ -158,7 +185,7 @@ class FeedItem extends React.Component {
 
         <div className="dropdown-area">
 
-          { this.getDropdown() }
+          {this.getDropdown()}
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-json.extract! question, :id, :ask, :topic_id, :asker_id
+json.extract! question, :id, :ask, :topic_id, :asker_id, :created_at
 
 json.answers question.answers do |ans|
   json.answer ans.answer

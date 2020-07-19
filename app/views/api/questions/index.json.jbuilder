@@ -1,6 +1,6 @@
 @questions.each do |q|
   json.set! q.id do
-    json.extract! q, :id, :ask, :asker_id, :topic_id
+    json.extract! q, :id, :ask, :asker_id, :topic_id, :created_at
 
     json.asker do
       json.extract! q.asker, :first_name, :last_name, :email
