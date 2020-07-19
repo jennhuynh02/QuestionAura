@@ -133,7 +133,6 @@ class FeedItem extends React.Component {
     const photoImageShow = <div className="center-feed-image"><img className="image-dashboard" src={photo} /></div>;
 
     this.questionId = question.id;
-    console.log(question)
     return (
 
       <div className="feed-item">
