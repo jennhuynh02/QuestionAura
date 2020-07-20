@@ -113,8 +113,10 @@ class FeedItem extends React.Component {
     let askerLast = ''
 
     let questionDate = getDate(question.created_at);
-    askerFirst = question.asker.first_name;
-    askerLast = question.asker.last_name;
+    // if (question) {
+    //   askerFirst = question.asker.first_name;
+    //   askerLast = question.asker.last_name;
+    // }
 
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
