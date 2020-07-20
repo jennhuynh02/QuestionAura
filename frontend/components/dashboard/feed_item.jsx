@@ -113,8 +113,8 @@ class FeedItem extends React.Component {
     let askerLast = ''
 
     let questionDate = getDate(question.created_at);
-    askerFirst = question.asker_first;
-    askerLast = question.asker_last;
+    askerFirst = question.asker.first_name;
+    askerLast = question.asker.last_name;
 
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
@@ -166,7 +166,7 @@ class FeedItem extends React.Component {
                 {askerLast}
                 {' · '}
                 <span className="date">
-                  Asked on
+                  Created
                   {' '}
                   {questionDate}
                 </span>
