@@ -104,7 +104,6 @@ class FeedItem extends React.Component {
     const {
       question, answers,
     } = this.props;
-    console.log(question)
     let answer = '';
     let a = '';
     let photo;

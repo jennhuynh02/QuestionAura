@@ -35,9 +35,16 @@ class Feed extends React.Component {
       questions,
     } = this.props;
 
+    const orderedQuestions = questions.slice(questions.length - 24);
+    orderedQuestions.push(...questions.slice(0, questions.length - 24));
+
+    const orderedFeed = [];
+    for (let i = orderedQuestions.length - 1; i >= 0; i--) {
+      orderedFeed.push(orderedQuestions[i]);
+    }
     return (
       <div>
-        {questions.map((question) => (
+        {orderedFeed.map((question) => (
           <FeedItemContainer question={question} key={question.id} />
         ))}
 
