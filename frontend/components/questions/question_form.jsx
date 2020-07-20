@@ -50,11 +50,13 @@ class QuestionForm extends React.Component {
   
   showForm() {
     if (this.state.topicToggle === false) {
-      return (
+      let banana = this.props.questions.slice(this.props.questions.length - 25, 1);
+      if (banana) {
+        return (
         <div>
-          <TopicSelection topics={this.props.topics} question={this.props.questions[0]} />
+          <TopicSelection topics={this.props.topics} question={banana} />
       </div>
-      );
+      )};
     }
     return (
       <div>

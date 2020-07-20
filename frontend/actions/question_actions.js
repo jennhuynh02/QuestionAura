@@ -40,7 +40,7 @@ export const createQuestion = (question) => (dispatch) => (
       (err) => (
         dispatch(receiveErrors(err.responseJSON))
       ))
-    .then((questions) => (dispatch(fetchQuestions(questions))))
+    // .then((questions) => (dispatch(fetchQuestions(questions))))
 );
 
 export const fetchQuestion = (questionId) => (dispatch) => (

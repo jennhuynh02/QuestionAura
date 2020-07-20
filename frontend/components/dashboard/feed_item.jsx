@@ -109,10 +109,12 @@ class FeedItem extends React.Component {
     let a = '';
     let photo;
     let created = '';
+    let askerFirst = ''
+    let askerLast = ''
 
     let questionDate = getDate(question.created_at);
-    let askerFirst = question.asker.first_name;
-    let askerLast = question.asker.last_name;
+    askerFirst = question.asker_first;
+    askerLast = question.asker_last;
 
     for (let i = 0; i < answers.length; i++) {
       if (question.id === answers[i].question_id) {
@@ -159,12 +161,12 @@ class FeedItem extends React.Component {
             <div>
               <p className="feed-header">Be the first to answer this question</p>
               <p className="feed-author-name">
-                {askerFirst && askerFirst}
+                {askerFirst}
                 {' '}
-                {askerLast && askerLast}
+                {askerLast}
                 {' · '}
                 <span className="date">
-                  Created
+                  Asked on
                   {' '}
                   {questionDate}
                 </span>

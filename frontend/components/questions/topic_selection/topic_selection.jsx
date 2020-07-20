@@ -59,8 +59,8 @@ class TopicSelection extends React.Component {
   }
 
   render() {
-    const { question, topics, closeModal, associated } = this.props;
-    const { ask } = question;
+    const { questions, topics, closeModal, associated } = this.props;
+    const question = this.props.questions[0]
     return (
       <div>
         <div className="question-header">
@@ -74,7 +74,7 @@ class TopicSelection extends React.Component {
               Make sure this question has the right topics:
             </p>
             <p className="question-on-topics-form">
-              {ask}
+              {question.ask}
             </p>
             <div>
               {topics.map((el) => (
