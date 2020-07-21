@@ -89,10 +89,12 @@ class QuestionPage extends React.Component {
     let firstName = '';
     let lastName = '';
 
+    let topics = [];
     for (let i = 0; i < questions.length; i++) {
       qId = questions[i].id;
       if (qId === questionId) {
         question = questions[i];
+        topics = questions[i].topics;
         this.topics = questions[i].topics;
         this.questionString = questions[i].ask;
         this.question = questions[i];
@@ -118,8 +120,8 @@ class QuestionPage extends React.Component {
         <div className="question-page">
           <div className="question-page-box">
             <p className="question-page-author-name">
-              {this.topics
-                ? this.topics.map((topic) => (
+              {topics
+                ? topics.map((topic) => (
                   <Link key={topic.id} className="link" to={`/topics/${topic.name}`}>
                     <span className="topic-tags" key={topic.id}>{topic.name}</span>
                   </Link>
