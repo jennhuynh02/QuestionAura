@@ -2,34 +2,41 @@
 <html>
   <head>
     <title>QuestionAura</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <meta property='og:title' content='Question Aura'/>
     <meta property='og:image' content="<%= image_url('preview.jpg') %>"/>
+    <meta property='og:description' content='Inspired by Quora Online Question & Answer Forum Platform'/>
+    <meta property='og:url' content='https://question-aura.herokuapp.com/' />
+
     <link rel="icon" href="<%= image_url("favicon.png") %>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript">
-    window.fullLogoURL = "<%= image_url('RickandMortyBackground.jpg') %>";
-    window.profilePic = "<%= image_url('profile.png') %>";
-    window.magnifyingGlass = "<%= image_url('magnifyingGlass.png') %>";
-    window.Feed = "<%= image_url('feed.jpg') %>";
-    window.Home = "<%= image_url('home.png') %>";
 
-    window.Programming = "<%= image_url('coding.jpg') %>";
-    window.Finance = "<%= image_url('finance.png') %>";
-    window.Books = "<%= image_url('books.png') %>";
-    window.Criminology = "<%= image_url('criminology.png') %>";
-    window.Philosophy = "<%= image_url('philosophy.png') %>";
-    window.Nature = "<%= image_url('nature.png') %>";
-    window.Psychology = "<%= image_url('psychology.png') %>";
-    window.Music = "<%= image_url('music.png') %>";
-    window.Career = "<%= image_url('career.png') %>";
-    window.Technology = "<%= image_url('technology.png') %>";
-    window.Art = "<%= image_url('art.png') %>";
-    window.History = "<%= image_url('history.png') %>";
-  </script>
+    <script type="text/javascript">
+      window.fullLogoURL = "<%= image_url('RickandMortyBackground.jpg') %>";
+      window.profilePic = "<%= image_url('profile.png') %>";
+      window.magnifyingGlass = "<%= image_url('magnifyingGlass.png') %>";
+      window.Feed = "<%= image_url('feed.jpg') %>";
+      window.Home = "<%= image_url('home.png') %>";
+
+      window.Programming = "<%= image_url('coding.jpg') %>";
+      window.Finance = "<%= image_url('finance.png') %>";
+      window.Books = "<%= image_url('books.png') %>";
+      window.Criminology = "<%= image_url('criminology.png') %>";
+      window.Philosophy = "<%= image_url('philosophy.png') %>";
+      window.Nature = "<%= image_url('nature.png') %>";
+      window.Psychology = "<%= image_url('psychology.png') %>";
+      window.Music = "<%= image_url('music.png') %>";
+      window.Career = "<%= image_url('career.png') %>";
+      window.Technology = "<%= image_url('technology.png') %>";
+      window.Art = "<%= image_url('art.png') %>";
+      window.History = "<%= image_url('history.png') %>";
+    </script>
   </head>
 
   <body>
