@@ -66,9 +66,17 @@ class QuestionPage extends React.Component {
       for (let i = 0; i < this.topics.length; i++) {
         if (this.topics[i].questions) {
           const related = this.topics[i].questions;
+          const ids = [this.question.id];
+          const filtered = [];
+          for (let i = 0; i < related.length; i++) {
+            if (!ids.includes(related[i].id)) {
+              ids.push(related[i].id);
+              filtered.push(related[i]);
+            }
+          }
           return (
             <div>
-              {related.map((question) => (
+              {filtered.map((question) => (
                 <div className="related-link-section" key={question.id}>
                   <Link className="related-links" to={`/questions/${question.id}`}>{question.ask}</Link>
                 </div>
