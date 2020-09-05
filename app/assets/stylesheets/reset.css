@@ -40,3 +40,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* Custom Reset */
+
+#root {
+	height: 100vh;
+	width: 100vw;
+}
