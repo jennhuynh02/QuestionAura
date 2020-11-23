@@ -87,7 +87,7 @@ class AnswerForm extends React.Component {
               {' '}
               {this.props.last}
             </p>
-            <input
+            <textarea
               type="text"
               value={this.state.answer}
               onChange={this.update('answer')}
