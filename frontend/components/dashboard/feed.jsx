@@ -39,7 +39,7 @@ class Feed extends React.Component {
     orderedQuestions.push(...questions.slice(0, questions.length - 24));
 
     const orderedFeed = [];
-    for (let i = orderedQuestions.length - 1; i >= 0; i--) {
+    for (let i = 0; i < orderedQuestions.length; i += 1) {
       orderedFeed.push(orderedQuestions[i]);
     }
     return (
