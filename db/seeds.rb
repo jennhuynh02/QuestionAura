@@ -12,18 +12,18 @@ Answer.destroy_all
 QuestionTopic.destroy_all
 
 users = User.create([
-  {id: 101, first_name: "Guest", last_name: "User", email: "guestuser@questionaura.com", password: "academy"},
-  {id: 102, first_name: "Isaac", last_name: "Newdon", email: "isaac@gmail.com", password: "academy"},
-  {id: 103, first_name: "Wayne", last_name: "Brazy", email: "wayne@gmail.com", password: "academy"},
-  {id: 104, first_name: "James", last_name: "Bands", email: "james@gmail.com", password: "academy"},
-  {id: 105, first_name: "Darrick", last_name: "Yawns", email: "darrick@gmail.com", password: "academy"},
-  {id: 106, first_name: "Miguel", last_name: "Juan", email: "miguel@gmail.com", password: "academy"},
-  {id: 107, first_name: "Chef", last_name: "Lean", email: "chef@gmail.com", password: "academy"},
-  {id: 108, first_name: "Charles", last_name: "Choose", email: "charles@gmail.com", password: "academy"},
-  {id: 109, first_name: "Michael", last_name: "Murr", email: "michael@gmail.com", password: "academy"},
-  {id: 110, first_name: "Ray", last_name: "Gee", email: "ray@gmail.com", password: "academy"},
-  {id: 111, first_name: "Jenn", last_name: "Wynn", email: "jenn@gmail.com", password: "academy"},
-  {id: 112, first_name: "David", last_name: "Fam", email: "david@gmail.com", password: "academy"}
+  {id: 101, first_name: "Guest", last_name: "User", email: "guestuser@questionaura.com", password: "123456"},
+  {id: 102, first_name: "Isaac", last_name: "Newdon", email: "isaac@gmail.com", password: "123456"},
+  {id: 103, first_name: "Wayne", last_name: "Brazy", email: "wayne@gmail.com", password: "123456"},
+  {id: 104, first_name: "James", last_name: "Bands", email: "james@gmail.com", password: "123456"},
+  {id: 105, first_name: "Darrick", last_name: "Yawns", email: "darrick@gmail.com", password: "123456"},
+  {id: 106, first_name: "Miguel", last_name: "Juan", email: "miguel@gmail.com", password: "123456"},
+  {id: 107, first_name: "Chef", last_name: "Lean", email: "chef@gmail.com", password: "123456"},
+  {id: 108, first_name: "Charles", last_name: "Choose", email: "charles@gmail.com", password: "123456"},
+  {id: 109, first_name: "Michael", last_name: "Murr", email: "michael@gmail.com", password: "123456"},
+  {id: 110, first_name: "Ray", last_name: "Gee", email: "ray@gmail.com", password: "123456"},
+  {id: 111, first_name: "Jenn", last_name: "Wynn", email: "jenn@gmail.com", password: "123456"},
+  {id: 112, first_name: "David", last_name: "Fam", email: "david@gmail.com", password: "123456"}
 ])
 
 questions = Question.create([
