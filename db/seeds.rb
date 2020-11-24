@@ -12,18 +12,18 @@ Answer.destroy_all
 QuestionTopic.destroy_all
 
 users = User.create([
-  {id: 101, first_name: "Guest", last_name: "User", email: "guestuser@questionaura.com", password: "123456"},
-  {id: 102, first_name: "Isaac", last_name: "Newdon", email: "isaacstein@gmail.com", password: "123456"},
-  {id: 103, first_name: "Wayne", last_name: "Brazy", email: "allthewayne@yahoo.com", password: "123456"},
-  {id: 104, first_name: "James", last_name: "Bands", email: "jayjames@hotmail.com", password: "123456"},
-  {id: 105, first_name: "Darrick", last_name: "Yawns", email: "imthedad@me.com", password: "123456"},
-  {id: 106, first_name: "Miguel", last_name: "Juan", email: "jmiggs@hello.com", password: "123456"},
-  {id: 107, first_name: "Chef", last_name: "Lean", email: "shaphen@gmail.com", password: "123456"},
-  {id: 108, first_name: "Charles", last_name: "Choose", email: "charles@dude.com", password: "123456"},
-  {id: 109, first_name: "Michael", last_name: "Murr", email: "michael@hello.com", password: "123456"},
-  {id: 110, first_name: "Ray", last_name: "Gee", email: "gin@hey.com", password: "123456"},
-  {id: 111, first_name: "Jenn", last_name: "Wynn", email: "jenjen@hello.com", password: "123456"},
-  {id: 112, first_name: "David", last_name: "Fam", email: "david@gmail.com", password: "123456"}
+  {id: 101, first_name: "Guest", last_name: "User", email: "guestuser@questionaura.com", password: "academy"},
+  {id: 102, first_name: "Isaac", last_name: "Newdon", email: "isaac@gmail.com", password: "academy"},
+  {id: 103, first_name: "Wayne", last_name: "Brazy", email: "wayne@gmail.com", password: "academy"},
+  {id: 104, first_name: "James", last_name: "Bands", email: "james@gmail.com", password: "academy"},
+  {id: 105, first_name: "Darrick", last_name: "Yawns", email: "darrick@gmail.com", password: "academy"},
+  {id: 106, first_name: "Miguel", last_name: "Juan", email: "miguel@gmail.com", password: "academy"},
+  {id: 107, first_name: "Chef", last_name: "Lean", email: "chef@gmail.com", password: "academy"},
+  {id: 108, first_name: "Charles", last_name: "Choose", email: "charles@gmail.com", password: "academy"},
+  {id: 109, first_name: "Michael", last_name: "Murr", email: "michael@gmail.com", password: "academy"},
+  {id: 110, first_name: "Ray", last_name: "Gee", email: "ray@gmail.com", password: "academy"},
+  {id: 111, first_name: "Jenn", last_name: "Wynn", email: "jenn@gmail.com", password: "academy"},
+  {id: 112, first_name: "David", last_name: "Fam", email: "david@gmail.com", password: "academy"}
 ])
 
 questions = Question.create([
@@ -95,9 +95,9 @@ answers = Answer.create([
   {id: 320, responder_id: 104, question_id: 210, 
   answer: "Confucius, he, who focuses on cultivation of virtue in a morally organized world."},
   {id: 321, responder_id: 102, question_id: 211, 
-  answer: "Mission Peak in Fremont, California is infamous for its intensity - make it to the top and take can a picture at the famous pole!"},
-  {id: 322, responder_id: 105, question_id: 211, 
   answer: "Lake Chabot in San Leandro has a nice, flat trail to stroll around the lake.  You can go paddle boating and fishing there as well."},
+  {id: 322, responder_id: 105, question_id: 211, 
+  answer: "Mission Peak in Fremont, California is infamous for its intensity - make it to the top and take can a picture at the famous pole!"},
   {id: 323, responder_id: 101, question_id: 212, 
   answer: "Underwater rivers - they form when fresh water sits on top of dense salt water."},
   {id: 324, responder_id: 106, question_id: 212, 
@@ -147,7 +147,7 @@ answers = Answer.create([
   {id: 346, responder_id: 105, question_id: 223, 
   answer: "The War in Afganistan - this took place after the 9/11 attacks and is a war against terrorism."},
   {id: 347, responder_id: 101, question_id: 224, 
-  answer: "The Vietnam War, also known as the Second IndoChina War, in which the communist regime had aimed to take over the Southern part of the country.  The Americans tried to help but was unable to do so.  The terrain made guerilla warfare possible, and the Viet Cong used this as their strategy to win."},
+  answer: "The Vietnam War, also known as the Second IndoChina War, took place when the communist regime aimed to take over the Southern part of Vietnam. The American soldiers tried to help but were unable to do so due to Vietnam's geography. The terrain made guerilla warfare possible, the Viet Cong used this warfare strategy to their advantage and eventually won the war."},
   {id: 348, responder_id: 106, question_id: 224, 
   answer: "The Korean war between North and South Korea.  The two countries remain divided till this day."}
 ])
