@@ -32,13 +32,13 @@ class QuestionForm extends React.Component {
     const question = { ...this.state };
     this.props.action(question);
     this.setState({
-        topicToggle: !this.state.topicToggle
-      });
-    }
-    
-    renderErrors() {
-      return (
-        <ul>
+      topicToggle: !this.state.topicToggle
+    });
+  }
+
+  renderErrors() {
+    return (
+      <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -47,16 +47,17 @@ class QuestionForm extends React.Component {
       </ul>
     );
   }
-  
+
   showForm() {
     if (this.state.topicToggle === false) {
       let banana = this.props.questions.slice(this.props.questions.length - 25, 1);
       if (banana) {
         return (
-        <div>
-          <TopicSelection topics={this.props.topics} question={banana} />
-      </div>
-      )};
+          <div>
+            <TopicSelection topics={this.props.topics} question={banana} />
+          </div>
+        )
+      };
     }
     return (
       <div>
