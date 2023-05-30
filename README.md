@@ -40,7 +40,7 @@ Altogether, these technologies were incorporated to:
 ## Configuration and Deployment Instructions:
 1. Download the zip from github 
 2. Open terminal
-3. Run "npm install" to run webpack
+3. Run "npm install" to install node dependencies
 4. Run "bundle install" to install associated ruby/rails gems
 5. Turn on PostgresQL
 6. Run "rails s" to start the rails server
